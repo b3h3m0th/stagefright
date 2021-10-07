@@ -33,6 +33,15 @@
     "api-interfaces": {
       "tags": []
     },
+    "home": {
+      "tags": []
+    },
+    "router": {
+      "tags": []
+    },
+    "shared": {
+      "tags": []
+    },
     "stagefright": {
       "tags": []
     },

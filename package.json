@@ -3,16 +3,24 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "nx": "nx",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "dev": "concurrently \"nx serve stagefright\" \"nx serve api\"",
+    "lint:fix": "nx run-many --all --target=lint --parallel --fix",
+    "lint:affected": "nx affected:lint",
+    "lint:affected:fix": "nx affected:lint --fix"
   },
   "private": true,
   "dependencies": {
     "core-js": "^3.6.5",
     "express": "4.17.1",
+    "mobx": "^6.3.3",
+    "mobx-react": "^7.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-router": "^5.2.1",
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.0.0"
   },
@@ -38,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "~4.28.3",
     "@typescript-eslint/parser": "~4.28.3",
     "babel-jest": "27.0.6",
+    "concurrently": "^6.3.0",
     "cypress": "^8.3.0",
     "eslint": "7.22.0",
     "eslint-config-prettier": "8.1.0",
