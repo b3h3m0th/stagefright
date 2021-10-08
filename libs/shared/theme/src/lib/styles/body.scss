@@ -1,0 +1,11 @@
+@use '../variables/typography.scss' as typo;
+@use '../variables/colors.scss' as colors;
+
+body,
+#root {
+  background-color: colors.$cream;
+  overflow-x: hidden;
+  font-family: typo.$text;
+  scroll-behavior: smooth;
+  hyphens: auto;
+}

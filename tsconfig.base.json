@@ -20,6 +20,7 @@
       "@stagefright/loader": ["libs/loader/src/index.ts"],
       "@stagefright/router": ["libs/router/src/index.ts"],
       "@stagefright/shared/components": ["libs/shared/components/src/index.ts"],
+      "@stagefright/shared/theme": ["libs/shared/theme/src/index.ts"],
       "@stagefright/shared/util": ["libs/shared/util/src/index.ts"]
     }
   },

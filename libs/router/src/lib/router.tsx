@@ -4,6 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Loader } from '@stagefright/loader';
 import { AnimatePresence, motion } from 'framer-motion';
 import { pages, ROUTES } from './routes';
+import { Header } from '@stagefright/shared/components';
 
 /* eslint-disable-next-line */
 export interface RouterProps {}
@@ -13,6 +14,7 @@ export const Router: React.FC = (props: RouterProps) => {
     <div>
       <BrowserRouter>
         <Suspense fallback={<Loader />}>
+          <Header />
           <Switch>
             {Object.entries(pages).map(([pageKey, component]) => (
               <Route

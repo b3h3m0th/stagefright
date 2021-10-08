@@ -45,6 +45,9 @@
     "shared-components": {
       "tags": []
     },
+    "shared-theme": {
+      "tags": []
+    },
     "shared-util": {
       "tags": []
     },
