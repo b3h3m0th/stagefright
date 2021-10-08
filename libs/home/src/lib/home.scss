@@ -1,9 +1,9 @@
 .home {
   &__hero {
-    background-image: url('https://media.discordapp.net/attachments/725617902891434080/896069476771069983/StageFright_cut_out.jpg?width=1215&height=683');
-    background-size: cover;
-    height: 100vh;
+    background-image: url('/assets/img/band_hero.jpg');
     width: 100vw;
+    height: 100vh;
+    background-size: cover;
     filter: grayscale(100%);
     background-position: center;
   }

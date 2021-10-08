@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './header.scss';
 
+/*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
 
 /* eslint-disable-next-line */
@@ -21,8 +22,8 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         ))}
         <li className="nav__list__item">
           <Link to={`/`}>
-            {/* <img className="nav__list__logo" src="assets/img/logo.png" alt="" /> */}
-            <span className="nav__list__logo">StageFright</span>
+            <img className="nav__list__logo" src="assets/img/logo.png" alt="" />
+            {/* <span className="nav__list__logo">StageFright</span> */}
           </Link>
         </li>
         {navItems.slice(-Math.ceil(navItems.length / 2)).map((e) => (

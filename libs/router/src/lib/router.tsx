@@ -4,6 +4,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Loader } from '@stagefright/loader';
 import { AnimatePresence, motion } from 'framer-motion';
 import { pages, ROUTES } from './routes';
+/*eslint-disable-next-line */
 import { Header } from '@stagefright/shared/components';
 
 /* eslint-disable-next-line */
