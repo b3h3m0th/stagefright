@@ -4,11 +4,7 @@ import './home.module.scss';
 export interface HomeProps {}
 
 export const Home = (props: HomeProps) => {
-  return (
-    <div>
-      <h1>StageFright</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Home;
