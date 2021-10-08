@@ -1,0 +1,11 @@
+.hero {
+  background-image: url('/assets/img/band_hero.jpg');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  filter: grayscale(100%);
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: inspect($value: );
+}
