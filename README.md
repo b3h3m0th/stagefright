@@ -2,6 +2,8 @@
 
 # Stagefright
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dd34fc31-fc5a-421f-a622-91b9fce18c79/deploy-status)](https://app.netlify.com/sites/stagefright/deploys)
+
 This project was generated using [Nx](https://nx.dev).
 
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
