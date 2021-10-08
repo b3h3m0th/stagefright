@@ -1,7 +1,9 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import './router.module.scss';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { propnameOf } from '@stagefright/shared/util';
+import { Loader } from '@stagefright/loader';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const pages = {
   home: {
@@ -10,7 +12,7 @@ const pages = {
   music: {
     component: lazy(() => import('@stagefright/home')),
   },
-  socialmedia: lazy(() => import('@stagefright/home')),
+  socialmedia: { component: lazy(() => import('@stagefright/home')) },
 } as const;
 
 /**
@@ -35,7 +37,33 @@ export interface RouterProps {}
 export const Router = (props: RouterProps) => {
   return (
     <div>
-      <BrowserRouter></BrowserRouter>
+      <BrowserRouter>
+        <Suspense fallback={<Loader />}>
+          <Switch>
+            {Object.entries(pages).map(([pageKey, component]) => (
+              <Route
+                key={pageKey}
+                exact
+                path={`/${ROUTES[pageKey as keyof typeof pages]}`}
+                component={() => (
+                  <AnimatePresence>
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 1 }}
+                      transition={{
+                        duration: 2 / 1000,
+                      }}
+                    >
+                      <component.component />
+                    </motion.div>
+                  </AnimatePresence>
+                )}
+              />
+            ))}
+          </Switch>
+        </Suspense>
+      </BrowserRouter>
     </div>
   );
 };
