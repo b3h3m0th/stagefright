@@ -61,6 +61,11 @@ export const Router = (props: RouterProps) => {
                 )}
               />
             ))}
+
+            <Route
+              path={`*`}
+              component={() => <Redirect to={`/${ROUTES.home}`} />}
+            />
           </Switch>
         </Suspense>
       </BrowserRouter>
