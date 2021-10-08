@@ -9,10 +9,6 @@ const pages = {
   home: {
     component: lazy(() => import('@stagefright/home')),
   },
-  music: {
-    component: lazy(() => import('@stagefright/home')),
-  },
-  socialmedia: { component: lazy(() => import('@stagefright/home')) },
 } as const;
 
 /**
