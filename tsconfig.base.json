@@ -17,6 +17,7 @@
     "paths": {
       "@stagefright/api-interfaces": ["libs/api-interfaces/src/index.ts"],
       "@stagefright/home": ["libs/home/src/index.ts"],
+      "@stagefright/loader": ["libs/loader/src/index.ts"],
       "@stagefright/router": ["libs/router/src/index.ts"],
       "@stagefright/shared/util": ["libs/shared/util/src/index.ts"]
     }
