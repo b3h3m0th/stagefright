@@ -6,8 +6,9 @@
     "nx": "nx",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test",
+    "test": "npx nx run-many --all --target=test --parallel",
     "dev": "concurrently \"nx serve stagefright\" \"nx serve api\"",
+    "lint": "nx lint",
     "lint:fix": "nx run-many --all --target=lint --parallel --fix",
     "lint:affected": "nx affected:lint",
     "lint:affected:fix": "nx affected:lint --fix"
