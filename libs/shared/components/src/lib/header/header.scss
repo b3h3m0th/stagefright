@@ -1,9 +1,5 @@
 @use 'theme:variables' as variables;
 
-#root {
-  margin-top: 15vh;
-}
-
 .nav {
   position: fixed;
   top: 0;
@@ -12,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: variables.$black;
+  z-index: 100;
 
   &__list {
     height: 100%;
@@ -24,13 +20,32 @@
 
     &__logo {
       height: 15vh;
+      font-size: variables.$font-size-4xl;
+
+      &::before {
+        z-index: -1;
+        position: absolute;
+        display: block;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100px;
+        width: 100%;
+        background: center / contain no-repeat
+          url('https://i.gifer.com/9hw9.mp4');
+      }
     }
 
     &__item {
       margin: 0 variables.$spacing-m;
       font-size: variables.$font-size-xl;
       font-family: variables.$head;
-      letter-spacing: 3px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      &__link {
+        color: variables.$white;
+      }
     }
   }
 }
