@@ -25,6 +25,5 @@ module.exports = (config) => {
         ),
       },
     },
-    rules: {}
   };
 };
