@@ -15,7 +15,10 @@
     color: variables.$white;
     font-family: variables.$head;
     text-transform: uppercase;
-    font-size: variables.$font-size-xl;
+    font-size: variables.$font-size-xxl;
     letter-spacing: variables.$letter-spacing-s;
+
+    &__album-title {
+    }
   }
 }
