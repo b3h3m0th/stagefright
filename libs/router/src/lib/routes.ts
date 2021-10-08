@@ -7,14 +7,6 @@ export const pages = {
   },
 } as const;
 
-export const homeSections = {
-  default: '',
-  music: 'music',
-  band: 'band',
-  shows: 'shows',
-  contact: 'contact',
-};
-
 /**
  * @key Route name
  * @value URL route
@@ -30,13 +22,10 @@ export const ROUTES: ROUTES = Object.keys(pages).reduce(
   {}
 ) as ROUTES;
 
-export type HOMESECTIONS = {
-  [K in keyof typeof pages]: K extends 'home' ? `` : `#${K}`;
-};
-export const HOMESECTIONS: HOMESECTIONS = Object.keys(pages).reduce(
-  (acc, curr) =>
-    curr === propnameOf<typeof pages>(pages, (p) => p.home)
-      ? { ...acc, [curr]: `` }
-      : { ...acc, [curr]: `#${curr}` },
-  {}
-) as HOMESECTIONS;
+export enum HomeSection {
+  default = '',
+  music = 'music',
+  band = 'band',
+  shows = 'shows',
+  contact = 'contact',
+}

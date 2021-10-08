@@ -5,7 +5,7 @@ import { Provider as StoreProvider } from 'mobx-react';
 // stores
 const stores = {};
 
-export const App = () => {
+export const App: React.FC = () => {
   return (
     <React.StrictMode>
       <StoreProvider {...stores}>

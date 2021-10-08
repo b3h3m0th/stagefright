@@ -8,7 +8,7 @@ import { pages, ROUTES } from './routes';
 /* eslint-disable-next-line */
 export interface RouterProps {}
 
-export const Router = (props: RouterProps) => {
+export const Router: React.FC = (props: RouterProps) => {
   return (
     <div>
       <BrowserRouter>
