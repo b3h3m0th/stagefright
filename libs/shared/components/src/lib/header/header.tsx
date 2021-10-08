@@ -20,13 +20,9 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             </Link>
           </li>
         ))}
-        <li className="nav__list__item">
+        <li className="nav__list__item nav__list__item__logo">
           <Link to={`/`}>
-            <img
-              className="nav__list__logo"
-              src="assets/img/logo_filled.png"
-              alt="StageFright Logo"
-            />
+            <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
             {/* <span className="nav__list__logo">StageFright</span> */}
           </Link>
         </li>

@@ -7,10 +7,10 @@ export const Hero: React.FC = (props: HeroProps) => {
   return (
     <div className="hero">
       <div className="hero__content">
-        <h1>
-          Debut Album{' '}
-          <span className="hero__content__album-title">"Wanted"</span> Coming
-          Soon!
+        <h1 className="hero__content__headline">
+          Debut Album "
+          <span className="hero__content__headline__album-title">Wanted</span>"{' '}
+          Coming Soon!
         </h1>
       </div>
     </div>

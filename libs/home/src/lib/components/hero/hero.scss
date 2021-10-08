@@ -1,11 +1,13 @@
 @use 'theme:variables' as variables;
 
 .hero {
-  background-image: url('/assets/img/band_hero.jpg');
+  background-image: linear-gradient(black, black),
+    url('/assets/img/band_hero.jpg');
+  background-blend-mode: saturation;
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  filter: grayscale(100%);
+  // filter: grayscale(100%);
   background-position: center;
   display: flex;
   justify-content: center;
@@ -17,8 +19,14 @@
     text-transform: uppercase;
     font-size: variables.$font-size-xxl;
     letter-spacing: variables.$letter-spacing-s;
+    padding: 0 variables.$horizontal-spacer-s;
 
-    &__album-title {
+    &__headline {
+      text-align: center;
+
+      &__album-title {
+        color: variables.$accent;
+      }
     }
   }
 }
