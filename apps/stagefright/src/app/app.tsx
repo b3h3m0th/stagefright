@@ -2,7 +2,7 @@ import React from 'react';
 import * as fromRouter from '@stagefright/router';
 import { Provider as StoreProvider } from 'mobx-react';
 
-// storesa
+// stores
 const stores = {};
 
 export const App = () => {
