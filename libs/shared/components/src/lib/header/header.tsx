@@ -1,45 +1,79 @@
 import { Link } from 'react-router-dom';
 import './header.scss';
 import * as config from '@stagefright/shared/config';
+import AnimateHeight from 'react-animate-height';
 
 /*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+  const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
+
   const [, ...navItems] = Object.entries(HomeSection);
 
-  return (
+  useEffect(() => {
+    window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
+    return () => {
+      window.removeEventListener('resize', () =>
+        setWindowWidth(window.innerWidth)
+      );
+    };
+  }, [windowWidth]);
+
+  return windowWidth > config.breakpoints.phone ? (
     <nav className="nav">
-      {windowWidth > config.breakpoints.phone ? (
-        <ul className="nav__list">
-          {navItems.slice(0, Math.ceil(navItems.length / 2)).map((e) => (
-            <li className="nav__list__item">
-              <Link className="nav__list__item__link" to={{ hash: e[0] }}>
-                {e[1]}
-              </Link>
-            </li>
-          ))}
-          <li className="nav__list__item nav__list__item__logo">
-            <Link to={`/`}>
-              <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
+      <ul className="nav__list">
+        {navItems.slice(0, Math.ceil(navItems.length / 2)).map((e, i) => (
+          <li className="nav__list__item" key={i}>
+            <Link className="nav__list__item__link" to={{ hash: e[0] }}>
+              {e[1]}
             </Link>
           </li>
-          {navItems.slice(-Math.ceil(navItems.length / 2)).map((e) => (
-            <li className="nav__list__item">
+        ))}
+        <li className="nav__list__item nav__list__item__logo">
+          <Link to={`/`}>
+            <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
+          </Link>
+        </li>
+        {navItems.slice(-Math.ceil(navItems.length / 2)).map((e, i) => (
+          <li className="nav__list__item" key={i}>
+            <Link className="nav__list__item__link" to={{ hash: e[0] }}>
+              {e[1]}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  ) : (
+    <nav className="nav">
+      <ul className="nav__list">
+        <li className="nav__list__item nav__list__item__logo">
+          <Link to={`/`}>
+            <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
+          </Link>
+        </li>
+        <AnimateHeight duration={350} height={isMenuShown ? 'auto' : 0}>
+          {navItems.map((e, i) => (
+            <li className="nav__list__item" key={i}>
               <Link className="nav__list__item__link" to={{ hash: e[0] }}>
                 {e[1]}
               </Link>
             </li>
           ))}
-        </ul>
-      ) : (
-        <div></div>
-      )}
+        </AnimateHeight>
+      </ul>
+      <div
+        className="burger-menu"
+        onClick={() => setIsMenuShown((prev) => !prev)}
+      >
+        <div className="burger-menu__layer"></div>
+        <div className="burger-menu__layer"></div>
+      </div>
     </nav>
   );
 };

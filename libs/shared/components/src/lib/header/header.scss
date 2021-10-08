@@ -1,4 +1,5 @@
 @use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
 
 .nav {
   position: fixed;
@@ -9,6 +10,11 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
+  padding: 0 variables.$horizontal-spacer-s;
+
+  @include mixins.for-phone {
+    justify-content: space-between;
+  }
 
   &__list {
     height: 100%;
@@ -17,6 +23,10 @@
     align-items: center;
     margin: 0;
     padding: 0;
+
+    @include mixins.for-phone {
+      flex-direction: column;
+    }
 
     &__item {
       margin: 0 variables.$spacing-m;
@@ -31,6 +41,10 @@
         justify-content: center;
         align-items: center;
         height: 15vh;
+
+        @include mixins.for-phone {
+          top: 10%;
+        }
 
         img {
           height: 15vh;
@@ -62,6 +76,23 @@
       &__link {
         color: variables.$white;
       }
+    }
+  }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: variables.$spacing-3xl;
+    height: variables.$spacing-l;
+    cursor: pointer;
+
+    &__layer {
+      display: inline-block;
+      height: variables.$spacing-xxs;
+      width: 80%;
+      background-color: variables.$white;
     }
   }
 }
