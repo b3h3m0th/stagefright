@@ -43,7 +43,7 @@
       font-size: variables.$font-size-xl;
       font-family: variables.$head;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: variables.$letter-spacing-s;
 
       &__link {
         color: variables.$white;

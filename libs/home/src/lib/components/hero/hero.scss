@@ -1,3 +1,5 @@
+@use 'theme:variables' as variables;
+
 .hero {
   background-image: url('/assets/img/band_hero.jpg');
   width: 100vw;
@@ -7,5 +9,13 @@
   background-position: center;
   display: flex;
   justify-content: center;
-  align-items: inspect($value: );
+  align-items: center;
+
+  &__content {
+    color: variables.$white;
+    font-family: variables.$head;
+    text-transform: uppercase;
+    font-size: variables.$font-size-xl;
+    letter-spacing: variables.$letter-spacing-s;
+  }
 }

@@ -6,7 +6,9 @@ export interface HeroProps {}
 export const Hero: React.FC = (props: HeroProps) => {
   return (
     <div className="hero">
-      <h1>Debut Album "Wanted" Coming Soon!</h1>
+      <div className="hero__content">
+        <h1>Debut Album "Wanted" Coming Soon!</h1>
+      </div>
     </div>
   );
 };
