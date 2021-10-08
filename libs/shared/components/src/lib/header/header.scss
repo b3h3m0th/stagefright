@@ -1,0 +1,36 @@
+@use 'theme:variables' as variables;
+
+#root {
+  margin-top: 15vh;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  height: 15vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$black;
+
+  &__list {
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    &__logo {
+      height: 15vh;
+    }
+
+    &__item {
+      margin: 0 variables.$spacing-m;
+      font-size: variables.$font-size-xl;
+      font-family: variables.$head;
+      letter-spacing: 2px;
+    }
+  }
+}
