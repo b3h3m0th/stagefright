@@ -52,16 +52,20 @@
           margin: 0;
           font-size: variables.$font-size-4xl;
           color: variables.$accent;
+          // color: variables.$black;
+          // background-color: variables.$white;
         }
 
         &__month {
           margin: 0;
           font-family: variables.$text;
+          font-size: initial;
         }
 
         &__year {
           margin: 0;
           font-family: variables.$text;
+          font-size: initial;
         }
       }
 
@@ -80,12 +84,12 @@
         }
 
         &__address {
-          font-size: variables.$spacing-m;
+          font-size: initial;
           margin: 0;
         }
 
         &__url {
-          font-size: variables.$spacing-m;
+          font-size: initial;
           margin: 0;
           color: variables.$accent;
         }

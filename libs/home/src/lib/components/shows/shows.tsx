@@ -12,50 +12,52 @@ export const Shows: React.FC = (props: ShowsProps) => {
     <div className="shows" id="shows">
       <h1 className="shows__title">Upcoming Shows</h1>
       <div className="shows__content">
-        {shows.map((show: IShow) => (
-          <div className="shows__content__show">
-            <div className="shows__content__show__date">
-              <p className="shows__content__show__date__day">
-                {show.start.getUTCDate()}
-              </p>
-              <p className="shows__content__show__date__month">
-                {show.start.toLocaleString('en', { month: 'long' })}
-              </p>
-              <p className="shows__content__show__date__year">
-                {show.start.getUTCFullYear()}
-              </p>
-            </div>
-            <div className="shows__content__show__location">
-              <p className="shows__content__show__location__title">
-                {show.location.title}
-              </p>
-              <p className="shows__content__show__location__address">
-                {show.location.address}
-              </p>
-              <a
-                href={show.location.url}
-                target="_blank"
-                rel="noreferrer"
-                className="shows__content__show__location__url"
-              >
-                {show.location.url?.replace(/(^\w+:|^)\/\//, '')}
-              </a>
-            </div>
-            <div className="shows__content__show__tickets">
-              {show.ticket.url ? (
-                <a href={show.ticket.url} target="_blank" rel="noreferrer">
+        {shows
+          .filter((show) => new Date() < show.start)
+          .map((show: IShow) => (
+            <div className="shows__content__show">
+              <div className="shows__content__show__date">
+                <p className="shows__content__show__date__day">
+                  {show.start.getUTCDate()}
+                </p>
+                <p className="shows__content__show__date__month">
+                  {show.start.toLocaleString('en', { month: 'long' })}
+                </p>
+                <p className="shows__content__show__date__year">
+                  {show.start.getUTCFullYear()}
+                </p>
+              </div>
+              <div className="shows__content__show__location">
+                <p className="shows__content__show__location__title">
+                  {show.location.title}
+                </p>
+                <p className="shows__content__show__location__address">
+                  {show.location.address}
+                </p>
+                <a
+                  href={show.location.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="shows__content__show__location__url"
+                >
+                  {show.location.url?.replace(/(^\w+:|^)\/\//, '')}
+                </a>
+              </div>
+              <div className="shows__content__show__tickets">
+                {show.ticket.url ? (
+                  <a href={show.ticket.url} target="_blank" rel="noreferrer">
+                    <button className="ticket-button">
+                      Tickets ({show.ticket.label})
+                    </button>
+                  </a>
+                ) : (
                   <button className="ticket-button">
                     Tickets ({show.ticket.label})
                   </button>
-                </a>
-              ) : (
-                <button className="ticket-button">
-                  Tickets ({show.ticket.label})
-                </button>
-              )}
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         {/* <Helmet>
           <script
             charSet="utf-8"
