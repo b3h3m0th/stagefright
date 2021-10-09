@@ -44,10 +44,14 @@ export const Shows: React.FC = (props: ShowsProps) => {
             <div className="shows__content__show__tickets">
               {show.ticket.url ? (
                 <a href={show.ticket.url} target="_blank" rel="noreferrer">
-                  {show.ticket.label}
+                  <button className="ticket-button">
+                    Tickets ({show.ticket.label})
+                  </button>
                 </a>
               ) : (
-                show.ticket.label
+                <button className="ticket-button">
+                  Tickets ({show.ticket.label})
+                </button>
               )}
             </div>
           </div>
