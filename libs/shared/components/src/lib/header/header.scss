@@ -14,6 +14,8 @@
 
   @include mixins.for-phone {
     justify-content: space-between;
+    background-color: variables.$black;
+    height: auto;
   }
 
   &__list {
@@ -26,6 +28,7 @@
 
     @include mixins.for-phone {
       flex-direction: column;
+      width: 100vw;
     }
 
     &__item {
@@ -35,16 +38,19 @@
       text-transform: uppercase;
       letter-spacing: variables.$letter-spacing-s;
 
+      @include mixins.for-phone {
+        text-align: center;
+        &:last-child {
+          padding-bottom: variables.$spacing-l;
+        }
+      }
+
       &__logo {
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 15vh;
-
-        @include mixins.for-phone {
-          top: 10%;
-        }
 
         img {
           height: 15vh;
@@ -87,12 +93,23 @@
     width: variables.$spacing-3xl;
     height: variables.$spacing-l;
     cursor: pointer;
+    align-self: flex-start;
+    margin-top: 6vh;
 
     &__layer {
       display: inline-block;
       height: variables.$spacing-xxs;
       width: 80%;
       background-color: variables.$white;
+
+      @include mixins.for-phone {
+        &__opened {
+          display: inline-block;
+          height: variables.$spacing-xxs;
+          width: 80%;
+          background-color: variables.$white;
+        }
+      }
     }
   }
 }

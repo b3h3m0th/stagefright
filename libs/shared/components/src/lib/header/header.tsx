@@ -12,7 +12,7 @@ export interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
-  const [isMenuShown, setIsMenuShown] = useState<boolean>(false);
+  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
   const [, ...navItems] = Object.entries(HomeSection);
 
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
           </Link>
         </li>
-        <AnimateHeight duration={350} height={isMenuShown ? 'auto' : 0}>
+        <AnimateHeight duration={350} height={isMenuOpened ? 'auto' : 0}>
           {navItems.map((e, i) => (
             <li className="nav__list__item" key={i}>
               <Link className="nav__list__item__link" to={{ hash: e[0] }}>
@@ -68,11 +68,18 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         </AnimateHeight>
       </ul>
       <div
-        className="burger-menu"
-        onClick={() => setIsMenuShown((prev) => !prev)}
+        className={`burger-menu`}
+        onClick={() => setIsMenuOpened((prev) => !prev)}
       >
-        <div className="burger-menu__layer"></div>
-        <div className="burger-menu__layer"></div>
+        <div
+          className={`burger-menu__layer${isMenuOpened ? '__opened' : ''}`}
+        ></div>
+        <div
+          className={`burger-menu__layer${isMenuOpened ? '__opened' : ''}`}
+        ></div>
+        <div
+          className={`burger-menu__layer${isMenuOpened ? '__opened' : ''}`}
+        ></div>
       </div>
     </nav>
   );
