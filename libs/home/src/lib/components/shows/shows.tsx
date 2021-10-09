@@ -14,7 +14,26 @@ export const Shows: React.FC = (props: ShowsProps) => {
       <div className="shows__content">
         {shows.map((show: IShow) => (
           <div className="shows__content__show">
-            <div className="shows__content__show__date"></div>
+            <div className="shows__content__show__date">
+              <p className="shows__content__show__date__day">
+                {show.start.getUTCDate()}
+              </p>
+              <p className="shows__content__show__date__month">
+                {show.start.toLocaleString('default', { month: 'long' })}
+              </p>
+              <p className="shows__content__show__date__year">
+                {show.start.getUTCFullYear()}
+              </p>
+            </div>
+            <div className="shows__content__show__location">
+              <p className="shows__content__show__location__title">
+                {show.location.title}
+              </p>
+              <p className="shows__content__show__location__address">
+                {show.location.address}
+              </p>
+            </div>
+            <div className="shows__content__show__tickets"></div>
           </div>
         ))}
         {/* <Helmet>

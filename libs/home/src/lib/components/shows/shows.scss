@@ -14,16 +14,71 @@
   }
 
   &__content {
-    height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     padding: 0 variables.$horizontal-spacer-s;
+    flex-direction: column;
 
     &__show {
+      font-size: variables.$font-size-xxl;
+      color: variables.$white;
       width: 100%;
-      background-color: red;
+      border-top: 1px solid variables.$white;
+      padding: variables.$vertical-spacer-xxs variables.$horizontal-spacer-xs;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-family: variables.$head;
+
+      & > * {
+        margin: 0 variables.$spacing-l;
+      }
+
+      &__date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: variables.$font-size-l;
+        flex: 1;
+
+        &__day {
+          margin: 0;
+          font-size: variables.$font-size-4xl;
+        }
+
+        &__month {
+          margin: 0;
+          font-family: variables.$text;
+        }
+
+        &__year {
+          margin: 0;
+          font-family: variables.$text;
+        }
+      }
+
+      &__location {
+        flex: 4;
+        font-family: variables.$text;
+
+        &__title {
+          font-size: variables.$spacing-l;
+          margin: 0;
+          font-weight: 600;
+        }
+
+        &__address {
+          font-size: variables.$spacing-m;
+          margin-top: variables.$spacing-s;
+        }
+      }
+
+      &__tickets {
+        flex: 2;
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ export type Shows = IShow[];
 export const shows: Shows = [
   {
     location: {
-      title: 'Kulturhaus ProKontra, Hohenems',
+      title: 'Kulturhaus ProKontra',
       address: 'Kaiser-Franz-Josef-Straße 29, 6845 Hohenems',
       url: 'https://prokontra.at/stagefright/',
     },
@@ -14,7 +14,7 @@ export const shows: Shows = [
   },
   {
     location: {
-      title: 'Kulturcafé Schlachthaus, Dornbirn',
+      title: 'Kulturcafé Schlachthaus',
       address: 'Schlachthausstraße 11, 6850 Dornbirn',
       url: 'https://www.ojad.at/event/stagefright/',
     },
