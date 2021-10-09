@@ -43,8 +43,14 @@
       font-family: variables.$head;
       text-transform: uppercase;
       letter-spacing: variables.$letter-spacing-s;
-      flex-grow: 1;
-      flex-basis: 0;
+
+      &:first-child {
+        margin-left: auto;
+      }
+
+      &:last-of-type {
+        margin-right: auto;
+      }
 
       @include mixins.for-phone {
         text-align: center;
@@ -56,8 +62,7 @@
 
       &__logo {
         height: 15vh;
-        flex-grow: initial;
-        flex-basis: initial;
+        justify-self: center;
 
         img {
           height: 15vh;
@@ -65,10 +70,6 @@
           color: variables.$white;
           filter: invert(1);
         }
-      }
-
-      &:hover::after {
-        opacity: 1;
       }
 
       &__link {
