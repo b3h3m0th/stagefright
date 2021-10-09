@@ -32,6 +32,14 @@ export const Shows: React.FC = (props: ShowsProps) => {
               <p className="shows__content__show__location__address">
                 {show.location.address}
               </p>
+              <a
+                href={show.location.url}
+                target="_blank"
+                rel="noreferrer"
+                className="shows__content__show__location__url"
+              >
+                {show.location.url?.replace(/(^\w+:|^)\/\//, '')}
+              </a>
             </div>
             <div className="shows__content__show__tickets"></div>
           </div>

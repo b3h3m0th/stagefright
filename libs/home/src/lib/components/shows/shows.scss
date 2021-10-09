@@ -75,13 +75,19 @@
 
         &__title {
           font-size: variables.$spacing-l;
-          margin: 0;
+          margin: 0 0 variables.$spacing-xs 0;
           font-weight: 600;
         }
 
         &__address {
           font-size: variables.$spacing-m;
           margin: 0;
+        }
+
+        &__url {
+          font-size: variables.$spacing-m;
+          margin: 0;
+          color: variables.$accent;
         }
       }
 
