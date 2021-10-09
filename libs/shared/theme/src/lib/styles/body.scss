@@ -1,13 +1,17 @@
-@use '../variables/typography.scss' as typo;
-@use '../variables/colors.scss' as colors;
+@use 'theme:variables' as variables;
 
 body,
 #root {
-  background-color: colors.$black;
+  background-color: variables.$black;
   overflow-x: hidden;
-  font-family: typo.$text;
+  font-family: variables.$text;
   scroll-behavior: smooth;
   hyphens: auto;
   padding: 0;
   margin: 0;
+}
+
+::selection {
+  background-color: variables.$white;
+  color: variables.$black;
 }
