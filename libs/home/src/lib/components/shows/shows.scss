@@ -1,0 +1,21 @@
+@use 'theme:variables' as variables;
+
+.shows {
+  margin-top: variables.$vertical-spacer-s;
+  width: 100vw;
+  height: 100vh;
+
+  &__title {
+    font-family: variables.$head;
+    text-align: center;
+    color: variables.$white;
+    text-transform: uppercase;
+    letter-spacing: variables.$letter-spacing-s;
+  }
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+  }
+}
