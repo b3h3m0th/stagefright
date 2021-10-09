@@ -10,7 +10,9 @@ export const shows: Shows = [
       url: 'https://prokontra.at/stagefright/',
     },
     start: new Date(2021, 9, 30, 21),
-    ticketUrl: '',
+    ticket: {
+      label: 'Box Office',
+    },
   },
   {
     location: {
@@ -19,6 +21,8 @@ export const shows: Shows = [
       url: 'https://www.ojad.at/event/stagefright/',
     },
     start: new Date(2021, 10, 19, 21),
-    ticketUrl: '',
+    ticket: {
+      label: 'Box Office',
+    },
   },
 ];

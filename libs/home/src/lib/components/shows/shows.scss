@@ -92,7 +92,12 @@
       }
 
       &__tickets {
+        font-size: variables.$spacing-m;
         flex: 2;
+        font-family: variables.$text;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
