@@ -1,5 +1,4 @@
 import './shows.scss';
-import { useScript } from '@stagefright/shared/util';
 import { Helmet } from 'react-helmet';
 
 /* eslint-disable-next-line */

@@ -10,7 +10,9 @@ export const Home = (props: HomeProps) => {
     <div className="home">
       <Hero />
       <Shows />
-      <div className="home__music"></div>
+      <div className="home__music">
+        <a id="shows"></a>
+      </div>
     </div>
   );
 };
