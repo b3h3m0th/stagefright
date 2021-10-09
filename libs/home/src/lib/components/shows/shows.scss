@@ -120,5 +120,10 @@
         }
       }
     }
+
+    &__empty {
+      color: variables.$white;
+      font-weight: 600;
+    }
   }
 }
