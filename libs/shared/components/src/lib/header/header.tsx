@@ -49,6 +49,15 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             </Link>
           </li>
         ))}
+        <div className="nav__list__item nav__list__item__socials">
+          <a
+            href={config.socials.instagram.link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+        </div>
       </ul>
     </nav>
   ) : (
