@@ -19,7 +19,7 @@ export const Shows: React.FC = (props: ShowsProps) => {
                 {show.start.getUTCDate()}
               </p>
               <p className="shows__content__show__date__month">
-                {show.start.toLocaleString('default', { month: 'long' })}
+                {show.start.toLocaleString('en', { month: 'long' })}
               </p>
               <p className="shows__content__show__date__year">
                 {show.start.getUTCFullYear()}

@@ -25,12 +25,16 @@
       font-size: variables.$font-size-xxl;
       color: variables.$white;
       width: 100%;
-      border-top: 1px solid variables.$white;
+      border-top: 1px solid variables.$white-transparent;
       padding: variables.$vertical-spacer-xxs variables.$horizontal-spacer-xs;
       display: flex;
       justify-content: space-around;
       align-items: center;
       font-family: variables.$head;
+
+      &:last-of-type {
+        border-bottom: 1px solid variables.$white-transparent;
+      }
 
       & > * {
         margin: 0 variables.$spacing-l;
@@ -47,6 +51,7 @@
         &__day {
           margin: 0;
           font-size: variables.$font-size-4xl;
+          color: variables.$accent;
         }
 
         &__month {
@@ -63,6 +68,10 @@
       &__location {
         flex: 4;
         font-family: variables.$text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
         &__title {
           font-size: variables.$spacing-l;
@@ -72,7 +81,7 @@
 
         &__address {
           font-size: variables.$spacing-m;
-          margin-top: variables.$spacing-s;
+          margin: 0;
         }
       }
 
