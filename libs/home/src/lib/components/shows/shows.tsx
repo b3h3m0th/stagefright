@@ -1,5 +1,6 @@
 import './shows.scss';
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
+import { shows, IShow } from '@stagefright/shared/data';
 
 /* eslint-disable-next-line */
 export interface ShowsProps {}
@@ -11,6 +12,11 @@ export const Shows: React.FC = (props: ShowsProps) => {
     <div className="shows" id="shows">
       <h1 className="shows__title">Upcoming Shows</h1>
       <div className="shows__content">
+        {shows.map((show: IShow) => (
+          <div className="shows__content__show">
+            <div className="shows__content__show__date"></div>
+          </div>
+        ))}
         {/* <Helmet>
           <script
             charSet="utf-8"

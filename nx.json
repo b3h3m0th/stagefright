@@ -48,6 +48,9 @@
     "shared-config": {
       "tags": []
     },
+    "shared-data": {
+      "tags": []
+    },
     "shared-theme": {
       "tags": []
     },

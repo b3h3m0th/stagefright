@@ -176,6 +176,28 @@
         }
       }
     },
+    "shared-data": {
+      "root": "libs/shared/data",
+      "sourceRoot": "libs/shared/data/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/shared/data/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/data"],
+          "options": {
+            "jestConfig": "libs/shared/data/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "shared-theme": {
       "root": "libs/shared/theme",
       "sourceRoot": "libs/shared/theme/src",
