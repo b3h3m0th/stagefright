@@ -96,6 +96,10 @@
         a {
           color: variables.$white;
           font-size: variables.$font-size-xl;
+
+          &:not(:last-child) {
+            margin-right: variables.$spacing-s;
+          }
         }
       }
     }

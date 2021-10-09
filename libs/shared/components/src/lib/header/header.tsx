@@ -7,7 +7,13 @@ import AnimateHeight from 'react-animate-height';
 import { HomeSection } from '@stagefright/router';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {
+  faAmazon,
+  faDeezer,
+  faInstagram,
+  faSpotify,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -26,6 +32,26 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       );
     };
   }, [windowWidth]);
+
+  const renderSocials: () => JSX.Element = () => (
+    <div className="nav__list__item__socials">
+      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faInstagram} />
+      </a>
+      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faSpotify} />
+      </a>
+      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faAmazon} />
+      </a>
+      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faDeezer} />
+      </a>
+      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faYoutube} />
+      </a>
+    </div>
+  );
 
   return windowWidth > config.breakpoints.phone ? (
     <nav className="nav">
@@ -49,15 +75,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             </Link>
           </li>
         ))}
-        <div className="nav__list__item__socials">
-          <a
-            href={config.socials.instagram.link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-        </div>
+        {renderSocials()}
       </ul>
     </nav>
   ) : (
@@ -76,15 +94,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
               </Link>
             </li>
           ))}
-          <div className="nav__list__item nav__list__item__socials">
-            <a
-              href={config.socials.instagram.link}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-          </div>
+          {renderSocials()}
         </AnimateHeight>
       </ul>
       <div
