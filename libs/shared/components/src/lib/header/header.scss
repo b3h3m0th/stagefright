@@ -29,8 +29,7 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    width: 100%;
+    width: 50%;
 
     @include mixins.for-phone {
       flex-direction: column;
@@ -43,6 +42,9 @@
       font-family: variables.$head;
       text-transform: uppercase;
       letter-spacing: variables.$letter-spacing-s;
+      display: flex;
+      flex: 1;
+      justify-content: center;
 
       &:first-child {
         margin-left: auto;
@@ -55,8 +57,13 @@
       @include mixins.for-phone {
         text-align: center;
 
-        &:last-child {
-          padding-bottom: variables.$spacing-l;
+        &:first-child,
+        &:last-of-type {
+          margin: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: variables.$spacing-l;
         }
       }
 
@@ -77,18 +84,25 @@
       }
 
       &__socials {
+        position: absolute;
+        right: 10vw;
+        top: 6vh;
+
         @include mixins.for-phone {
           margin-top: variables.$spacing-m;
+          position: initial;
         }
 
         a {
           color: variables.$white;
+          font-size: variables.$font-size-xl;
         }
       }
     }
   }
 
   .burger-menu {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -97,6 +111,7 @@
     height: variables.$spacing-l;
     cursor: pointer;
     align-self: flex-start;
+    right: variables.$horizontal-spacer-s;
     margin-top: 6vh;
 
     &__layer {
