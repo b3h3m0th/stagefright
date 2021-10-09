@@ -6,6 +6,8 @@ import AnimateHeight from 'react-animate-height';
 /*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -65,6 +67,15 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
               </Link>
             </li>
           ))}
+          <div className="nav__list__item nav__list__item__socials">
+            <a
+              href={config.socials.instagram.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+          </div>
         </AnimateHeight>
       </ul>
       <div
