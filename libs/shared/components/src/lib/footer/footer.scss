@@ -1,0 +1,8 @@
+@use 'theme:variables' as variables;
+
+.footer {
+  width: 100vw;
+  min-height: 40vh;
+  background-color: variables.$black;
+  border-top: 1px solid variables.$white;
+}

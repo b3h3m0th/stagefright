@@ -1,5 +1,7 @@
 import Hero from './components/hero/hero';
 import Shows from './components/shows/shows';
+/*eslint-disable-next-line */
+import { Footer } from '@stagefright/shared/components';
 import './home.scss';
 
 /* eslint-disable-next-line */
@@ -10,9 +12,7 @@ export const Home = (props: HomeProps) => {
     <div className="home">
       <Hero />
       <Shows />
-      <div className="home__music">
-        <a id="shows"></a>
-      </div>
+      <Footer />
     </div>
   );
 };
