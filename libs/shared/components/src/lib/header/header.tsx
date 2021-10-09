@@ -52,7 +52,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       </ul>
     </nav>
   ) : (
-    <nav className="nav">
+    <nav className={`nav ${isMenuOpened ? 'nav__opened' : ''}`}>
       <ul className="nav__list">
         <li className="nav__list__item nav__list__item__logo">
           <Link to={`/`}>
