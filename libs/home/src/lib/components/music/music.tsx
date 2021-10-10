@@ -5,7 +5,7 @@ export interface MusicProps {}
 
 export const Music: React.FC = (props: MusicProps) => {
   return (
-    <div className="music">
+    <div className="music" id="music">
       <h1 className="music__title">Music</h1>
       <div className="music__content">
         <p className="music__content__announcement">
