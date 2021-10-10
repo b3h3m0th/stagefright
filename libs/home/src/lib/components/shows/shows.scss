@@ -85,7 +85,7 @@
         align-items: flex-start;
 
         @include mixins.for-phone {
-          text-align: center;
+          align-items: center;
         }
 
         &__title {
