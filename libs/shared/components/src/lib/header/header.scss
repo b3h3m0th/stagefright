@@ -119,12 +119,12 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: variables.$spacing-3xl;
+    width: variables.$spacing-xxl;
     height: variables.$spacing-l;
     cursor: pointer;
     align-self: flex-start;
     right: variables.$horizontal-spacer-s;
-    margin-top: 5vh;
+    margin-top: 4.5vh;
 
     &__layer {
       display: inline-block;
