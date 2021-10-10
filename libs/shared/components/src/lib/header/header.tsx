@@ -19,7 +19,7 @@ import {
 export interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
-  const scrollBreakpoint = 100 as const;
+  const scrollBreakpoint = 200 as const;
   const [isNavTransparent, setIsNavTransparent] = useState<boolean>(true);
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
@@ -93,7 +93,11 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       </ul>
     </nav>
   ) : (
-    <nav className={`nav ${isMenuOpened ? 'nav__opened' : ''}`}>
+    <nav
+      className={`nav ${isMenuOpened ? 'nav__opened' : ''} ${
+        isNavTransparent ? 'nav__transparent' : ''
+      }`}
+    >
       <ul className="nav__list">
         <li
           className="nav__list__item nav__list__item__logo"

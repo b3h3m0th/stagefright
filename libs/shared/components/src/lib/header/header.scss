@@ -43,7 +43,7 @@
 
     &__item {
       margin: 0 variables.$spacing-m;
-      font-size: variables.$font-size-xl;
+      font-size: variables.$font-size-l;
       font-family: variables.$head;
       text-transform: uppercase;
       letter-spacing: variables.$letter-spacing-s;
@@ -92,7 +92,7 @@
       &__socials {
         position: absolute;
         right: 10vw;
-        top: 5vh;
+        top: 4.5vh;
 
         @include mixins.for-phone {
           margin: variables.$spacing-m 0 variables.$spacing-l 0;
