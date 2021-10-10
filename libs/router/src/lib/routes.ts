@@ -3,6 +3,7 @@ import { lazy } from 'react';
 
 export const pages = {
   home: {
+    /*eslint-disable-next-line */
     component: lazy(() => import('@stagefright/home')),
   },
 } as const;
