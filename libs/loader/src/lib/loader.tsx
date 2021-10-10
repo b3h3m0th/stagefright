@@ -1,4 +1,5 @@
 import './loader.scss';
+import { motion } from 'framer-motion';
 
 /* eslint-disable-next-line */
 export interface LoaderProps {}
@@ -6,10 +7,12 @@ export interface LoaderProps {}
 export const Loader: React.FC = (props: LoaderProps) => {
   return (
     <div className="loader">
-      <img
+      <motion.img
         className="loader__logo"
         src="assets/img/logo_filled.png"
         alt="StageFright Logo"
+        transition={{ duration: 1 }}
+        animate={{ opacity: 0 }}
       />
     </div>
   );
