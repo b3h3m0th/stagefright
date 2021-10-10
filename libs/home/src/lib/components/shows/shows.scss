@@ -43,6 +43,10 @@
 
       & > * {
         margin: 0 variables.$spacing-l;
+
+        @include mixins.for-phone {
+          margin: variables.$spacing-m 0;
+        }
       }
 
       &__date {
@@ -79,6 +83,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+
+        @include mixins.for-phone {
+          text-align: center;
+        }
 
         &__title {
           font-size: variables.$spacing-l;
