@@ -8,6 +8,7 @@
     "build": "nx build",
     "test": "npx nx run-many --all --target=test --parallel",
     "dev": "concurrently \"nx serve stagefright\" \"nx serve api\"",
+    "prod": "git ch production && git rebase master && git push -f && git ch -",
     "lint": "nx lint",
     "lint:fix": "nx run-many --all --target=lint --parallel --fix",
     "lint:affected": "nx affected:lint",
