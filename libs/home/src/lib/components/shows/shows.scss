@@ -2,9 +2,9 @@
 @use 'theme:mixins' as mixins;
 
 .shows {
-  margin-top: variables.$vertical-spacer-s;
+  padding-top: variables.$vertical-spacer-m;
   width: 100vw;
-  height: 100vh;
+  margin-bottom: variables.$vertical-spacer-s;
 
   &__title {
     font-family: variables.$head;
@@ -86,6 +86,7 @@
 
         @include mixins.for-phone {
           align-items: center;
+          text-align: center;
         }
 
         &__title {
