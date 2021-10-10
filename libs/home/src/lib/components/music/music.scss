@@ -1,0 +1,31 @@
+@use 'theme:variables' as variables;
+
+.music {
+  width: 100vw;
+  margin-bottom: variables.$vertical-spacer-s;
+
+  &__title {
+    font-family: variables.$head;
+    text-align: center;
+    color: variables.$white;
+    text-transform: uppercase;
+    letter-spacing: variables.$letter-spacing-s;
+  }
+
+  &__content {
+    width: 100%;
+
+    &__announcement {
+      font-family: variables.$head;
+      font-size: variables.$font-size-m;
+      letter-spacing: variables.$letter-spacing-s;
+      text-align: center;
+      text-transform: uppercase;
+      color: variables.$white;
+
+      &__album-title {
+        color: variables.$accent;
+      }
+    }
+  }
+}

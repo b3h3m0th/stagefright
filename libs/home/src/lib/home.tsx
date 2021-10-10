@@ -1,6 +1,5 @@
-import { scrollToHash } from '@stagefright/shared/util';
-import { useEffect } from 'react';
 import Hero from './components/hero/hero';
+import Music from './components/music/music';
 import Shows from './components/shows/shows';
 import './home.scss';
 
@@ -12,6 +11,7 @@ export const Home = (props: HomeProps) => {
     <div className="home">
       <Hero />
       <Shows />
+      <Music />
     </div>
   );
 };

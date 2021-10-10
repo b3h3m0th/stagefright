@@ -13,14 +13,20 @@ export const Footer: React.FC = (props: FooterProps) => {
       <div className="footer__head">
         <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
       </div>
-      <h1>Welcome to Footer!</h1>
-      {navItems.map((e, i) => (
-        <li className="" key={i}>
-          <a className="" href={`#${e[0]}`}>
-            {e[1]}
-          </a>
-        </li>
-      ))}
+      <div className="footer__content">
+        <ul className="footer__content__quick-links">
+          {navItems.map((e, i) => (
+            <li className="footer__content__quick-links__item" key={i}>
+              <a
+                className="footer__content__quick-links__item__link"
+                href={`#${e[0]}`}
+              >
+                {e[1]}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
