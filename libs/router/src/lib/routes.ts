@@ -3,8 +3,13 @@ import { lazy } from 'react';
 
 export const pages = {
   home: {
-    /*eslint-disable-next-line */
-    component: lazy(() => import('@stagefright/home')),
+    component: lazy(() => {
+      /*eslint-disable-next-line */
+      return new Promise((resolve: any) => {
+        /*eslint-disable-next-line */
+        setTimeout(() => resolve(import('@stagefright/home')), 1000);
+      });
+    }),
   },
 } as const;
 

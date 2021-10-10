@@ -6,7 +6,7 @@ import './home.scss';
 /* eslint-disable-next-line */
 export interface HomeProps {}
 
-export const Home = (props: HomeProps) => {
+export const Home: React.FC = (props: HomeProps) => {
   return (
     <div className="home">
       <Hero />

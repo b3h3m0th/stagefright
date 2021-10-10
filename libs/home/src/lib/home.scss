@@ -1,4 +1,6 @@
 .home {
+  animation: mountAnimation 1s normal 0s 1 forwards;
+
   &__hero {
     background-image: url('/assets/img/band_hero.jpg');
     width: 100vw;
@@ -10,5 +12,14 @@
 
   &__music {
     height: 50vh;
+  }
+}
+
+@keyframes mountAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

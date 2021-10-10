@@ -1,12 +1,16 @@
-import './loader.module.scss';
+import './loader.scss';
 
 /* eslint-disable-next-line */
 export interface LoaderProps {}
 
-export const Loader = (props: LoaderProps) => {
+export const Loader: React.FC = (props: LoaderProps) => {
   return (
-    <div>
-      <h1>Loading</h1>
+    <div className="loader">
+      <img
+        className="loader__logo"
+        src="assets/img/logo_filled.png"
+        alt="StageFright Logo"
+      />
     </div>
   );
 };
