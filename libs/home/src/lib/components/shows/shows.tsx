@@ -6,7 +6,9 @@ import { removeURLProtocol } from '@stagefright/shared/util';
 export interface ShowsProps {}
 
 export const Shows: React.FC = (props: ShowsProps) => {
-  const upcomingShows = shows.filter((show) => new Date() < show.start);
+  const upcomingShows: IShow[] = shows.filter(
+    (show) => new Date() < show.start
+  );
 
   return (
     <div className="shows" id="shows">
