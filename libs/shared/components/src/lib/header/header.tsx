@@ -94,7 +94,11 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         </li>
         <AnimateHeight duration={350} height={isMenuOpened ? 'auto' : 0}>
           {navItems.map((e, i) => (
-            <li className="nav__list__item" key={i}>
+            <li
+              className="nav__list__item"
+              key={i}
+              onClick={() => setIsMenuOpened(false)}
+            >
               <a className="nav__list__item__link" href={`#${e[0]}`}>
                 {e[1]}
               </a>
