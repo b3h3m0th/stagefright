@@ -84,7 +84,10 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   ) : (
     <nav className={`nav ${isMenuOpened ? 'nav__opened' : ''}`}>
       <ul className="nav__list">
-        <li className="nav__list__item nav__list__item__logo">
+        <li
+          className="nav__list__item nav__list__item__logo"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           <Link to={`/`}>
             <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
           </Link>
@@ -92,9 +95,9 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         <AnimateHeight duration={350} height={isMenuOpened ? 'auto' : 0}>
           {navItems.map((e, i) => (
             <li className="nav__list__item" key={i}>
-              <Link className="nav__list__item__link" to={{ hash: e[0] }}>
+              <a className="nav__list__item__link" href={`#${e[0]}`}>
                 {e[1]}
-              </Link>
+              </a>
             </li>
           ))}
           {renderSocials()}
