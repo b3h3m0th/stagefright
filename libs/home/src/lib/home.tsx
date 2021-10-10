@@ -1,8 +1,7 @@
 import Hero from './components/hero/hero';
 import Shows from './components/shows/shows';
-/*eslint-disable-next-line */
-import { Footer } from '@stagefright/shared/components';
 import './home.scss';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 
 /* eslint-disable-next-line */
 export interface HomeProps {}
@@ -10,9 +9,10 @@ export interface HomeProps {}
 export const Home = (props: HomeProps) => {
   return (
     <div className="home">
-      <Hero />
-      <Shows />
-      <Footer />
+      <BrowserRouter>
+        <Hero />
+        <Shows />
+      </BrowserRouter >
     </div>
   );
 };

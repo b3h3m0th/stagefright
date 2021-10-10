@@ -5,7 +5,7 @@ import { Loader } from '@stagefright/loader';
 import { AnimatePresence, motion } from 'framer-motion';
 import { pages, ROUTES } from './routes';
 /*eslint-disable-next-line */
-import { Header } from '@stagefright/shared/components';
+import { Footer, Header } from '@stagefright/shared/components';
 
 /* eslint-disable-next-line */
 export interface RouterProps {}
@@ -44,6 +44,7 @@ export const Router: React.FC = (props: RouterProps) => {
               component={() => <Redirect to={`/${ROUTES.home}`} />}
             />
           </Switch>
+          <Footer />
         </Suspense>
       </BrowserRouter>
     </div>
