@@ -15,8 +15,8 @@ export const Shows: React.FC = (props: ShowsProps) => {
       <h1 className="shows__title">Upcoming Shows</h1>
       <div className="shows__content">
         {upcomingShows.length > 0 ? (
-          upcomingShows.map((show: IShow) => (
-            <div className="shows__content__show">
+          upcomingShows.map((show: IShow, i) => (
+            <div className="shows__content__show" key={i}>
               <div className="shows__content__show__date">
                 <p className="shows__content__show__date__day">
                   {show.start.getUTCDate()}
