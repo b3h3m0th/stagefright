@@ -91,6 +91,8 @@
         @include mixins.for-phone {
           margin: variables.$spacing-m 0 variables.$spacing-l 0;
           position: initial;
+          display: flex;
+          justify-content: center;
         }
 
         a {

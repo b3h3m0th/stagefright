@@ -38,7 +38,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faInstagram} />
       </a>
-      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
+      {/* <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faSpotify} />
       </a>
       <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
@@ -49,7 +49,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       </a>
       <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faYoutube} />
-      </a>
+      </a> */}
     </div>
   );
 
