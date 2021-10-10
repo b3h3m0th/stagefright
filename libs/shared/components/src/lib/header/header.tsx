@@ -19,17 +19,28 @@ import {
 export interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+  const scrollBreakpoint = 100 as const;
+  const [isNavTransparent, setIsNavTransparent] = useState<boolean>(true);
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
   const [, ...navItems] = Object.entries(HomeSection);
 
+  const onResize = () => setWindowWidth(window.innerWidth);
+  const onScroll = () => {
+    isMenuOpened
+      ? setIsNavTransparent(false)
+      : window.scrollY >= scrollBreakpoint
+      ? isNavTransparent && setIsNavTransparent(false)
+      : setIsNavTransparent(true);
+  };
+
   useEffect(() => {
-    window.addEventListener('resize', () => setWindowWidth(window.innerWidth));
+    window.addEventListener('resize', onResize);
+    window.addEventListener('scroll', onScroll);
     return () => {
-      window.removeEventListener('resize', () =>
-        setWindowWidth(window.innerWidth)
-      );
+      window.removeEventListener('resize', onResize);
+      window.addEventListener('scroll', onScroll);
     };
   }, [windowWidth]);
 
@@ -54,7 +65,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   );
 
   return windowWidth > config.breakpoints.phone ? (
-    <nav className="nav">
+    <nav className={`nav ${isNavTransparent ? 'nav__transparent' : ''}`}>
       <ul className="nav__list">
         {navItems.slice(0, Math.ceil(navItems.length / 2)).map((e, i) => (
           <li className="nav__list__item" key={i}>
