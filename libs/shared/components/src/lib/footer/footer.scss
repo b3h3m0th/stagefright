@@ -42,5 +42,10 @@
         }
       }
     }
+
+    &__copyright {
+      text-align: center;
+      font-size: variables.$font-size-s;
+    }
   }
 }

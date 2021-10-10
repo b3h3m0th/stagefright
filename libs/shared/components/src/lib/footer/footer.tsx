@@ -26,6 +26,9 @@ export const Footer: React.FC = (props: FooterProps) => {
             </li>
           ))}
         </ul>
+        <p className="footer__content__copyright">
+          &copy; Copyright StageFright {new Date().getFullYear()}
+        </p>
       </div>
     </div>
   );
