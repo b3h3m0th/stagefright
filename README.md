@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/b3h3m0th/stagefright/master/apps/assets/img/logo_filled.png"/>
+  <img src="https://raw.githubusercontent.com/b3h3m0th/stagefright/master/apps/stagefright/src/assets/img/logo_filled.png"/>
 </p>
 
 # Stagefright
