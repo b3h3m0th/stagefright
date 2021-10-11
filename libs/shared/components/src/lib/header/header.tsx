@@ -79,7 +79,10 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
           onClick={() => window.scrollTo(0, 0)}
         >
           <Link to={`/`}>
-            <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
+            <img
+              src="assets/img/logo_filled_white.png"
+              alt="StageFright Logo"
+            />
           </Link>
         </li>
         {navItems.slice(-Math.ceil(navItems.length / 2)).map((e, i) => (

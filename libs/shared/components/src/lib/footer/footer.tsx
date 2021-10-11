@@ -11,7 +11,7 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   return (
     <div className="footer">
       <div className="footer__head">
-        <img src="assets/img/logo_filled.png" alt="StageFright Logo" />
+        <img src="assets/img/logo_filled_white.png" alt="StageFright Logo" />
       </div>
       <div className="footer__content">
         <ul className="footer__content__quick-links">

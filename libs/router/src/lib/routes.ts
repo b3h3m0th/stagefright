@@ -1,13 +1,17 @@
 import { propnameOf } from '@stagefright/shared/util';
 import { lazy } from 'react';
+import { loading } from '@stagefright/shared/config';
 
 export const pages = {
   home: {
     component: lazy(() => {
       /*eslint-disable-next-line */
       return new Promise((resolve: any) => {
-        /*eslint-disable-next-line */
-        setTimeout(() => resolve(import('@stagefright/home')), 1000);
+        setTimeout(
+          /*eslint-disable-next-line */
+          () => resolve(import('@stagefright/home')),
+          loading.artificialPageMountDelay
+        );
       });
     }),
   },

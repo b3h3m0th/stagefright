@@ -76,7 +76,6 @@
           height: 10vh;
           font-size: variables.$font-size-4xl;
           color: variables.$white;
-          filter: invert(1);
 
           @include mixins.for-phone {
             height: 10vh;

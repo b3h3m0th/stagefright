@@ -9,7 +9,7 @@ export const Loader: React.FC<LoaderProps> = (props: LoaderProps) => {
     <div className="loader">
       <motion.img
         className="loader__logo"
-        src="assets/img/logo_filled.png"
+        src="assets/img/logo_filled_white.png"
         alt="StageFright Logo"
         transition={{ duration: 1 }}
         animate={{ opacity: 0 }}

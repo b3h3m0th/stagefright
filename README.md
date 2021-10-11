@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/b3h3m0th/stagefright/master/apps/stagefright/src/assets/img/logo_filled.png" style="filter:invert(1);"/>
+  <img src="https://raw.githubusercontent.com/b3h3m0th/stagefright/master/apps/stagefright/src/assets/img/logo_filled_white.png" height="300" width="300"/>
 </p>
 
 # Stagefright
@@ -86,8 +86,6 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 
