@@ -24,7 +24,9 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
-  const [, ...navItems] = Object.entries(HomeSection);
+  const navItems = Object.entries(HomeSection).filter(
+    (o) => !o.includes(HomeSection.default)
+  );
 
   const onResize = () => setWindowWidth(window.innerWidth);
   const onScroll = () => {
@@ -78,7 +80,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
           className="nav__list__item nav__list__item__logo"
           onClick={() => window.scrollTo(0, 0)}
         >
-          <Link to={`/`}>
+          <Link to={`/${HomeSection.default}`}>
             <img
               src="assets/img/logo_filled_white.png"
               alt="StageFright Logo"
