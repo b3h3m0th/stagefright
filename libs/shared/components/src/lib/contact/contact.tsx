@@ -1,8 +1,7 @@
 import './contact.scss';
 import { contact } from '@stagefright/shared/data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faMailBulk } from '@fortawesome/free-solid-svg-icons';
-import { faMailchimp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 /* eslint-disable-next-line */
 export interface ContactProps {}
