@@ -3,6 +3,10 @@
 # Stagefright
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dd34fc31-fc5a-421f-a622-91b9fce18c79/deploy-status)](https://app.netlify.com/sites/stagefright/deploys)
+<img src="https://img.shields.io/website?down_color=red&down_message=down&up_color=green&up_message=up&url=https%3A%2F%2Fkahoot-hack-durio.netlify.app%2F_v2" />
+<img src="https://badges.aleen42.com/src/typescript.svg" />
+<img src="https://badges.aleen42.com/src/react.svg" />
+<img src="https://badges.aleen42.com/src/node.svg" /><br/>
 
 This project was generated using [Nx](https://nx.dev).
 
