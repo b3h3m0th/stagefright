@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 /* eslint-disable-next-line */
 export interface LoaderProps {}
 
-export const Loader: React.FC = (props: LoaderProps) => {
+export const Loader: React.FC<LoaderProps> = (props: LoaderProps) => {
   return (
     <div className="loader">
       <motion.img

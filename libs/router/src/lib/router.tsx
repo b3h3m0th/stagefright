@@ -10,7 +10,7 @@ import { Footer, Header } from '@stagefright/shared/components';
 /* eslint-disable-next-line */
 export interface RouterProps {}
 
-export const Router: React.FC = (props: RouterProps) => {
+export const Router: React.FC<RouterProps> = (props: RouterProps) => {
   return (
     <div>
       <BrowserRouter>

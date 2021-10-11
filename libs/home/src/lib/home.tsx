@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 /* eslint-disable-next-line */
 export interface HomeProps {}
 
-export const Home: React.FC = (props: HomeProps) => {
+export const Home: React.FC<HomeProps> = (props: HomeProps) => {
   return (
     <motion.div
       className="home"

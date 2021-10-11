@@ -3,7 +3,7 @@ import './music.scss';
 /* eslint-disable-next-line */
 export interface MusicProps {}
 
-export const Music: React.FC = (props: MusicProps) => {
+export const Music: React.FC<MusicProps> = (props: MusicProps) => {
   return (
     <div className="music" id="music">
       <h2 className="music__title">Music</h2>

@@ -5,7 +5,7 @@ import './footer.scss';
 /* eslint-disable-next-line */
 export interface FooterProps {}
 
-export const Footer: React.FC = (props: FooterProps) => {
+export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   const [, ...navItems] = Object.entries(HomeSection);
 
   return (
