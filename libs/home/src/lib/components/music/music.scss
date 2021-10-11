@@ -9,18 +9,14 @@
     text-align: center;
     color: variables.$white;
     text-transform: uppercase;
-    letter-spacing: variables.$letter-spacing-s;
   }
 
   &__content {
     width: 100%;
+    padding: 0 variables.$horizontal-spacer-s;
 
     &__announcement {
-      font-family: variables.$head;
-      font-size: variables.$font-size-m;
-      letter-spacing: variables.$letter-spacing-s;
       text-align: center;
-      text-transform: uppercase;
       color: variables.$white;
 
       &__album-title {

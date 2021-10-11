@@ -11,7 +11,6 @@
     text-align: center;
     color: variables.$white;
     text-transform: uppercase;
-    letter-spacing: variables.$letter-spacing-s;
   }
 
   &__content {
@@ -23,7 +22,6 @@
     flex-direction: column;
 
     &__show {
-      font-size: variables.$font-size-xxl;
       color: variables.$white;
       width: 100%;
       border-top: 1px solid variables.$white-transparent;
@@ -60,6 +58,7 @@
         &__day {
           margin: 0;
           font-size: variables.$font-size-4xl;
+          font-family: variables.$display;
           color: variables.$accent;
         }
 
@@ -90,9 +89,8 @@
         }
 
         &__title {
-          font-size: variables.$spacing-l;
+          font-size: variables.$font-size-xl;
           margin: 0 0 variables.$spacing-xs 0;
-          font-weight: 600;
         }
 
         &__address {
