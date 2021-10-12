@@ -1,4 +1,5 @@
 @use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
 
 .hero {
   background-image: linear-gradient(black, black),
@@ -8,9 +9,16 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include mixins.for-phone {
+    background-size: contain;
+    background-position: top;
+    width: 130vw;
+  }
 
   &__content {
     color: variables.$white;
