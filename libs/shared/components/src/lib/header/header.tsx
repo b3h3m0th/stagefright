@@ -44,7 +44,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       window.removeEventListener('resize', onResize);
       window.addEventListener('scroll', onScroll);
     };
-  }, [windowWidth]);
+  });
 
   const renderSocials: () => JSX.Element = () => (
     <div className="nav__list__item__socials">
