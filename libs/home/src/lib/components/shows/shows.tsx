@@ -5,7 +5,7 @@ import { removeURLProtocol } from '@stagefright/shared/util';
 /* eslint-disable-next-line */
 export interface ShowsProps {}
 
-export const Shows: React.FC = (props: ShowsProps) => {
+export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
   const upcomingShows: IShow[] = shows.filter(
     (show) => new Date() < show.start
   );

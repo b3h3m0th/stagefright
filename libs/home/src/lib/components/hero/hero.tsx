@@ -3,7 +3,7 @@ import './hero.scss';
 /* eslint-disable-next-line */
 export interface HeroProps {}
 
-export const Hero: React.FC = (props: HeroProps) => {
+export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
   return (
     <div className="hero">
       <div className="hero__content">

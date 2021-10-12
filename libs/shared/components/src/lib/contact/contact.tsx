@@ -6,7 +6,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 /* eslint-disable-next-line */
 export interface ContactProps {}
 
-export const Contact: React.FC = (props: ContactProps) => {
+export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
   return (
     <div className="contact" id="contact">
       <h2 className="contact__title">Contact</h2>
