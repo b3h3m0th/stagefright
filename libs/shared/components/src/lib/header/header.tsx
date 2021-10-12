@@ -28,8 +28,10 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     (o) => !o.includes(HomeSection.default)
   );
 
-  const onResize = () => setWindowWidth(window.innerWidth);
-  const onScroll = () => {
+  const onResize: () => ReturnType<typeof setWindowWidth> = () =>
+    setWindowWidth(window.innerWidth);
+
+  const onScroll: () => ReturnType<typeof setIsNavTransparent> = () => {
     isMenuOpened
       ? setIsNavTransparent(false)
       : window.scrollY >= scrollBreakpoint
