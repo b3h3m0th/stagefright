@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
 
-  const navItems = Object.entries(HomeSection).filter(
+  const navItems: [string, HomeSection][] = Object.entries(HomeSection).filter(
     (o) => !o.includes(HomeSection.default)
   );
 
