@@ -2,7 +2,7 @@
 @use 'theme:mixins' as mixins;
 
 .hero {
-  background-image: linear-gradient(black, black),
+  background-image: linear-gradient(variables.$black, variables.$black),
     url('/assets/img/band_hero.jpg');
   background-blend-mode: saturation;
   width: 100vw;
@@ -15,9 +15,11 @@
   align-items: center;
 
   @include mixins.for-phone {
-    background-size: contain;
-    background-position: top;
-    width: 130vw;
+    height: auto;
+    background-position: center top;
+    background-size: cover;
+    background-image: linear-gradient(variables.$black, variables.$black),
+      url('/assets/img/band_hero_mobile.jpg');
   }
 
   &__content {
@@ -30,6 +32,10 @@
 
     &__headline {
       text-align: center;
+
+      @include mixins.for-phone {
+        margin-top: 40%;
+      }
 
       &__album-title {
         color: variables.$accent;
