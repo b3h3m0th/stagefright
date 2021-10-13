@@ -14,6 +14,7 @@ import {
   faSpotify,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { useWindowSize } from '@stagefright/shared/util';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -21,15 +22,12 @@ export interface HeaderProps {}
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const scrollBreakpoint = 200 as const;
   const [isNavTransparent, setIsNavTransparent] = useState<boolean>(true);
-  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
+  const { width: windowWidth } = useWindowSize();
 
   const navItems: [string, HomeSection][] = Object.entries(HomeSection).filter(
     (o) => !o.includes(HomeSection.default)
   );
-
-  const onResize: () => ReturnType<typeof setWindowWidth> = () =>
-    setWindowWidth(window.innerWidth);
 
   const onScroll: () => ReturnType<typeof setIsNavTransparent> = () => {
     isMenuOpened
@@ -40,10 +38,8 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   };
 
   useEffect(() => {
-    window.addEventListener('resize', onResize);
     window.addEventListener('scroll', onScroll);
     return () => {
-      window.removeEventListener('resize', onResize);
       window.addEventListener('scroll', onScroll);
     };
   });
