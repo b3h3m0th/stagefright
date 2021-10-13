@@ -6,9 +6,9 @@ export type WindowSize = {
 };
 
 export function useWindowSize(): WindowSize {
-  const [windowSize, setWindowSize] = useState<WindowSize>({
-    height: undefined,
-    width: undefined,
+  const [windowSize, setWindowSize] = useState<WindowSize>(<WindowSize>{
+    height: 0,
+    width: 0,
   });
 
   const onResize: () => ReturnType<typeof setWindowSize> = () =>
