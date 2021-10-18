@@ -5,7 +5,7 @@ import AnimateHeight from 'react-animate-height';
 
 /*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAmazon,
