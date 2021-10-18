@@ -14,35 +14,20 @@ import {
   faSpotify,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
-import { useWindowSize } from '@stagefright/shared/util';
+import { useIsNavTransparent, useWindowSize } from '@stagefright/shared/util';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const scrollBreakpoint = 200 as const;
-  const [isNavTransparent, setIsNavTransparent] = useState<boolean>(true);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
   const { width: windowWidth } = useWindowSize();
+  const isNavTransparent = useIsNavTransparent(isMenuOpened, scrollBreakpoint);
 
   const navItems: [string, HomeSection][] = Object.entries(HomeSection).filter(
     (o) => !o.includes(HomeSection.default)
   );
-
-  const onScroll: () => ReturnType<typeof setIsNavTransparent> = () => {
-    isMenuOpened
-      ? setIsNavTransparent(false)
-      : window.scrollY >= scrollBreakpoint
-      ? isNavTransparent && setIsNavTransparent(false)
-      : setIsNavTransparent(true);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll);
-    return () => {
-      window.addEventListener('scroll', onScroll);
-    };
-  });
 
   const renderSocials: () => JSX.Element = () => (
     <div className="nav__list__item__socials">
