@@ -7,8 +7,8 @@ export type WindowSize = {
 
 export function useWindowSize(): WindowSize {
   const [windowSize, setWindowSize] = useState<WindowSize>(<WindowSize>{
-    height: 0,
-    width: 0,
+    height: window.innerHeight,
+    width: window.innerWidth,
   });
 
   const onResize: () => ReturnType<typeof setWindowSize> = () =>
@@ -19,7 +19,7 @@ export function useWindowSize(): WindowSize {
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  });
+  }, [windowSize]);
 
   return windowSize;
 }

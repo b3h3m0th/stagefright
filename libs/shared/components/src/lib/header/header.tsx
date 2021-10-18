@@ -24,6 +24,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const [isNavTransparent, setIsNavTransparent] = useState<boolean>(true);
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
   const { width: windowWidth } = useWindowSize();
+  console.log(windowWidth);
 
   const navItems: [string, HomeSection][] = Object.entries(HomeSection).filter(
     (o) => !o.includes(HomeSection.default)
