@@ -32,6 +32,7 @@
     list-style-type: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
     width: 50%;
@@ -50,6 +51,7 @@
       text-transform: uppercase;
       display: flex;
       justify-content: center;
+      min-width: (variables.$spacing-xxl) * 2;
 
       &:after {
         transition: 0.2s;
