@@ -25,5 +25,8 @@ module.exports = (config) => {
         ),
       },
     },
+    node: {
+      fs: 'empty',
+    },
   };
 };

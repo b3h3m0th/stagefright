@@ -5,12 +5,16 @@ import Shows from './components/shows/shows';
 import { Contact } from '@stagefright/shared/components';
 import './home.scss';
 import { motion } from 'framer-motion';
-import Shop from './components/shop/shop';
-
+// import Shop from './components/shop/shop';
+import InstagramEmbed from 'react-instagram-embed';
 /* eslint-disable-next-line */
 export interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = (props: HomeProps) => {
+  // const accessToken = `${process.env.NX_INSTAGRAM_APP_ID ?? ''}|${
+  //   process.env.NX_INSTAGRAM_CLIENT_TOKEN ?? ''
+  // }` as const;
+
   return (
     <motion.div
       className="home"
@@ -21,6 +25,15 @@ export const Home: React.FC<HomeProps> = (props: HomeProps) => {
       <Shows />
       <Music />
       {/* <Shop /> */}
+      {/* <InstagramEmbed
+        url="https://www.instagram.com/stagefright.official/"
+        clientAccessToken={accessToken}
+        maxWidth={320}
+        hideCaption={false}
+        containerTagName="div"
+        protocol=""
+        injectScript
+      /> */}
       <Contact />
     </motion.div>
   );

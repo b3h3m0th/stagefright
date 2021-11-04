@@ -1,6 +1,9 @@
+import * as dotenv from 'dotenv';
 import React from 'react';
 import * as fromRouter from '@stagefright/router';
 import { Provider as StoreProvider } from 'mobx-react';
+
+dotenv.config();
 
 // stores
 const stores = {};

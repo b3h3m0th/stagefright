@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAmazon,
   faDeezer,
+  faFacebook,
   faInstagram,
   faSpotify,
   faYoutube,
@@ -33,6 +34,9 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     <div className="nav__list__item__socials">
       <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faInstagram} />
+      </a>
+      <a href={config.socials.facebook.link} target="_blank" rel="noreferrer">
+        <FontAwesomeIcon icon={faFacebook} />
       </a>
       {/* <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faSpotify} />
