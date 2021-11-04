@@ -18,9 +18,7 @@ export const Socials: React.FC<SocialsProps> = (props: SocialsProps) => {
           src="//lightwidget.com/widgets/8a23b912024353d7907ce39e63b56635.html"
           scrolling="no"
           allowTransparency
-          className="lightwidget-widget"
-          style={{ width: '100%', border: 0, overflow: 'hidden' }}
-          height="500px"
+          className="lightwidget-widget socials-section__instagram__feed"
         ></iframe>
         <a
           href={socials.instagram.link}
