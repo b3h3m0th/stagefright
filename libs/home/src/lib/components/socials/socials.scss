@@ -1,0 +1,47 @@
+@use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
+
+.socials-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 variables.$horizontal-spacer-s;
+
+  @include mixins.for-phone {
+    flex-direction: column;
+  }
+
+  &__instagram {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__feed {
+      border: 0;
+      height: 500px;
+      width: 100%;
+    }
+
+    &__follow {
+      margin-top: variables.$spacing-l;
+
+      button {
+        cursor: pointer;
+        border-radius: 4px;
+        padding: variables.$spacing-s variables.$spacing-m;
+        border: 0;
+        outline: 0;
+        background-color: variables.$accent;
+        color: variables.$white;
+      }
+    }
+  }
+
+  & > div {
+    flex: 1;
+    padding: variables.$spacing-m;
+  }
+}
