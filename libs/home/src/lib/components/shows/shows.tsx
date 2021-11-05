@@ -7,7 +7,7 @@ export interface ShowsProps {}
 
 export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
   const upcomingShows: IShow[] = shows.filter(
-    (show) => new Date() < show.start
+    (show: IShow) => new Date() < show.start
   );
 
   return (
