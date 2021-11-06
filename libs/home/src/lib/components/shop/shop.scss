@@ -1,8 +1,9 @@
 @use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
 
 .shop {
+  padding-top: variables.$vertical-spacer-s;
   width: 100vw;
-  margin-bottom: variables.$vertical-spacer-s;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -13,5 +14,56 @@
     text-align: center;
     color: variables.$white;
     text-transform: uppercase;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mixins.for-phone {
+      flex-direction: column;
+    }
+
+    &__merch,
+    &__music {
+      position: relative;
+      padding: variables.$spacing-l;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        height: 40vh;
+      }
+
+      &__overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: variables.$black-1-transparent;
+        font-family: variables.$head;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: variables.$white;
+        font-size: 3em;
+      }
+    }
+  }
+
+  &__shop {
+    a {
+      button {
+        cursor: pointer;
+        border-radius: 4px;
+        padding: variables.$spacing-s variables.$spacing-m;
+        border: 0;
+        outline: 0;
+        background-color: variables.$accent;
+        color: variables.$white;
+      }
+    }
   }
 }

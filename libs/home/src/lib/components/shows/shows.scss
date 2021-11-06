@@ -4,7 +4,6 @@
 .shows {
   padding-top: variables.$vertical-spacer-s;
   width: 100vw;
-  margin-bottom: variables.$vertical-spacer-s;
 
   &__title {
     font-family: variables.$head;
@@ -108,20 +107,20 @@
       &__tickets {
         font-size: variables.$spacing-m;
         flex: 2;
-        font-family: variables.$text;
+        font-family: variables.$display;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .ticket-button {
-          padding: variables.$spacing-m variables.$spacing-l;
-          border: 1px solid variables.$accent;
-          color: variables.$white;
-          font-weight: 600;
-          outline: none;
-          transition: background-color 0.35s;
+          font-family: variables.$head;
           cursor: pointer;
+          border-radius: 4px;
+          padding: variables.$spacing-s variables.$spacing-m;
+          border: 0;
+          outline: 0;
           background-color: variables.$accent;
+          color: variables.$white;
 
           &:hover {
             background-color: variables.$accent;

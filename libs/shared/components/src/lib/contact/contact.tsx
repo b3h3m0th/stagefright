@@ -2,13 +2,15 @@ import './contact.scss';
 import { contact } from '@stagefright/shared/data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+/*eslint-disable-next-line */
+import { HomeSection } from '@stagefright/router';
 
 /* eslint-disable-next-line */
 export interface ContactProps {}
 
 export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
   return (
-    <div className="contact" id="contact">
+    <div className="contact" id={HomeSection.contact}>
       <h2 className="contact__title">Contact</h2>
       <div className="contact__content">
         <div className="contact__content__email">

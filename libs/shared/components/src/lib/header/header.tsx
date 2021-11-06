@@ -16,6 +16,7 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 import { useIsNavTransparent, useWindowSize } from '@stagefright/shared/util';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -32,6 +33,9 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
 
   const renderSocials: () => JSX.Element = () => (
     <div className="nav__list__item__socials">
+      <a href="#shop">
+        <FontAwesomeIcon icon={faShoppingCart} />
+      </a>
       <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faInstagram} />
       </a>

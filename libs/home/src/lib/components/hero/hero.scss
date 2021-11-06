@@ -32,6 +32,7 @@
 
     &__headline {
       text-align: center;
+      font-family: variables.$display;
 
       @include mixins.for-phone {
         margin-top: 40%;
@@ -39,6 +40,7 @@
 
       &__album-title {
         color: variables.$accent;
+        font-family: variables.$display;
       }
     }
   }

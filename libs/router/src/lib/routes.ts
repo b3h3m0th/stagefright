@@ -34,8 +34,12 @@ export const ROUTES: ROUTES = Object.keys(pages).reduce(
 
 export enum HomeSection {
   default = '',
-  music = 'Music',
-  band = 'Band',
-  shows = 'Shows',
-  contact = 'Contact',
+  music = 'music',
+  shop = 'shop',
+  shows = 'shows',
+  contact = 'contact',
+}
+
+export function getSectionId(section: HomeSection): string {
+  return section.toLowerCase();
 }

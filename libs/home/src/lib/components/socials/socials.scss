@@ -5,11 +5,13 @@
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-around;
-  padding: 0 variables.$horizontal-spacer-s;
+  justify-content: center;
+  padding: variables.$vertical-spacer-s variables.$horizontal-spacer-m 0
+    variables.$vertical-spacer-m;
 
   @include mixins.for-phone {
     flex-direction: column;
+    padding: 0 variables.$horizontal-spacer-s;
   }
 
   &__instagram {
@@ -43,6 +45,6 @@
 
   & > div {
     flex: 1;
-    padding: variables.$spacing-m;
+    padding: variables.$spacing-l;
   }
 }

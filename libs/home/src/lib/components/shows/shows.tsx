@@ -1,6 +1,10 @@
 import './shows.scss';
 import { shows, IShow } from '@stagefright/shared/data';
 import { removeURLProtocol } from '@stagefright/shared/util';
+/* eslint-disable-next-line */
+import { HomeSection } from '@stagefright/router';
+/* eslint-disable-next-line */
+import { Button } from '@stagefright/shared/components';
 
 /* eslint-disable-next-line */
 export interface ShowsProps {}
@@ -11,7 +15,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
   );
 
   return (
-    <div className="shows" id="shows">
+    <div className="shows" id={HomeSection.shows}>
       <h2 className="shows__title">Upcoming Shows</h2>
       <div className="shows__content">
         {upcomingShows.length > 0 ? (
@@ -48,15 +52,19 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
               </div>
               <div className="shows__content__show__tickets">
                 {show.ticket.url ? (
-                  <a href={show.ticket.url} target="_blank" rel="noreferrer">
-                    <button className="ticket-button">
-                      Tickets ({show.ticket.label})
-                    </button>
-                  </a>
+                  <Button
+                    text={`
+                      Tickets (${show.ticket.label})
+                  `}
+                    link={show.ticket.url}
+                    linkTarget="_blank"
+                  />
                 ) : (
-                  <button className="ticket-button">
-                    Tickets ({show.ticket.label})
-                  </button>
+                  <Button
+                    text={`
+                      Tickets (${show.ticket.label})
+                  `}
+                  />
                 )}
               </div>
             </div>

@@ -17,7 +17,6 @@ export const Socials: React.FC<SocialsProps> = (props: SocialsProps) => {
           title="StageFright Instagram Feed"
           src="//lightwidget.com/widgets/8a23b912024353d7907ce39e63b56635.html"
           scrolling="no"
-          allowTransparency
           className="lightwidget-widget socials-section__instagram__feed"
         ></iframe>
         <a
