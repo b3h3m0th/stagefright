@@ -7,6 +7,7 @@ import music from './assets/products/music/music.jpg';
 import { shopData } from '@stagefright/shared/config';
 /*eslint-disable-next-line */
 import { Button } from '@stagefright/shared/components';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 /* eslint-disable-next-line */
 export interface ShopProps {}
@@ -34,6 +35,7 @@ export const Shop: React.FC = (props: ShopProps) => {
           text="Visit StageFright Shop"
           link={shopData.url}
           linkTarget="_blank"
+          icon={faShoppingCart}
         />
       </div>
     </div>

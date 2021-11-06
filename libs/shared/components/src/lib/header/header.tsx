@@ -11,6 +11,7 @@ import {
   faAmazon,
   faDeezer,
   faFacebook,
+  faFacebookF,
   faInstagram,
   faSpotify,
   faYoutube,
@@ -40,7 +41,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         <FontAwesomeIcon icon={faInstagram} />
       </a>
       <a href={config.socials.facebook.link} target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faFacebook} />
+        <FontAwesomeIcon icon={faFacebookF} />
       </a>
       {/* <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faSpotify} />
