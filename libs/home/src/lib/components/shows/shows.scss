@@ -111,22 +111,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        .ticket-button {
-          font-family: variables.$head;
-          cursor: pointer;
-          border-radius: 4px;
-          padding: variables.$spacing-s variables.$spacing-m;
-          border: 0;
-          outline: 0;
-          background-color: variables.$accent;
-          color: variables.$white;
-
-          &:hover {
-            background-color: variables.$accent;
-            color: variables.$white;
-          }
-        }
       }
     }
 

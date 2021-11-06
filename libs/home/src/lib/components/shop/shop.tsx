@@ -5,6 +5,8 @@ import './shop.scss';
 import merch from './assets/products/merch/merch.jpg';
 import music from './assets/products/music/music.jpg';
 import { shopData } from '@stagefright/shared/config';
+/*eslint-disable-next-line */
+import { Button } from '@stagefright/shared/components';
 
 /* eslint-disable-next-line */
 export interface ShopProps {}
@@ -17,7 +19,7 @@ export const Shop: React.FC = (props: ShopProps) => {
         <a className="shop__content__merch" href={shopData.url}>
           <img src={merch} alt="StageFright Merch" />
           <div className="shop__content__merch__overlay">
-            <h3> Merch</h3>
+            <h3>Merch</h3>
           </div>
         </a>
         <a className="shop__content__music" href={shopData.url}>
@@ -28,9 +30,11 @@ export const Shop: React.FC = (props: ShopProps) => {
         </a>
       </div>
       <div className="shop__shop">
-        <a href={shopData.url} target="_blank" rel="noreferrer">
-          <button className="ticket-button">Go to StageFright Shop</button>
-        </a>
+        <Button
+          text="Visit StageFright Shop"
+          link={shopData.url}
+          linkTarget="_blank"
+        />
       </div>
     </div>
   );
