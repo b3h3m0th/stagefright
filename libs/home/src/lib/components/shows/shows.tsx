@@ -5,6 +5,9 @@ import { removeURLProtocol } from '@stagefright/shared/util';
 import { HomeSection } from '@stagefright/router';
 /* eslint-disable-next-line */
 import { Button } from '@stagefright/shared/components';
+import AOS from 'aos';
+import { useEffect } from 'react';
+import 'aos/dist/aos.css';
 
 /* eslint-disable-next-line */
 export interface ShowsProps {}
@@ -14,13 +17,21 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
     (show: IShow) => new Date() < show.start
   );
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <div className="shows" id={HomeSection.shows}>
-      <h2 className="shows__title">Upcoming Shows</h2>
+      <h2 className="shows__title" data-aos="fade-up">
+        Upcoming Shows
+      </h2>
       <div className="shows__content">
         {upcomingShows.length > 0 ? (
           upcomingShows.map((show: IShow, i) => (
-            <div className="shows__content__show" key={i}>
+            <div className="shows__content__show" key={i} data-aos="fade-up">
               <div className="shows__content__show__date">
                 <p className="shows__content__show__date__day">
                   {show.start.getUTCDate()}

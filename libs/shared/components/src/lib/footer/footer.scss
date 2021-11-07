@@ -13,6 +13,9 @@
     display: flex;
     justify-content: center;
 
+    &__banner {
+    }
+
     img {
       height: 100%;
       font-size: variables.$font-size-4xl;

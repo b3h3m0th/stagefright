@@ -7,9 +7,9 @@
 
   &__title {
     font-family: variables.$head;
-    text-align: center;
     color: variables.$white;
     text-transform: uppercase;
+    padding: 0 variables.$horizontal-spacer-s;
   }
 
   &__content {

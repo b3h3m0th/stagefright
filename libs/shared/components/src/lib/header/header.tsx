@@ -61,13 +61,6 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   return windowWidth > config.breakpoints.phone ? (
     <nav className={`nav ${isNavTransparent ? 'nav__transparent' : ''}`}>
       <ul className="nav__list">
-        {navItems.slice(0, Math.ceil(navItems.length / 2)).map((e, i) => (
-          <li className="nav__list__item" key={i}>
-            <a className="nav__list__item__link" href={`#${e[0]}`}>
-              {e[1]}
-            </a>
-          </li>
-        ))}
         <li
           className="nav__list__item nav__list__item__logo"
           onClick={() => window.scrollTo(0, 0)}
@@ -79,7 +72,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             />
           </Link>
         </li>
-        {navItems.slice(-Math.ceil(navItems.length / 2)).map((e, i) => (
+        {navItems.map((e, i) => (
           <li className="nav__list__item" key={i}>
             <a className="nav__list__item__link" href={`#${e[0]}`}>
               {e[1]}

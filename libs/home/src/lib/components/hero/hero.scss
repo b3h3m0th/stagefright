@@ -11,8 +11,8 @@
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-end;
 
   @include mixins.for-phone {
     height: auto;
@@ -23,16 +23,21 @@
   }
 
   &__content {
-    color: variables.$white;
+    padding: 0 variables.$horizontal-spacer-s;
+    width: 100%;
     font-family: variables.$display;
     text-transform: uppercase;
     font-size: variables.$font-size-xxl;
-    letter-spacing: variables.$letter-spacing-s;
-    padding: 0 variables.$horizontal-spacer-s;
+    position: relative;
+    white-space: nowrap;
 
     &__headline {
-      text-align: center;
+      text-align: left;
       font-family: variables.$display;
+      margin: 0;
+      font-size: 6em;
+      top: 10px;
+      color: variables.$white;
 
       @include mixins.for-phone {
         margin-top: 40%;
