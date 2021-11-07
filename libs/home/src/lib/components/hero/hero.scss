@@ -31,16 +31,26 @@
     position: relative;
     white-space: nowrap;
 
+    @include mixins.for-phone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: initial;
+      transform: initial;
+      white-space: normal;
+    }
+
     &__headline {
       text-align: left;
       font-family: variables.$display;
       margin: 0;
       font-size: 6em;
-      top: 10px;
       color: variables.$white;
 
       @include mixins.for-phone {
         margin-top: 40%;
+        font-size: 2em;
+        text-align: center;
       }
 
       &__album-title {

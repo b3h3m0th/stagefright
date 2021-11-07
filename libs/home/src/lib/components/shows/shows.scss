@@ -10,6 +10,10 @@
     color: variables.$white;
     text-transform: uppercase;
     padding: 0 variables.$horizontal-spacer-s;
+
+    @include mixins.for-phone {
+      text-align: center;
+    }
   }
 
   &__content {
