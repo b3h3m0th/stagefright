@@ -1,0 +1,13 @@
+@use 'theme:variables' as variables;
+
+.animated-letters__row-title,
+.animated-letters__row-letter {
+  font-size: 1.5em;
+  font-family: variables.$head;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  color: variables.$white;
+  overflow: hidden;
+}
