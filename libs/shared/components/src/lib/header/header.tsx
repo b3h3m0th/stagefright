@@ -8,10 +8,14 @@ import { HomeSection } from '@stagefright/router';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { useIsNavTransparent, useWindowSize } from '@stagefright/shared/util';
+import {
+  useFirstRender,
+  useIsNavTransparent,
+  useWindowSize,
+} from '@stagefright/shared/util';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
-import { animationData } from '@stagefright/shared/config';
+import { animationData, loading } from '@stagefright/shared/config';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -21,6 +25,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
   const { width: windowWidth } = useWindowSize();
   const isNavTransparent = useIsNavTransparent(isMenuOpened, scrollBreakpoint);
+  const isFirstRender = useFirstRender();
 
   const navItems: [string, HomeSection][] = Object.entries(HomeSection).filter(
     (o) => !o.includes(HomeSection.default)
@@ -58,7 +63,9 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       transition={{
         duration: (animationData.hero.duration / 1000) * 2,
         ease: animationData.hero.ease,
-        delay: animationData.hero.delay / 1000,
+        delay: isFirstRender
+          ? (animationData.hero.delay + loading.artificialPageMountDelay) / 1000
+          : animationData.hero.delay / 1000,
       }}
     >
       <ul className="nav__list">
