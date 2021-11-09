@@ -29,6 +29,7 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
   return (
     <div className="hero">
       <div className="hero__content">
+        <div className="hero__content__content"></div>
         {windowWidth >= breakpoints.phone && (
           <AnimatedLetters
             text="StageFright"

@@ -48,9 +48,8 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     >
       <motion.a
         href="#shop"
-        target="_blank"
-        rel="noreferrer"
         variants={navItemAnimation}
+        onClick={() => scrollToNavigationTarget(['shop', HomeSection.shop])}
       >
         <FontAwesomeIcon icon={faShoppingCart} />
       </motion.a>
