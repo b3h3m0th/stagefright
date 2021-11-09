@@ -1,3 +1,5 @@
+/*eslint-disable-next-line */
+import { AnimatedLetters } from '@stagefright/shared/components';
 import { breakpoints } from '@stagefright/shared/config';
 import { useWindowSize } from '@stagefright/shared/util';
 import React, { useEffect, useState } from 'react';
@@ -9,11 +11,12 @@ export interface HeroProps {}
 export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
   const [offset, setOffset] = useState<number>(0);
   const { width: windowWidth } = useWindowSize();
+  const scrollSpeedMultiplicator = 0.05 as const;
 
   /*eslint-disable-next-line */
   const offsetScroll: () => void =
     windowWidth >= breakpoints.phone
-      ? () => setOffset(window.scrollY)
+      ? () => setOffset(window.scrollY * scrollSpeedMultiplicator)
       : () => void 0;
 
   useEffect(() => {
@@ -26,19 +29,35 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
   return (
     <div className="hero">
       <div className="hero__content">
-        <h1
-          className="hero__content__headline"
-          style={{
-            transform:
-              windowWidth >= breakpoints.phone
-                ? `translate(-${offset}px, 44px)`
-                : '',
-          }}
-        >
-          Debut Album{' '}
-          <span className="hero__content__headline__album-title">Wanted</span>{' '}
-          Coming Soon!
-        </h1>
+        {windowWidth >= breakpoints.phone && (
+          <AnimatedLetters
+            text="StageFright"
+            wrapperClassName="hero__content__band hero__content__band__wrapper"
+            letterClassName="hero__content__band"
+            animationDirection="up"
+            wrapperStyle={{
+              transform:
+                windowWidth >= breakpoints.phone
+                  ? `translate(${offset}px, 10px)`
+                  : '',
+            }}
+          />
+        )}
+        {windowWidth >= breakpoints.phone ? (
+          <AnimatedLetters
+            text="Wanted Coming Soon!"
+            wrapperClassName="hero__content__headline"
+            letterClassName="hero__content__headline"
+            wrapperStyle={{
+              transform:
+                windowWidth >= breakpoints.phone
+                  ? `translate(-${offset + 5}px, 10px)`
+                  : '',
+            }}
+          />
+        ) : (
+          <h1 className="hero__content__headline">Wanted Coming Soon!</h1>
+        )}
       </div>
     </div>
   );

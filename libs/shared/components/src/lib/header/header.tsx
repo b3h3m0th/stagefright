@@ -5,19 +5,13 @@ import AnimateHeight from 'react-animate-height';
 
 /*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faAmazon,
-  faDeezer,
-  faFacebook,
-  faFacebookF,
-  faInstagram,
-  faSpotify,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { useIsNavTransparent, useWindowSize } from '@stagefright/shared/util';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+import { animationData } from '@stagefright/shared/config';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -32,6 +26,15 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     (o) => !o.includes(HomeSection.default)
   );
 
+  const scrollToNavigationTarget: (target: [string, HomeSection]) => void = (
+    target: [string, HomeSection]
+  ) =>
+    window.scrollTo(
+      0,
+      document.getElementById(target[0])!.offsetTop -
+        document.getElementById('nav')!.offsetTop
+    );
+
   const renderSocials: () => JSX.Element = () => (
     <div className="nav__list__item__socials">
       <a href="#shop">
@@ -43,23 +46,21 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       <a href={config.socials.facebook.link} target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faFacebookF} />
       </a>
-      {/* <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faSpotify} />
-      </a>
-      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faAmazon} />
-      </a>
-      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faDeezer} />
-      </a>
-      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
-        <FontAwesomeIcon icon={faYoutube} />
-      </a> */}
     </div>
   );
 
   return windowWidth > config.breakpoints.phone ? (
-    <nav className={`nav ${isNavTransparent ? 'nav__transparent' : ''}`}>
+    <motion.nav
+      className={`nav ${isNavTransparent ? 'nav__transparent' : ''}`}
+      id="nav"
+      initial={{ transform: 'translateY(-100px)' }}
+      animate={{ transform: 'translateY(0px)' }}
+      transition={{
+        duration: (animationData.hero.duration / 1000) * 2,
+        ease: animationData.hero.ease,
+        delay: animationData.hero.delay / 1000,
+      }}
+    >
       <ul className="nav__list">
         <li
           className="nav__list__item nav__list__item__logo"
@@ -72,21 +73,26 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             />
           </Link>
         </li>
-        {navItems.map((e, i) => (
+        {navItems.map((e: [string, HomeSection], i: number) => (
           <li className="nav__list__item" key={i}>
-            <a className="nav__list__item__link" href={`#${e[0]}`}>
+            <a
+              className="nav__list__item__link"
+              href={`#${e[0]}`}
+              onClick={() => scrollToNavigationTarget(e)}
+            >
               {e[1]}
             </a>
           </li>
         ))}
         {renderSocials()}
       </ul>
-    </nav>
+    </motion.nav>
   ) : (
     <nav
       className={`nav ${isMenuOpened ? 'nav__opened' : ''} ${
         isNavTransparent ? 'nav__transparent' : ''
       }`}
+      id="nav"
     >
       <ul className="nav__list">
         <li
@@ -101,13 +107,17 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
           </Link>
         </li>
         <AnimateHeight duration={350} height={isMenuOpened ? 'auto' : 0}>
-          {navItems.map((e, i) => (
+          {navItems.map((e: [string, HomeSection], i: number) => (
             <li
               className="nav__list__item"
               key={i}
               onClick={() => setIsMenuOpened(false)}
             >
-              <a className="nav__list__item__link" href={`#${e[0]}`}>
+              <a
+                className="nav__list__item__link"
+                href={`#${e[0]}`}
+                onClick={() => scrollToNavigationTarget(e)}
+              >
                 {e[1]}
               </a>
             </li>
@@ -117,7 +127,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       </ul>
       <div
         className={`burger-menu`}
-        onClick={() => setIsMenuOpened((prev) => !prev)}
+        onClick={() => setIsMenuOpened((prev: boolean) => !prev)}
       >
         <div
           className={`burger-menu__layer${isMenuOpened ? '__opened' : ''}`}
