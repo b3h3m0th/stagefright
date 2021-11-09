@@ -14,7 +14,7 @@ import {
   useWindowSize,
 } from '@stagefright/shared/util';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { animationData, loading } from '@stagefright/shared/config';
 
 /* eslint-disable-next-line */
@@ -41,34 +41,73 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     );
 
   const renderSocials: () => JSX.Element = () => (
-    <div className="nav__list__item__socials">
-      <a href="#shop">
+    <motion.div
+      className="nav__list__item__socials"
+      initial="initial"
+      animate="animate"
+    >
+      <motion.a
+        href="#shop"
+        target="_blank"
+        rel="noreferrer"
+        variants={navItemAnimation}
+      >
         <FontAwesomeIcon icon={faShoppingCart} />
-      </a>
-      <a href={config.socials.instagram.link} target="_blank" rel="noreferrer">
+      </motion.a>
+      <motion.a
+        href={config.socials.instagram.link}
+        target="_blank"
+        rel="noreferrer"
+        variants={navItemAnimation}
+      >
         <FontAwesomeIcon icon={faInstagram} />
-      </a>
-      <a href={config.socials.facebook.link} target="_blank" rel="noreferrer">
+      </motion.a>
+      <motion.a
+        href={config.socials.facebook.link}
+        target="_blank"
+        rel="noreferrer"
+        variants={navItemAnimation}
+      >
         <FontAwesomeIcon icon={faFacebookF} />
-      </a>
-    </div>
+      </motion.a>
+    </motion.div>
   );
 
-  return windowWidth > config.breakpoints.phone ? (
-    <motion.nav
-      className={`nav ${isNavTransparent ? 'nav__transparent' : ''}`}
-      id="nav"
-      initial={{ transform: 'translateY(-100px)' }}
-      animate={{ transform: 'translateY(0px)' }}
-      transition={{
-        duration: (animationData.hero.duration / 1000) * 2,
-        ease: animationData.hero.ease,
-        delay: isFirstRender
+  const navListAnimation: Variants = {
+    animate: {
+      transition: {
+        delayChildren: isFirstRender
           ? (animationData.hero.delay + loading.artificialPageMountDelay) / 1000
           : animationData.hero.delay / 1000,
-      }}
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const navItemAnimation: Variants = {
+    initial: {
+      y: -50,
+    },
+    animate: {
+      y: 0,
+      transition: {
+        ease: animationData.hero.ease,
+        duration: animationData.hero.duration / 1000,
+      },
+    },
+  };
+
+  return windowWidth > config.breakpoints.phone ? (
+    <nav
+      className={`nav ${isNavTransparent ? 'nav__transparent' : ''}`}
+      id="nav"
     >
-      <ul className="nav__list">
+      <motion.ul
+        className="nav__list"
+        variants={navListAnimation}
+        initial="initial"
+        animate="animate"
+      >
         <li
           className="nav__list__item nav__list__item__logo"
           onClick={() => window.scrollTo(0, 0)}
@@ -82,18 +121,19 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         </li>
         {navItems.map((e: [string, HomeSection], i: number) => (
           <li className="nav__list__item" key={i}>
-            <a
+            <motion.a
               className="nav__list__item__link"
               href={`#${e[0]}`}
               onClick={() => scrollToNavigationTarget(e)}
+              variants={navItemAnimation}
             >
               {e[1]}
-            </a>
+            </motion.a>
           </li>
         ))}
         {renderSocials()}
-      </ul>
-    </motion.nav>
+      </motion.ul>
+    </nav>
   ) : (
     <nav
       className={`nav ${isMenuOpened ? 'nav__opened' : ''} ${

@@ -11,15 +11,6 @@ dotenv.config();
 const stores = {};
 
 export const App: React.FC = () => {
-  // document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  //   anchor.addEventListener('click', function (e) {
-  //     e.preventDefault();
-
-  //     document.querySelector().scrollIntoView({
-  //       behavior: 'smooth',
-  //     });
-  //   });
-  // });
   return (
     <SkewScrollingWrapper>
       <React.StrictMode>

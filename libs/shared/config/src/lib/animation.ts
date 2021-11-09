@@ -1,4 +1,4 @@
-export const animationData = {
+export const animationData = <const>{
   hero: {
     duration: 1000,
     delay: 500,

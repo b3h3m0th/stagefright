@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
             wrapperStyle={{
               transform:
                 windowWidth >= breakpoints.phone
-                  ? `translate(${offset}px, 10px)`
+                  ? `translate(${offset}px, 5px)`
                   : '',
             }}
           />
@@ -51,8 +51,9 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
             wrapperStyle={{
               transform:
                 windowWidth >= breakpoints.phone
-                  ? `translate(-${offset + 5}px, 10px)`
+                  ? `translate(-${offset + 5}px, 5px)`
                   : '',
+              display: 'block',
             }}
           />
         ) : (

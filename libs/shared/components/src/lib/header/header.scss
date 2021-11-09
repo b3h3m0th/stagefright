@@ -51,6 +51,7 @@
       display: flex;
       justify-content: center;
       min-width: (variables.$spacing-xxl) * 2;
+      overflow: hidden;
 
       &:after {
         transition: 0.2s;
@@ -132,6 +133,7 @@
         position: absolute;
         right: 10vw;
         top: 4.5vh;
+        overflow: hidden;
 
         @include mixins.for-phone {
           margin: variables.$spacing-m 0 variables.$spacing-l 0;
