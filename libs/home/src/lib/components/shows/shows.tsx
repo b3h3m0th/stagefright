@@ -5,9 +5,9 @@ import { removeURLProtocol } from '@stagefright/shared/util';
 import { HomeSection } from '@stagefright/router';
 /* eslint-disable-next-line */
 import { Button } from '@stagefright/shared/components';
-import AOS from 'aos';
-import { useEffect } from 'react';
-import 'aos/dist/aos.css';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
 export interface ShowsProps {}
@@ -17,14 +17,8 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
     (show: IShow) => new Date() < show.start
   );
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
-
   return (
-    <div className="shows" id={HomeSection.shows}>
+    <section className="shows" id={HomeSection.shows}>
       <h2 className="shows__title">Upcoming Shows</h2>
       <div className="shows__content">
         {upcomingShows.length > 0 ? (
@@ -82,7 +76,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
           <p className="shows__content__empty">Coming Soon!</p>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 
