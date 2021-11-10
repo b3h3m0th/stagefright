@@ -7,6 +7,7 @@ import { HomeSection } from '@stagefright/router';
 import { Button } from '@stagefright/shared/components';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useEffect } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
@@ -16,6 +17,19 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
   const upcomingShows: IShow[] = shows.filter(
     (show: IShow) => new Date() < show.start
   );
+
+  useEffect(() => {
+    gsap.to('.shows', {
+      scrollTrigger: {
+        trigger: '.shows',
+        scrub: 1,
+        // markers: true,
+      },
+      y: -50,
+      ease: 'power2',
+      duration: 3,
+    });
+  });
 
   return (
     <section className="shows" id={HomeSection.shows}>
