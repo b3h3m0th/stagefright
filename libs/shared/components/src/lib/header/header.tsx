@@ -40,11 +40,36 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         document.getElementById('nav')!.offsetTop
     );
 
+  const navListAnimation: Variants = {
+    animate: {
+      transition: {
+        delayChildren: isFirstRender
+          ? (animationData.hero.delay + loading.artificialPageMountDelay) / 1000
+          : animationData.hero.delay / 1000,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const navItemAnimation: Variants = {
+    initial: {
+      transform: 'translateY(-50px)',
+    },
+    animate: {
+      transform: 'translateY(0px)',
+      transition: {
+        ease: animationData.hero.ease,
+        duration: animationData.hero.duration / 1000,
+      },
+    },
+  };
+
   const renderSocials: () => JSX.Element = () => (
     <motion.div
       className="nav__list__item__socials"
       initial="initial"
       animate="animate"
+      variants={navListAnimation}
     >
       <motion.a
         href="#shop"
@@ -71,30 +96,6 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
       </motion.a>
     </motion.div>
   );
-
-  const navListAnimation: Variants = {
-    animate: {
-      transition: {
-        delayChildren: isFirstRender
-          ? (animationData.hero.delay + loading.artificialPageMountDelay) / 1000
-          : animationData.hero.delay / 1000,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const navItemAnimation: Variants = {
-    initial: {
-      y: -50,
-    },
-    animate: {
-      y: 0,
-      transition: {
-        ease: animationData.hero.ease,
-        duration: animationData.hero.duration / 1000,
-      },
-    },
-  };
 
   return windowWidth > config.breakpoints.phone ? (
     <nav
@@ -130,7 +131,37 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             </motion.a>
           </li>
         ))}
-        {renderSocials()}
+        {/* {renderSocials()} */}
+        <motion.div
+          className="nav__list__item__socials"
+          variants={navListAnimation}
+          initial="initial"
+          animate="animate"
+        >
+          <motion.a
+            href="#shop"
+            variants={navItemAnimation}
+            onClick={() => scrollToNavigationTarget(['shop', HomeSection.shop])}
+          >
+            <FontAwesomeIcon icon={faShoppingCart} />
+          </motion.a>
+          <motion.a
+            href={config.socials.instagram.link}
+            target="_blank"
+            rel="noreferrer"
+            variants={navItemAnimation}
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </motion.a>
+          <motion.a
+            href={config.socials.facebook.link}
+            target="_blank"
+            rel="noreferrer"
+            variants={navItemAnimation}
+          >
+            <FontAwesomeIcon icon={faFacebookF} />
+          </motion.a>
+        </motion.div>
       </motion.ul>
     </nav>
   ) : (

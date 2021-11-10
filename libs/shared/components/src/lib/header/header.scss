@@ -130,10 +130,10 @@
       }
 
       &__socials {
-        position: absolute;
         right: 10vw;
-        top: 4.5vh;
         overflow: hidden;
+        display: flex;
+        justify-content: flex-start;
 
         @include mixins.for-phone {
           margin: variables.$spacing-m 0 variables.$spacing-l 0;
