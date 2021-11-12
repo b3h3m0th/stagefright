@@ -2,12 +2,13 @@
 import { HomeSection } from '@stagefright/router';
 import './shop.scss';
 
-import merch from './assets/products/merch/merch.jpg';
-import music from './assets/products/music/music.jpg';
 import { shopData } from '@stagefright/shared/config';
 /*eslint-disable-next-line */
 import { Button } from '@stagefright/shared/components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
+import merch from './assets/products/merch/merch.jpg';
+import music from './assets/products/music/music.jpg';
 
 /* eslint-disable-next-line */
 export interface ShopProps {}

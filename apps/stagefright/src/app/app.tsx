@@ -12,13 +12,13 @@ const stores = {};
 
 export const App: React.FC = () => {
   return (
-    <SkewScrollingWrapper>
-      <React.StrictMode>
-        <StoreProvider {...stores}>
+    <React.StrictMode>
+      <StoreProvider {...stores}>
+        <SkewScrollingWrapper>
           <fromRouter.Router />
-        </StoreProvider>
-      </React.StrictMode>
-    </SkewScrollingWrapper>
+        </SkewScrollingWrapper>
+      </StoreProvider>
+    </React.StrictMode>
   );
 };
 

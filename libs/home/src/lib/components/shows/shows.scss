@@ -33,6 +33,9 @@
       justify-content: space-around;
       align-items: center;
       font-family: variables.$head;
+      opacity: 0;
+      height: 0;
+      transform-origin: top;
 
       @include mixins.for-phone {
         flex-direction: column;

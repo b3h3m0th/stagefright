@@ -3,6 +3,8 @@
 .music {
   width: 100vw;
   padding-top: variables.$vertical-spacer-s;
+  background-size: cover;
+  background-position: center;
 
   &__title {
     font-family: variables.$head;

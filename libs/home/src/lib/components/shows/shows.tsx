@@ -6,8 +6,9 @@ import { HomeSection } from '@stagefright/router';
 /* eslint-disable-next-line */
 import { Button } from '@stagefright/shared/components';
 import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect } from 'react';
+import { animationData } from '@stagefright/shared/config';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
@@ -20,14 +21,24 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
 
   useEffect(() => {
     gsap.to('.shows', {
+      y: -50,
+      ease: 'power2',
+      duration: animationData.shows.duration / 1000,
       scrollTrigger: {
         trigger: '.shows',
         scrub: 1,
-        // markers: true,
       },
-      y: -50,
-      ease: 'power2',
-      duration: 3,
+    });
+
+    gsap.to('.shows__content__show', {
+      height: 'auto',
+      opacity: 1,
+      duration: animationData.shows.duration / 1000,
+      scrollTrigger: {
+        trigger: '.shows__content__show',
+        toggleActions: 'play none none none',
+        start: '10% bottom',
+      },
     });
   });
 
