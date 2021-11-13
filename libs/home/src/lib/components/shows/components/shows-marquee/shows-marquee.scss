@@ -1,0 +1,20 @@
+@use 'theme:variables' as variables;
+
+.shows-marquee {
+  padding: variables.$spacing-l variables.$horizontal-spacer-s !important;
+  width: 100%;
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+
+  &__show {
+    font-family: monospace !important;
+    font-size: variables.$font-size-m;
+    margin: 0 variables.$spacing-l;
+    color: variables.$white;
+  }
+
+  &__divider {
+  }
+}

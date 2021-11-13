@@ -9,6 +9,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect } from 'react';
 import { animationData } from '@stagefright/shared/config';
+import { ShowsMarquee } from './components';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
@@ -101,6 +102,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
           <p className="shows__content__empty">Coming Soon!</p>
         )}
       </div>
+      <ShowsMarquee />
     </section>
   );
 };

@@ -1,3 +1,3 @@
 export const loading = <const>{
-  artificialPageMountDelay: 1000,
+  artificialPageMountDelay: 0,
 };
