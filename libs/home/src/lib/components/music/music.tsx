@@ -3,44 +3,68 @@ import { HomeSection } from '@stagefright/router';
 import './music.scss';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { useEffect, useRef } from 'react';
-// import { useWindowSize } from '@stagefright/shared/util';
-// gsap.registerPlugin(ScrollTrigger);
+import { useEffect } from 'react';
+import { animationData } from '@stagefright/shared/config';
+gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
 export interface MusicProps {}
 
 export const Music: React.FC<MusicProps> = (props: MusicProps) => {
-  // const windowSize = useWindowSize();
-  // ScrollTrigger.refresh();
+  useEffect(() => {
+    // const tl: gsap.core.Timeline = gsap.timeline();
+    // tl.to('.music__content__box', {
+    //   duration: animationData.music.duration / 1000,
+    //   height: 100,
+    //   ease: 'power2',
+    //   scrollTrigger: {
+    //     trigger: '.music__content__box',
+    //     toggleActions: 'restart none none none',
+    //     start: 'top bottom',
+    //     markers: true,
+    //   },
+    // }).to('.music__content__box', {
+    //   duration: animationData.music.duration / 1000,
+    //   width: 100,
+    //   ease: 'power2',
+    //   scrollTrigger: {
+    //     trigger: '.music__content__box',
+    //     toggleActions: 'restart none none none',
+    //     start: 'top bottom',
+    //   },
+    // });
 
-  // useEffect(() => {
-  //   gsap.to('.music', {
-  //     xPercent: -100,
-  //     x: () => windowSize.width,
-  //     ease: 'none',
-  //     duration: 2,
-  //     scrollTrigger: {
-  //       markers: true,
-  //       trigger: '.music',
-  //       start: 'top top ',
-  //       end: () => windowSize.width * 3,
-  //       scrub: true,
-  //       pin: true,
-  //       invalidateOnRefresh: true,
-  //       anticipatePin: 1,
-  //     },
-  //   });
-  // }, [windowSize]);
+    gsap.to('.music__content__box', {
+      duration: animationData.music.duration / 1000,
+      height: 100,
+      width: 100,
+      ease: 'power2',
+      scrollTrigger: {
+        trigger: '.music__content__box',
+        toggleActions: 'restart none none none',
+        start: 'top 80%',
+        markers: true,
+        scrub: true,
+      },
+    });
 
-  // useEffect(() => {
-  //   ScrollTrigger.refresh();
-  // }, [windowSize]);
+    // gsap.from('.music__title', {
+    //   y: 50,
+    //   opacity: 1,
+    //   ease: 'power2',
+    //   duration: animationData.music.duration / 1000,
+    //   scrollTrigger: {
+    //     trigger: '.music__title',
+    //     scrub: 1,
+    //   },
+    // });
+  });
 
   return (
     <section className="music" id={HomeSection.music}>
       <h2 className="music__title">Music</h2>
       <div className="music__content">
+        <div className="music__content__box"></div>
         <p className="music__content__announcement">
           Debut Album{' '}
           <span className="music__content__announcement__album-title">

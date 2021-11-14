@@ -7,4 +7,7 @@ export const animationData = <const>{
   shows: {
     duration: 1000,
   },
+  music: {
+    duration: 1000,
+  },
 };

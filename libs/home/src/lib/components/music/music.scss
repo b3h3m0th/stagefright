@@ -1,25 +1,57 @@
 @use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
 
 .music {
-  width: 100vw;
-  padding-top: variables.$vertical-spacer-s;
+  width: 100%;
+  padding: variables.$vertical-spacer-s variables.$horizontal-spacer-s;
   background-size: cover;
   background-position: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @include mixins.for-phone {
+    display: initial;
+  }
 
   &__title {
     font-family: variables.$head;
-    text-align: center;
+    text-align: left;
     color: variables.$white;
     text-transform: uppercase;
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+    margin: 0 variables.$spacing-l 0 0;
+    line-height: 0.9em;
+
+    @include mixins.for-phone {
+      text-align: center;
+      writing-mode: initial;
+      transform: initial;
+      width: initial;
+      height: initial;
+      line-height: initial;
+    }
   }
 
   &__content {
     width: 100%;
-    padding: 0 variables.$horizontal-spacer-s;
+
+    &__box {
+      width: 1px;
+      background-color: variables.$accent;
+
+      @include mixins.for-phone {
+        display: none;
+      }
+    }
 
     &__announcement {
-      text-align: center;
       color: variables.$white;
+
+      @include mixins.for-phone {
+        text-align: center;
+      }
 
       &__album-title {
         color: variables.$accent;
