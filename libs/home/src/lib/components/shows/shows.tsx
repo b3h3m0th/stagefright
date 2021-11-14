@@ -6,7 +6,7 @@ import { HomeSection } from '@stagefright/router';
 /* eslint-disable-next-line */
 import { Button } from '@stagefright/shared/components';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger, Power2, Power4 } from 'gsap/all';
 import { useEffect, useRef } from 'react';
 import { animationData, loading } from '@stagefright/shared/config';
 import { ShowsMarquee } from './components';
@@ -28,7 +28,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
         loading.artificialPageMountDelay / 1000 +
         animationData.hero.delay / 1000,
       y: -50,
-      ease: 'power2',
+      ease: Power2.easeOut,
       duration: animationData.shows.duration / 1000,
       scrollTrigger: {
         trigger: '.shows',
@@ -48,7 +48,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
       .to('.shows__title__blender', {
         width: '100%',
         duration: animationData.shows.duration / 1000,
-        ease: 'power4',
+        ease: Power4.easeOut,
       })
       .to('.shows__title__blender', {
         right: '0',
@@ -61,7 +61,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
       .to('.shows__title__blender', {
         x: '100%',
         duration: animationData.shows.duration / 1000,
-        ease: 'power4',
+        ease: Power4.easeOut,
       });
 
     gsap.to('.shows__content__show', {

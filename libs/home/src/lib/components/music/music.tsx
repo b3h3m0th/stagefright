@@ -2,7 +2,7 @@
 import { HomeSection } from '@stagefright/router';
 import './music.scss';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger, Power2 } from 'gsap/all';
 import { useEffect } from 'react';
 import { animationData } from '@stagefright/shared/config';
 import { useWindowSize } from '@stagefright/shared/util';
@@ -18,7 +18,7 @@ export const Music: React.FC<MusicProps> = (props: MusicProps) => {
     gsap.to('.music__content__box', {
       duration: animationData.music.duration / 1000,
       width: '100%',
-      ease: 'power2',
+      ease: Power2.easeOut,
       scrollTrigger: {
         trigger: '.music__content__box',
         toggleActions: 'play none none none',

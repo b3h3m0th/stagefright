@@ -7,12 +7,13 @@
   width: 100vw;
 
   &__title {
-    width: 0;
     overflow: hidden;
     position: relative;
-    height: 50px;
+    height: 37px;
     overflow-x: hidden;
     width: 287px;
+    display: flex;
+    align-items: center;
 
     &__blender {
       background-color: variables.$white;
