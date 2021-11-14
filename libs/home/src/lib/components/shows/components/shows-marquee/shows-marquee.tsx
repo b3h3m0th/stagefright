@@ -27,7 +27,9 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
           const divider: JSX.Element = (
             <>
               {' '}
-              <span className="shows-marquee__divider">/</span>{' '}
+              <span key={i} className="shows-marquee__divider">
+                /
+              </span>{' '}
             </>
           );
 

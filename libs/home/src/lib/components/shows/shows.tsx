@@ -62,6 +62,15 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
         x: '100%',
         duration: animationData.shows.duration / 1000,
         ease: Power4.easeOut,
+      })
+
+      gsap.from('.shows__marquee', {
+        y: 500,
+        duration: animationData.shows.duration / 1000,
+        delay:
+          loading.artificialPageMountDelay / 1000 +
+          animationData.hero.delay / 1000,
+        ease: Power4.easeOut,
       });
 
     gsap.to('.shows__content__show', {
@@ -143,7 +152,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
           <p className="shows__content__empty">Coming Soon!</p>
         )}
       </div>
-      <ShowsMarquee />
+      <ShowsMarquee className={'shows__marquee'} />
     </section>
   );
 };
