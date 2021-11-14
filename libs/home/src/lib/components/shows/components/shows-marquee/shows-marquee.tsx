@@ -3,11 +3,23 @@ import Marquee from 'react-fast-marquee';
 import { IShow, shows } from '@stagefright/shared/data';
 
 /* eslint-disable-next-line */
-export interface ShowsMarqueeProps {}
+export interface ShowsMarqueeProps {
+  className?: string | string[];
+}
 
-export const ShowsMarquee = (props: ShowsMarqueeProps) => {
+export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
   return (
-    <div className="shows-marquee">
+    <div
+      className={`shows-marquee
+    ${
+      className
+        ? className instanceof Array
+          ? className.join(' ')
+          : className
+        : ''
+    }
+    `}
+    >
       <Marquee gradient={false} speed={100}>
         {[].concat(...Array(10).fill(shows)).map((show: IShow, i: number) => {
           const showContent = `
@@ -23,6 +35,7 @@ export const ShowsMarquee = (props: ShowsMarqueeProps) => {
             <>
               {show.location.url ? (
                 <a
+                  key={i}
                   className="shows-marquee__show"
                   href={show.location.url}
                   target="_blank"
@@ -31,7 +44,9 @@ export const ShowsMarquee = (props: ShowsMarqueeProps) => {
                   {showContent}
                 </a>
               ) : (
-                <div className="shows-marquee__show">{showContent}</div>
+                <div key={i} className="shows-marquee__show">
+                  {showContent}
+                </div>
               )}
               {divider}
             </>
