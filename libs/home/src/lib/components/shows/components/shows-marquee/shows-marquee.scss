@@ -1,7 +1,7 @@
 @use 'theme:variables' as variables;
 
 .shows-marquee {
-  padding: variables.$spacing-l variables.$horizontal-spacer-s !important;
+  padding: variables.$spacing-l 0;
   width: 100%;
   height: 50px;
   color: white;

@@ -7,8 +7,8 @@ import { HomeSection } from '@stagefright/router';
 import { Button } from '@stagefright/shared/components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
-import { animationData } from '@stagefright/shared/config';
+import { useEffect, useRef } from 'react';
+import { animationData, loading } from '@stagefright/shared/config';
 import { ShowsMarquee } from './components';
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,12 +16,17 @@ gsap.registerPlugin(ScrollTrigger);
 export interface ShowsProps {}
 
 export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
+  const showsTitle = useRef<HTMLHeadingElement>(null);
+  const showsTitleText = useRef<HTMLSpanElement>(null);
   const upcomingShows: IShow[] = shows.filter(
     (show: IShow) => new Date() < show.start
   );
 
   useEffect(() => {
     gsap.to('.shows', {
+      delay:
+        loading.artificialPageMountDelay / 1000 +
+        animationData.hero.delay / 1000,
       y: -50,
       ease: 'power2',
       duration: animationData.shows.duration / 1000,
@@ -31,21 +36,57 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
       },
     });
 
+    gsap
+      .timeline()
+      .to('.shows__title__blender', {
+        delay:
+          loading.artificialPageMountDelay / 1000 +
+          animationData.hero.delay / 1000,
+        opacity: 1,
+        duration: 0,
+      })
+      .to('.shows__title__blender', {
+        width: '100%',
+        duration: animationData.shows.duration / 1000,
+        ease: 'power4',
+      })
+      .to('.shows__title__blender', {
+        right: '0',
+        duration: 0,
+      })
+      .to('.shows__title__text', {
+        opacity: 1,
+        duration: 0,
+      })
+      .to('.shows__title__blender', {
+        x: '100%',
+        duration: animationData.shows.duration / 1000,
+        ease: 'power4',
+      });
+
     gsap.to('.shows__content__show', {
-      height: 'auto',
+      delay:
+        loading.artificialPageMountDelay / 1000 +
+        animationData.hero.delay / 1000,
       opacity: 1,
       duration: animationData.shows.duration / 1000,
+      stagger: 0.2,
       scrollTrigger: {
         trigger: '.shows__content__show',
         toggleActions: 'play none none none',
-        start: '10% bottom',
+        start: 'top 90%',
       },
     });
   });
 
   return (
     <section className="shows" id={HomeSection.shows}>
-      <h2 className="shows__title">Upcoming Shows</h2>
+      <h2 className="shows__title" ref={showsTitle}>
+        <span className="shows__title__blender"></span>
+        <span className="shows__title__text" ref={showsTitleText}>
+          Upcoming Shows
+        </span>
+      </h2>
       <div className="shows__content">
         {upcomingShows.length > 0 ? (
           upcomingShows.map((show: IShow, i) => (

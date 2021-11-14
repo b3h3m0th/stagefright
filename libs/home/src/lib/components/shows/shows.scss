@@ -2,14 +2,35 @@
 @use 'theme:mixins' as mixins;
 
 .shows {
-  padding-top: variables.$vertical-spacer-s;
+  padding: variables.$vertical-spacer-s variables.$horizontal-spacer-s 0
+    variables.$horizontal-spacer-s;
   width: 100vw;
 
   &__title {
-    font-family: variables.$head;
-    color: variables.$white;
-    text-transform: uppercase;
-    padding: 0 variables.$horizontal-spacer-s;
+    width: 0;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    overflow-x: hidden;
+    width: 287px;
+
+    &__blender {
+      background-color: variables.$white;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+    }
+
+    &__text {
+      font-family: variables.$head;
+      color: variables.$white;
+      text-transform: uppercase;
+      color: variables.$white;
+      white-space: nowrap;
+      opacity: 0;
+    }
 
     @include mixins.for-phone {
       text-align: center;
@@ -21,7 +42,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 variables.$horizontal-spacer-s;
     flex-direction: column;
 
     &__show {
@@ -34,7 +54,6 @@
       align-items: center;
       font-family: variables.$head;
       opacity: 0;
-      height: 0;
       transform-origin: top;
 
       @include mixins.for-phone {

@@ -14,9 +14,9 @@ export const App: React.FC = () => {
   return (
     <React.StrictMode>
       <StoreProvider {...stores}>
-        <SkewScrollingWrapper>
-          <fromRouter.Router />
-        </SkewScrollingWrapper>
+        {/* <SkewScrollingWrapper> */}
+        <fromRouter.Router />
+        {/* </SkewScrollingWrapper> */}
       </StoreProvider>
     </React.StrictMode>
   );
