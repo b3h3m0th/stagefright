@@ -5,7 +5,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger, Power2 } from 'gsap/all';
 import { useEffect } from 'react';
 import { animationData } from '@stagefright/shared/config';
-import { useWindowSize } from '@stagefright/shared/util';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
