@@ -1,5 +1,5 @@
 import './contact.scss';
-import { contact } from '@stagefright/shared/data';
+import { contact } from '@stagefright/shared/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 /*eslint-disable-next-line */

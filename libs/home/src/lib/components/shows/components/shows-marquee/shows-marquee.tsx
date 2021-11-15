@@ -1,6 +1,6 @@
 import './shows-marquee.scss';
 import Marquee from 'react-fast-marquee';
-import { IShow, shows } from '@stagefright/shared/data';
+import { IShow, shows } from '@stagefright/shared/config';
 
 /* eslint-disable-next-line */
 export interface ShowsMarqueeProps {

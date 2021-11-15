@@ -1,4 +1,4 @@
-import { IShow } from './interfaces';
+import { IShow } from '../../../config/src/lib/interfaces';
 
 export type Shows = IShow[];
 

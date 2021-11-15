@@ -1,5 +1,5 @@
 import './shows.scss';
-import { shows, IShow } from '@stagefright/shared/data';
+import { shows, IShow } from '@stagefright/shared/config';
 import { removeURLProtocol } from '@stagefright/shared/util';
 /* eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
@@ -62,16 +62,16 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
         x: '100%',
         duration: animationData.shows.duration / 1000,
         ease: Power4.easeOut,
-      })
-
-      gsap.from('.shows__marquee', {
-        y: 500,
-        duration: animationData.shows.duration / 1000,
-        delay:
-          loading.artificialPageMountDelay / 1000 +
-          animationData.hero.delay / 1000,
-        ease: Power4.easeOut,
       });
+
+    gsap.from('.shows__marquee', {
+      y: 500,
+      duration: animationData.shows.duration / 1000,
+      delay:
+        loading.artificialPageMountDelay / 1000 +
+        animationData.hero.delay / 1000,
+      ease: Power4.easeOut,
+    });
 
     gsap.to('.shows__content__show', {
       delay:
