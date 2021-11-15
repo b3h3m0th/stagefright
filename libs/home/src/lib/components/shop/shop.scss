@@ -28,6 +28,7 @@
       position: relative;
       padding: variables.$spacing-l;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
 
@@ -45,9 +46,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: variables.$white;
-        opacity: 0.7;
-        font-size: 3em;
+        color: variables.$accent;
+        font-size: 2em;
       }
     }
   }

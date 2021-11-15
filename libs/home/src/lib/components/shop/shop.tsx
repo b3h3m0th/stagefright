@@ -7,7 +7,7 @@ import { shopData } from '@stagefright/shared/config';
 import { Button } from '@stagefright/shared/components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import merch from './assets/products/merch/merch.jpg';
+import merch from './assets/products/merch/merch.png';
 import music from './assets/products/music/music.jpg';
 
 /* eslint-disable-next-line */
@@ -21,15 +21,15 @@ export const Shop: React.FC = (props: ShopProps) => {
         <a className="shop__content__merch" href={shopData.url}>
           <img src={merch} alt="StageFright Merch" />
           <div className="shop__content__merch__overlay">
-            <h3>Merch</h3>
+            <h3>Out of Stock</h3>
           </div>
         </a>
-        <a className="shop__content__music" href={shopData.url}>
+        {/* <a className="shop__content__music" href={shopData.url}>
           <img src={music} alt="StageFright Music" />
           <div className="shop__content__merch__overlay">
             <h3>Music</h3>
           </div>
-        </a>
+        </a> */}
       </div>
       <div className="shop__shop">
         <Button
