@@ -5,6 +5,7 @@
   padding: variables.$vertical-spacer-s variables.$horizontal-spacer-s 0
     variables.$horizontal-spacer-s;
   width: 100vw;
+  overflow: hidden;
 
   &__title {
     overflow: hidden;
