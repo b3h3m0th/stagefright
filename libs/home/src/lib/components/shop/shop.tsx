@@ -7,7 +7,7 @@ import { animationData, loading, shopData } from '@stagefright/shared/config';
 import { Button } from '@stagefright/shared/components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import merch from './assets/products/merch/merch.png';
+import merch from './assets/products/merch/stagefright_black_shirt_chest_logo.png';
 import music from './assets/products/music/music.jpg';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -74,6 +74,7 @@ export const Shop: React.FC = (props: ShopProps) => {
       scrollTrigger: {
         trigger: '.shop__content__products__product',
         start: 'top center',
+        scrub: 1,
       },
     });
 
