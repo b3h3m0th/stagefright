@@ -2,7 +2,7 @@
 @use 'theme:mixins' as mixins;
 
 .shop {
-  padding-top: variables.$vertical-spacer-s;
+  padding-top: variables.$vertical-spacer-xs;
   width: 100vw;
   display: flex;
   flex-direction: column;

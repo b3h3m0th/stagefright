@@ -1,6 +1,7 @@
 @use 'theme:variables' as variables;
 
 .contact {
+  padding-top: variables.$vertical-spacer-xs;
   width: 100vw;
   margin-bottom: variables.$vertical-spacer-s;
   display: flex;
