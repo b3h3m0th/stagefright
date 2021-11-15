@@ -2,12 +2,9 @@
 
 .animated-letters__row-title,
 .animated-letters__row-letter {
-  // font-size: 1.6em;
-  // font-family: variables.$display;
   position: relative;
   display: inline-block;
   white-space: nowrap;
-  // color: variables.$white;
   overflow: hidden;
   line-height: 90%;
 }
