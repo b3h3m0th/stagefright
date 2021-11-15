@@ -12,8 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 export interface MusicProps {}
 
 export const Music: React.FC<MusicProps> = (props: MusicProps) => {
-  const windowSize = useWindowSize();
-
   useEffect(() => {
     gsap.to('.music__content__box', {
       duration: animationData.music.duration / 1000,
