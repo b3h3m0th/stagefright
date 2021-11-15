@@ -22,7 +22,7 @@ export const Home: React.FC<HomeProps> = (props: HomeProps) => {
       <Shows />
       <Music />
       <Shop />
-      <Socials />
+      {/* <Socials /> */}
       <Contact />
     </motion.div>
   );
