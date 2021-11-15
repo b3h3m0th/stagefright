@@ -10,4 +10,8 @@ export const animationData = <const>{
   music: {
     duration: 1000,
   },
+  shop: {
+    duration: 1000,
+    delay: 500,
+  },
 };

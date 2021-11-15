@@ -47,7 +47,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
       })
       .to('.shows__title__blender', {
         width: '100%',
-        duration: animationData.shows.duration / 1000,
+        duration: animationData.shows.duration / 1000 / 2,
         ease: Power4.easeOut,
       })
       .to('.shows__title__blender', {
@@ -60,7 +60,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
       })
       .to('.shows__title__blender', {
         x: '100%',
-        duration: animationData.shows.duration / 1000,
+        duration: animationData.shows.duration / 1000 / 2,
         ease: Power4.easeOut,
       });
 

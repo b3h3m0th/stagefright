@@ -2,25 +2,114 @@
 @use 'theme:mixins' as mixins;
 
 .shop {
-  padding-top: variables.$vertical-spacer-xs;
+  padding: variables.$vertical-spacer-xs variables.$horizontal-spacer-s 0
+    variables.$horizontal-spacer-s;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  // align-items: center;
 
   &__title {
+    position: relative;
     color: variables.$white;
     text-transform: uppercase;
+    text-align: left;
+    overflow-x: hidden;
+    height: 37px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+
+    &__blender {
+      background-color: variables.$white;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+    }
+
+    &__text {
+      font-family: variables.$head;
+      color: variables.$white;
+      text-transform: uppercase;
+      color: variables.$white;
+      white-space: nowrap;
+      opacity: 0;
+    }
+
+    @include mixins.for-phone {
+      text-align: center;
+      writing-mode: initial;
+      transform: initial;
+      width: 100%;
+      height: initial;
+      line-height: initial;
+      font-family: inherit;
+      font-size: 1.8em;
+      font-weight: 700;
+    }
   }
 
   &__content {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 100%;
 
     @include mixins.for-phone {
       flex-direction: column;
+    }
+
+    &__cursor-follow {
+      position: absolute;
+      background: url('./assets/products/merch/merch.png') no-repeat 50% 50%;
+      background-size: cover;
+      width: 300px;
+      mix-blend-mode: difference;
+      height: 400px;
+      z-index: 2;
+      user-select: none;
+      pointer-events: none;
+      transform: translate(5px, 5px);
+    }
+
+    &__products {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      width: 100%;
+
+      &__product {
+        text-align: left;
+        margin-top: 0;
+        margin-right: variables.$spacing-xl;
+        text-transform: uppercase;
+        font-size: 6em;
+        font-family: variables.$head;
+        font-weight: 700;
+        position: relative;
+        -webkit-text-stroke: 1px variables.$white;
+        color: transparent;
+        cursor: pointer;
+        width: 30%;
+        overflow: visible;
+        white-space: nowrap;
+        opacity: 0;
+
+        img {
+          position: absolute;
+          width: 250px;
+          object-fit: cover;
+          transform: translateX(-50%) translateY(-50%);
+          z-index: -10;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+      }
     }
 
     &__merch,
@@ -55,6 +144,12 @@
   &__shop {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: variables.$vertical-spacer-xs;
+    overflow: hidden;
+
+    @include mixins.for-phone {
+      justify-content: center;
+    }
   }
 }
