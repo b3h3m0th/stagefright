@@ -119,30 +119,16 @@ export const Shop: React.FC = (props: ShopProps) => {
       </h2>
       <div className="shop__content">
         <ul className="shop__content__products">
-          <a href={shopData.url} target="_blank" rel="noreferrer">
-            <li className="shop__content__products__product">
-              <img src={merch} alt="StagFright Merch Shirt" />
-              Shirt S
-            </li>
-          </a>
-          <a href={shopData.url} target="_blank" rel="noreferrer">
-            <li className="shop__content__products__product">
-              <img src={merch} alt="StagFright Merch Shirt" />
-              Shirt M
-            </li>
-          </a>
-          <a href={shopData.url} target="_blank" rel="noreferrer">
-            <li className="shop__content__products__product">
-              <img src={merch} alt="StagFright Merch Shirt" />
-              Shirt L
-            </li>
-          </a>
-          <a href={shopData.url} target="_blank" rel="noreferrer">
-            <li className="shop__content__products__product">
-              <img src={merch} alt="StagFright Merch Shirt" />
-              Shirt XL
-            </li>
-          </a>
+          {shopData.products.shirt.sizes.map((size: string, i: number) => {
+            return (
+              <a href={shopData.url} target="_blank" rel="noreferrer" key={i}>
+                <li className="shop__content__products__product">
+                  <img src={merch} alt="StagFright Merch Shirt" />
+                  {shopData.products.shirt.name} {size}
+                </li>
+              </a>
+            );
+          })}
         </ul>
         {/* <a className="shop__content__merch" href={shopData.url}>
           <img src={merch} alt="StageFright Merch" />
