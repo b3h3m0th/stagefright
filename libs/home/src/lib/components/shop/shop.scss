@@ -105,6 +105,7 @@
 
         @include mixins.for-phone {
           font-size: 3em;
+          margin-bottom: variables.$spacing-xl;
         }
 
         &::after {
