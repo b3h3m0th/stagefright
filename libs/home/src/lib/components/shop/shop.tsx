@@ -103,7 +103,7 @@ export const Shop: React.FC = (props: ShopProps) => {
         gsap.to(image, { autoAlpha: 0 });
       });
 
-      el.addEventListener('mousemove', (e: any) => {
+      el.addEventListener('mousemove', (e: MouseEvent) => {
         gsap.set(image, { x: e.offsetX, y: e.offsetY });
       });
     });
