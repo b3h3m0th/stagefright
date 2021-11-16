@@ -66,12 +66,13 @@ export const Shop: React.FC = (props: ShopProps) => {
       },
     });
 
-    gsap.to('.shop__content__products', {
-      x: '-50%',
+    gsap.to('.shop__content__products__product', {
+      opacity: 1,
+      duration: animationData.shop.duration / 1000,
+      stagger: 0.2,
       scrollTrigger: {
-        trigger: '.shop__content__products',
-        start: 'top -50%',
-        end: '+200%',
+        trigger: '.shop__content__products__product',
+        start: 'top 20%',
         scrub: 1,
       },
     });

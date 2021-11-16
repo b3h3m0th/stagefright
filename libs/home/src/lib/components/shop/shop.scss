@@ -83,7 +83,7 @@
       padding: 0;
       list-style-type: none;
       width: 100%;
-      display: flex;
+      // display: flex;
 
       &__product {
         text-align: left;
@@ -100,14 +100,23 @@
         width: 30%;
         overflow: visible;
         white-space: nowrap;
+        margin-bottom: variables.$spacing-m;
+        opacity: 0;
+
+        @include mixins.for-phone {
+          font-size: 3em;
+        }
 
         &::after {
           color: variables.$accent;
           content: 'Out of Stock';
           font-size: initial;
           -webkit-text-stroke: initial;
-          margin-left: variables.$spacing-l;
+          // margin-left: variables.$spacing-l;
           font-weight: 400;
+          position: absolute;
+          top: 100%;
+          left: 0%;
         }
 
         img {
@@ -156,7 +165,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    margin-top: variables.$vertical-spacer-xs;
+    margin-top: variables.$vertical-spacer-s;
     overflow: hidden;
 
     @include mixins.for-phone {
