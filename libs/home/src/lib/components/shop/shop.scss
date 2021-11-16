@@ -102,10 +102,12 @@
         white-space: nowrap;
         margin-bottom: variables.$spacing-m;
         opacity: 0;
-        transition: 0.7s color;
+        transition: color 0.4s, left 0.4s;
+        left: 0;
 
         &:hover {
           color: variables.$white;
+          left: variables.$spacing-xxl;
         }
 
         @include mixins.for-phone {
