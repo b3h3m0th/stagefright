@@ -96,11 +96,11 @@ export const Shop: React.FC = (props: ShopProps) => {
       const image = el.querySelector('img');
 
       el.addEventListener('mouseenter', () => {
-        gsap.to(image, { autoAlpha: 1 });
+        gsap.to(image, { autoAlpha: 1, zoom: 0.6 });
       });
 
       el.addEventListener('mouseleave', () => {
-        gsap.to(image, { autoAlpha: 0 });
+        gsap.to(image, { autoAlpha: 0, zoom: 1.5 });
       });
 
       el.addEventListener('mousemove', (e: MouseEvent) => {

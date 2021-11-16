@@ -102,10 +102,20 @@
         white-space: nowrap;
         margin-bottom: variables.$spacing-m;
         opacity: 0;
+        transition: 0.7s color;
+
+        &:hover {
+          color: variables.$white;
+        }
 
         @include mixins.for-phone {
           font-size: 3em;
           margin-bottom: variables.$spacing-xl;
+          transition: initial;
+
+          &:hover {
+            color: inherit;
+          }
         }
 
         &::after {
@@ -122,9 +132,9 @@
 
         img {
           position: absolute;
-          width: 250px;
+          width: 350px;
           object-fit: cover;
-          transform: translateX(-50%) translateY(-50%);
+          transform: translate(-50%, -50%);
           z-index: -1;
           opacity: 0;
           visibility: hidden;
