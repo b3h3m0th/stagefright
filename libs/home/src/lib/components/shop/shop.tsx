@@ -66,14 +66,12 @@ export const Shop: React.FC = (props: ShopProps) => {
       },
     });
 
-    gsap.to('.shop__content__products__product', {
-      opacity: 1,
-      duration: animationData.shop.duration / 1000,
-      stagger: 0.1,
-      ease: Power4.easeInOut,
+    gsap.to('.shop__content__products', {
+      x: '-50%',
       scrollTrigger: {
-        trigger: '.shop__content__products__product',
-        start: 'top center',
+        trigger: '.shop__content__products',
+        start: 'top -50%',
+        end: '+200%',
         scrub: 1,
       },
     });
@@ -81,7 +79,7 @@ export const Shop: React.FC = (props: ShopProps) => {
     gsap.from('.shop__shop__button-link', {
       y: -50,
       duration: animationData.shop.duration / 1000,
-      ease: Power4.easeInOut,
+      // ease: Power4.easeInOut,
       scrollTrigger: {
         trigger: '.shop__shop__button-link',
         start: 'top center',
