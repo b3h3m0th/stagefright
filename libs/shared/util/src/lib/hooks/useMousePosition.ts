@@ -12,9 +12,9 @@ export function useMousePosition(): MousePosition {
   });
 
   useEffect(() => {
-    function handlePosition(e: MouseEvent) {
+    const handlePosition: (e: MouseEvent) => void = (e: MouseEvent) => {
       setMousePosition({ x: e.pageX, y: e.pageY });
-    }
+    };
 
     window.addEventListener('mousemove', handlePosition);
     return () => window.removeEventListener('mousemove', handlePosition);
