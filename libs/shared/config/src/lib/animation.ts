@@ -15,7 +15,10 @@ export const animationData = <const>{
     delay: 500,
   },
   contact: {
-    duration: 400,
+    duration: 250,
     delay: 500,
+    defaultCursorScale: 1,
+    reducedCursorScale: 0.5,
+    increasedCursorScale: 2,
   },
 };
