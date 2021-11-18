@@ -34,7 +34,7 @@ export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
       e: MouseEvent
     ) =>
       gsap.to(cursorRef.current, {
-        scale: 20,
+        scale: 2,
         duration: 0.25,
       });
 
