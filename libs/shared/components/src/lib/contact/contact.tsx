@@ -16,17 +16,31 @@ export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
   const mousePosition = useMousePosition();
 
   useEffect(() => {
-    const initCursor = (e: MouseEvent) =>
+    const initCursor: (e: MouseEvent) => gsap.core.Tween = (e: MouseEvent) =>
       gsap.to(cursorRef.current, {
         scale: 1,
         autoAlpha: 1,
         duration: 0.25,
       });
 
-    const exitCursor = (e: MouseEvent) =>
+    const exitCursor: (e: MouseEvent) => gsap.core.Tween = (e: MouseEvent) =>
       gsap.to(cursorRef.current, {
         scale: 0.5,
         autoAlpha: 0,
+        duration: 0.25,
+      });
+
+    const increaseCursor: (e: MouseEvent) => gsap.core.Tween = (
+      e: MouseEvent
+    ) =>
+      gsap.to(cursorRef.current, {
+        scale: 20,
+        duration: 0.25,
+      });
+
+    const reduceCursor: (e: MouseEvent) => gsap.core.Tween = (e: MouseEvent) =>
+      gsap.to(cursorRef.current, {
+        scale: 1,
         duration: 0.25,
       });
 
@@ -39,10 +53,14 @@ export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
 
     contactRef.current?.addEventListener('mouseover', initCursor);
     contactRef.current?.addEventListener('mouseout', exitCursor);
+    emailRef.current?.addEventListener('mouseover', increaseCursor);
+    emailRef.current?.addEventListener('mouseout', reduceCursor);
 
     return () => {
       contactRef.current?.removeEventListener('mouseover', initCursor);
       contactRef.current?.removeEventListener('mouseout', exitCursor);
+      emailRef.current?.removeEventListener('mouseover', increaseCursor);
+      emailRef.current?.removeEventListener('mouseout', reduceCursor);
     };
   });
 
