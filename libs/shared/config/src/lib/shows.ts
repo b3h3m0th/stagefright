@@ -16,7 +16,7 @@ export const shows: Shows = [
   },
   {
     location: {
-      title: 'Kulturcafé Schlachthaus',
+      title: 'Kulturcafé Schlachthaus (Postponed!)',
       address: 'Schlachthausstraße 11, 6850 Dornbirn',
       url: 'https://www.ojad.at/event/stagefright/',
     },

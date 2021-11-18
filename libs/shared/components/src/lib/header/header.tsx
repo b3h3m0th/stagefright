@@ -31,13 +31,15 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
     (o) => !o.includes(HomeSection.default)
   );
 
-  const scrollToNavigationTarget: (target: [string, HomeSection]) => void = (
-    target: [string, HomeSection]
-  ) =>
+  const scrollToNavigationTarget: (
+    target: [string, HomeSection],
+    customOffset?: number
+  ) => void = (target: [string, HomeSection], customOffset?: number) =>
     window.scrollTo(
       0,
       document.getElementById(target[0])!.offsetTop -
-        document.getElementById('nav')!.offsetTop
+        document.getElementById('nav')!.offsetTop +
+        (customOffset ?? 0)
     );
 
   const navListAnimation: Variants = {
@@ -131,37 +133,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             </motion.a>
           </li>
         ))}
-        {/* {renderSocials()} */}
-        <motion.div
-          className="nav__list__item__socials"
-          variants={navListAnimation}
-          initial="initial"
-          animate="animate"
-        >
-          <motion.a
-            href="#shop"
-            variants={navItemAnimation}
-            onClick={() => scrollToNavigationTarget(['shop', HomeSection.shop])}
-          >
-            <FontAwesomeIcon icon={faShoppingCart} />
-          </motion.a>
-          <motion.a
-            href={config.socials.instagram.link}
-            target="_blank"
-            rel="noreferrer"
-            variants={navItemAnimation}
-          >
-            <FontAwesomeIcon icon={faInstagram} />
-          </motion.a>
-          <motion.a
-            href={config.socials.facebook.link}
-            target="_blank"
-            rel="noreferrer"
-            variants={navItemAnimation}
-          >
-            <FontAwesomeIcon icon={faFacebookF} />
-          </motion.a>
-        </motion.div>
+        {renderSocials()}
       </motion.ul>
     </nav>
   ) : (

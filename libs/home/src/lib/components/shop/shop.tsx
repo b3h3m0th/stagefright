@@ -7,11 +7,10 @@ import { animationData, loading, shopData } from '@stagefright/shared/config';
 import { Button } from '@stagefright/shared/components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import merch from './assets/products/merch/stagefright_black_shirt_chest_logo.png';
-import music from './assets/products/music/music.jpg';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger, Power4 } from 'gsap/all';
+import image from './assets/products/merch/stagefright_black_shirt_chest_logo.png';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
@@ -28,6 +27,7 @@ export const Shop: React.FC = (props: ShopProps) => {
         start: 'top 10%',
         end: '+200%',
         pin: true,
+        pinSpacing: true,
       },
     });
 
@@ -119,29 +119,24 @@ export const Shop: React.FC = (props: ShopProps) => {
       </h2>
       <div className="shop__content">
         <ul className="shop__content__products">
-          {shopData.products.shirt.sizes.map((size: string, i: number) => {
-            return (
-              <a href={shopData.url} target="_blank" rel="noreferrer" key={i}>
-                <li className="shop__content__products__product">
-                  <img src={merch} alt="StagFright Merch Shirt" />
-                  {shopData.products.shirt.name} {size}
-                </li>
-              </a>
-            );
+          {Object.values(shopData.products).map((e, _: number) => {
+            return e.map((p, __: number) => {
+              return (
+                <a
+                  href={shopData.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={`product-${_}-${__}`}
+                >
+                  <li className="shop__content__products__product">
+                    <img src={p.image} alt={p.altText} />
+                    {p.name}
+                  </li>
+                </a>
+              );
+            });
           })}
         </ul>
-        {/* <a className="shop__content__merch" href={shopData.url}>
-          <img src={merch} alt="StageFright Merch" />
-          <div className="shop__content__merch__overlay">
-            <h3>Out of Stock</h3>
-          </div>
-        </a> */}
-        {/* <a className="shop__content__music" href={shopData.url}>
-          <img src={music} alt="StageFright Music" />
-          <div className="shop__content__merch__overlay">
-            <h3>Music</h3>
-          </div>
-        </a> */}
       </div>
       <div className="shop__shop">
         <Button

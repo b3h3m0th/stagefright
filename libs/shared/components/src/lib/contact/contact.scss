@@ -1,14 +1,15 @@
 @use 'theme:variables' as variables;
 
 .contact {
+  // position: relative;
   width: 100vw;
-  margin-bottom: variables.$vertical-spacer-s;
+  // margin-bottom: variables.$vertical-spacer-s;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: variables.$vertical-spacer-xs variables.$horizontal-spacer-s 0
-    variables.$horizontal-spacer-s;
+  padding: 0 variables.$horizontal-spacer-s;
+  border-top: 1px solid variables.$white-transparent;
 
   &__title {
     font-family: variables.$head;
@@ -39,18 +40,18 @@
         -webkit-text-stroke: 1px variables.$white;
         color: variables.$white;
       }
-
-      &__underline {
-        position: absolute;
-        content: '';
-        display: block;
-        background-color: variables.$white;
-        top: 90%;
-        left: 0;
-        width: 0;
-        height: variables.$spacing-m;
-        transition: width 0.4s;
-      }
     }
+  }
+
+  &__cursor {
+    position: absolute;
+    width: variables.$spacing-s;
+    height: variables.$spacing-s;
+    transform: translate(-50%, -50%);
+    background-color: variables.$white;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    opacity: 0;
+    z-index: 9999;
   }
 }

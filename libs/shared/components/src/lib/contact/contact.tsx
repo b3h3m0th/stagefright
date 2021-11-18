@@ -2,98 +2,61 @@ import './contact.scss';
 import { contact } from '@stagefright/shared/config';
 /*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
+import { useMousePosition } from '@stagefright/shared/util';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Power4 } from 'gsap/all';
 
 /* eslint-disable-next-line */
 export interface ContactProps {}
 
 export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
-  const underlineRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLAnchorElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+  const emailRef = useRef<HTMLDivElement>(null);
+  const mousePosition = useMousePosition();
 
   useEffect(() => {
-    gsap.to('.contact__content__email', {
-      y: -50,
-      scrollTrigger: {
-        trigger: '.contact__content__email',
-        scrub: 1,
+    const initCursor = (e: MouseEvent) =>
+      gsap.to(cursorRef.current, {
+        scale: 1,
+        autoAlpha: 1,
+        duration: 0.25,
+      });
+
+    const exitCursor = (e: MouseEvent) =>
+      gsap.to(cursorRef.current, {
+        scale: 0.5,
+        autoAlpha: 0,
+        duration: 0.25,
+      });
+
+    gsap.to(cursorRef.current, {
+      css: {
+        left: mousePosition.x,
+        top: mousePosition.y,
       },
     });
 
-    const onContactMouseEnter = (e: MouseEvent) => {
-      gsap.to(underlineRef.current, {
-        duration: 0,
-        opacity: 1,
-        onComplete: () => {
-          gsap.to(underlineRef.current, {
-            ease: Power4.easeIn,
-            width: '100%',
-            duration: 0.3,
-          });
-        },
-      });
-    };
-
-    const onContactMouseLeave = (e: MouseEvent) => {
-      gsap.to(underlineRef.current, {
-        ease: Power4.easeIn,
-        left: '100%',
-        duration: 0.3,
-        onComplete: () => {
-          gsap.to(underlineRef.current, {
-            opacity: 0,
-            duration: 0,
-            width: 0,
-            onComplete: () => {
-              gsap.to(underlineRef.current, {
-                duration: 0,
-                left: 0,
-                onComplete: () => {
-                  gsap.to(underlineRef.current, {
-                    duration: 0,
-                  });
-                },
-              });
-            },
-          });
-        },
-      });
-    };
-
-    contactRef.current?.addEventListener('mouseenter', onContactMouseEnter);
-    contactRef.current?.addEventListener('mouseleave', onContactMouseLeave);
+    contactRef.current?.addEventListener('mouseover', initCursor);
+    contactRef.current?.addEventListener('mouseout', exitCursor);
 
     return () => {
-      contactRef.current?.removeEventListener(
-        'mouseenter',
-        onContactMouseEnter
-      );
-      contactRef.current?.removeEventListener(
-        'mouseleave',
-        onContactMouseLeave
-      );
+      contactRef.current?.removeEventListener('mouseover', initCursor);
+      contactRef.current?.removeEventListener('mouseout', exitCursor);
     };
   });
 
   return (
-    <div className="contact" id={HomeSection.contact}>
-      {/* <h2 className="contact__title">Contact</h2> */}
+    <div className="contact" id={HomeSection.contact} ref={contactRef}>
+      <div className="contact__cursor" ref={cursorRef}></div>
       <div className="contact__content">
-        <div className="contact__content__email">
-          {/* <FontAwesomeIcon icon={faEnvelope} /> */}
+        <div className="contact__content__email" ref={emailRef}>
           <a
             href={`mailto:${contact.email}`}
             className="contact__content__email__email"
-            ref={contactRef}
           >
             Contact Us
           </a>
-          <div
-            className="contact__content__email__underline"
-            ref={underlineRef}
-          ></div>
         </div>
       </div>
     </div>

@@ -14,4 +14,8 @@ export const animationData = <const>{
     duration: 1000,
     delay: 500,
   },
+  contact: {
+    duration: 400,
+    delay: 500,
+  },
 };

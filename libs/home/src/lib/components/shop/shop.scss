@@ -64,20 +64,6 @@
       flex-direction: column;
     }
 
-    &__cursor-follow {
-      position: absolute;
-      background: url('./assets/products/merch/stagefright_black_shirt_chest_logo.png')
-        no-repeat 50% 50%;
-      background-size: cover;
-      width: 300px;
-      mix-blend-mode: difference;
-      height: 400px;
-      z-index: 2;
-      user-select: none;
-      pointer-events: none;
-      transform: translate(5px, 5px);
-    }
-
     &__products {
       margin: 0;
       padding: 0;
@@ -130,11 +116,12 @@
           position: absolute;
           top: 100%;
           left: 0%;
+          z-index: -1;
         }
 
         img {
           position: absolute;
-          width: 350px;
+          width: 550px;
           object-fit: cover;
           transform: translate(-50%, -50%);
           z-index: -1;
