@@ -5,6 +5,7 @@ import { HomeSection } from '@stagefright/router';
 import { useMousePosition } from '@stagefright/shared/util';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { Power1 } from 'gsap/all';
 
 /* eslint-disable-next-line */
 export interface ContactProps {}
@@ -52,6 +53,7 @@ export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
     };
 
     gsap.to(cursorRef.current, {
+      duration: 0.8,
       css: {
         left: mousePosition.x,
         top: mousePosition.y,
