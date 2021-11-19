@@ -4,7 +4,7 @@ import AnimatedLetters from './animated-letters';
 
 describe('AnimatedLetters', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<AnimatedLetters />);
+    const { baseElement } = render(<AnimatedLetters text="test" />);
     expect(baseElement).toBeTruthy();
   });
 });
