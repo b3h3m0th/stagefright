@@ -10,7 +10,6 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger, Power4 } from 'gsap/all';
-import image from './assets/products/merch/stagefright_black_shirt_chest_logo.png';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
