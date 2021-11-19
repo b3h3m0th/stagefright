@@ -81,6 +81,8 @@ export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
           <a
             href={`mailto:${contact.email}`}
             className="contact__content__email__email"
+            target="_blank"
+            rel="noreferrer"
           >
             Contact Us
           </a>

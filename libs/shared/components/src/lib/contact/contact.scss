@@ -2,9 +2,7 @@
 @use 'theme:mixins' as mixins;
 
 .contact {
-  // position: relative;
   width: 100vw;
-  // margin-bottom: variables.$vertical-spacer-s;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
