@@ -35,14 +35,4 @@ export const shows: Shows = [
       label: 'Box Office',
     },
   },
-  {
-    location: {
-      title: 'Weihnachtsrock Wolfurt',
-      address: 'Unterlinden 1, 6922 Wolfurt',
-    },
-    start: new Date(2021, 11, 11, 21),
-    ticket: {
-      label: 'Box Office',
-    },
-  },
 ];
