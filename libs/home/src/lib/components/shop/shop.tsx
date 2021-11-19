@@ -80,7 +80,6 @@ export const Shop: React.FC = (props: ShopProps) => {
     gsap.from('.shop__shop__button-link', {
       y: -50,
       duration: animationData.shop.duration / 1000,
-      // ease: Power4.easeInOut,
       scrollTrigger: {
         trigger: '.shop__shop__button-link',
         start: 'top center',
@@ -104,7 +103,9 @@ export const Shop: React.FC = (props: ShopProps) => {
       });
 
       el.addEventListener('mousemove', (e: MouseEvent) => {
-        gsap.set(image, { x: e.offsetX, y: e.offsetY });
+        gsap.to(image, {
+          css: { left: e.offsetX, top: e.offsetY },
+        });
       });
     });
   });
