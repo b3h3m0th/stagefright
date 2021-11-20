@@ -36,3 +36,7 @@ export const shows: Shows = [
     },
   },
 ];
+
+export const upcomingShows: IShow[] = shows.filter(
+  (show: IShow) => new Date() < show.start
+);

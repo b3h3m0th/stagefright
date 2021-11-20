@@ -1,6 +1,6 @@
 import './shows-marquee.scss';
 import Marquee from 'react-fast-marquee';
-import { IShow, shows } from '@stagefright/shared/config';
+import { IShow, upcomingShows } from '@stagefright/shared/config';
 
 /* eslint-disable-next-line */
 export interface ShowsMarqueeProps {
@@ -21,39 +21,41 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
     `}
     >
       <Marquee gradient={false} speed={100}>
-        {[].concat(...Array(10).fill(shows)).map((show: IShow, i: number) => {
-          const showContent = `
+        {[]
+          .concat(...Array(10).fill(upcomingShows))
+          .map((show: IShow, i: number) => {
+            const showContent = `
               [${show.start.toLocaleDateString()} ${show.location.title}]`;
-          const divider: JSX.Element = (
-            <>
-              {' '}
-              <span key={i} className="shows-marquee__divider">
-                /
-              </span>{' '}
-            </>
-          );
+            const divider: JSX.Element = (
+              <>
+                {' '}
+                <span key={i} className="shows-marquee__divider">
+                  /
+                </span>{' '}
+              </>
+            );
 
-          return (
-            <>
-              {show.location.url ? (
-                <a
-                  key={i}
-                  className="shows-marquee__show"
-                  href={show.location.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {showContent}
-                </a>
-              ) : (
-                <div key={i} className="shows-marquee__show">
-                  {showContent}
-                </div>
-              )}
-              {divider}
-            </>
-          );
-        })}
+            return (
+              <>
+                {show.location.url ? (
+                  <a
+                    key={i}
+                    className="shows-marquee__show"
+                    href={show.location.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {showContent}
+                  </a>
+                ) : (
+                  <div key={i} className="shows-marquee__show">
+                    {showContent}
+                  </div>
+                )}
+                {divider}
+              </>
+            );
+          })}
       </Marquee>
     </div>
   );

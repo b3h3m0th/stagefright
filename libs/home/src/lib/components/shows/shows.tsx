@@ -1,5 +1,5 @@
 import './shows.scss';
-import { shows, IShow } from '@stagefright/shared/config';
+import { upcomingShows, IShow } from '@stagefright/shared/config';
 import { removeURLProtocol } from '@stagefright/shared/util';
 /* eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
@@ -18,9 +18,6 @@ export interface ShowsProps {}
 export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
   const showsTitle = useRef<HTMLHeadingElement>(null);
   const showsTitleText = useRef<HTMLSpanElement>(null);
-  const upcomingShows: IShow[] = shows.filter(
-    (show: IShow) => new Date() < show.start
-  );
 
   useEffect(() => {
     gsap.to('.shows', {
