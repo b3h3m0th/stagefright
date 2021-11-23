@@ -7,7 +7,7 @@ import { animationData, loading, shopData } from '@stagefright/shared/config';
 import { Button } from '@stagefright/shared/components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger, Power4 } from 'gsap/all';
 import { useMousePosition } from '@stagefright/shared/util';
@@ -21,8 +21,28 @@ export const Shop: React.FC = (props: ShopProps) => {
   const shopProducts = useRef<HTMLUListElement>(null);
   const shopButton = useRef<HTMLDivElement>(null);
   const shopTitleBlender = useRef<HTMLSpanElement>(null);
-  const imageFollowRef = useRef<HTMLImageElement>(null);
+  const imageFollowRef = useRef<HTMLDivElement>(null);
+  const imageFollowImageRef = useRef<HTMLImageElement>(null);
+  const imageFollowBlenderRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMousePosition();
+
+  const updateFollowImage: (source: string) => void = (source: string) => {
+    gsap.to(imageFollowBlenderRef.current, {
+      height: '100%',
+      duration: animationData.shop.duration / 1000 / 2,
+      // transformOrigin: 'top',
+      onComplete: () => {
+        imageFollowImageRef.current &&
+          (imageFollowImageRef.current.src = source);
+
+        gsap.to(imageFollowBlenderRef.current, {
+          height: '0',
+          duration: animationData.shop.duration / 1000 / 2,
+          // transformOrigin: 'bottom',
+        });
+      },
+    });
+  };
 
   useEffect(() => {
     gsap.to('.shop__title__blender', {
@@ -73,7 +93,8 @@ export const Shop: React.FC = (props: ShopProps) => {
     ) =>
       gsap.to(imageFollowRef.current, {
         autoAlpha: 1,
-        duration: animationData.shop.duration / 1000,
+        scale: 1,
+        duration: animationData.shop.duration / 1000 / 4,
       });
 
     const onProductsLeave: (e: MouseEvent) => gsap.core.Tween = (
@@ -81,7 +102,8 @@ export const Shop: React.FC = (props: ShopProps) => {
     ) =>
       gsap.to(imageFollowRef.current, {
         autoAlpha: 0,
-        duration: animationData.shop.duration / 1000,
+        scale: 0.5,
+        duration: animationData.shop.duration / 1000 / 4,
       });
 
     gsap.to(imageFollowRef.current, {
@@ -91,13 +113,14 @@ export const Shop: React.FC = (props: ShopProps) => {
     shopProducts.current?.addEventListener('mouseover', onProductsOver);
     shopProducts.current?.addEventListener('mouseleave', onProductsLeave);
 
+    const productListItems: NodeListOf<HTMLLIElement> =
+      document.querySelectorAll('.shop__content__products__product');
+
     return () => {
-      shopProducts.current?.removeEventListener('mouseenter', onProductsOver);
+      shopProducts.current?.removeEventListener('mouseover', onProductsOver);
       shopProducts.current?.removeEventListener('mouseleave', onProductsLeave);
     };
-  }, [mousePosition]);
-
-  // console.log('render');
+  });
 
   return (
     <div className="shop" id={HomeSection.shop}>
@@ -109,14 +132,20 @@ export const Shop: React.FC = (props: ShopProps) => {
       </h2>
       <div className="shop__content">
         <ul className="shop__content__products" ref={shopProducts}>
-          <img
-            src={
-              'https://artistsden.com/wp-content/uploads/2019/05/john-legend-e1568041810442.jpg'
-            }
-            alt="StageFright merch shirt"
-            ref={imageFollowRef}
+          <div
             className="shop__content__products__image-follow"
-          />
+            ref={imageFollowRef}
+          >
+            <div
+              className="shop__content__products__image-follow__blender"
+              ref={imageFollowBlenderRef}
+            ></div>
+            <img
+              alt="StageFright merch shirt"
+              className="shop__content__products__image-follow__image"
+              ref={imageFollowImageRef}
+            />
+          </div>
           {Object.values(shopData.products).map((e, _: number) => {
             return e.map((p, __: number) => {
               return (
@@ -126,7 +155,18 @@ export const Shop: React.FC = (props: ShopProps) => {
                   rel="noreferrer"
                   key={`product-${_}-${__}`}
                 >
-                  <li className="shop__content__products__product">
+                  <li
+                    className="shop__content__products__product"
+                    data-follow-image={p.image}
+                    onMouseEnter={(
+                      event: React.MouseEvent<HTMLLIElement, MouseEvent>
+                    ) =>
+                      updateFollowImage(
+                        event.currentTarget.getAttribute('data-follow-image') ??
+                          ''
+                      )
+                    }
+                  >
                     <span className="shop__content__products__product__text">
                       {p.name}
                     </span>

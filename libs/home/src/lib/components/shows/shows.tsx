@@ -32,19 +32,6 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
 
   useEffect(() => {
     if (windowSize.width > breakpoints.phone) {
-      gsap.to('.shows', {
-        delay:
-          loading.artificialPageMountDelay / 1000 +
-          animationData.hero.delay / 1000,
-        y: -50,
-        ease: Power2.easeOut,
-        duration: animationData.shows.duration / 1000,
-        scrollTrigger: {
-          trigger: '.shows',
-          scrub: 1,
-        },
-      });
-
       gsap
         .timeline()
         .to(showsTitleBlender.current, {
