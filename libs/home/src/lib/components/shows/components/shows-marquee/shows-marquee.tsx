@@ -30,7 +30,7 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
               <>
                 {' '}
                 <span key={i} className="shows-marquee__divider">
-                  /
+                  666
                 </span>{' '}
               </>
             );

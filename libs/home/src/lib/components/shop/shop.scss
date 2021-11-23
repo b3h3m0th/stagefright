@@ -2,14 +2,13 @@
 @use 'theme:mixins' as mixins;
 
 .shop {
-  padding: variables.$vertical-spacer-xs variables.$horizontal-spacer-s 0
-    variables.$horizontal-spacer-s;
+  padding: variables.$vertical-spacer-xs variables.$horizontal-spacer-s
+    variables.$vertical-spacer-m variables.$horizontal-spacer-s;
   width: 100vw;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  // align-items: center;
 
   &__title {
     position: relative;
@@ -70,12 +69,24 @@
       list-style-type: none;
       width: 100%;
 
+      &__image-follow {
+        position: absolute;
+        height: 300px;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+
+        @include mixins.for-phone {
+          display: none;
+        }
+      }
+
       &__product {
         text-align: left;
-        margin-top: 0;
         margin-right: variables.$spacing-xl;
         text-transform: uppercase;
-        font-size: 6em;
+        font-size: 4em;
         font-family: variables.$head;
         font-weight: 700;
         position: relative;
@@ -85,14 +96,14 @@
         width: 30%;
         overflow: visible;
         white-space: nowrap;
-        margin-bottom: variables.$spacing-m;
-        opacity: 0;
+        margin-bottom: variables.$spacing-3xl;
         transition: color 0.4s, left 0.4s;
         left: 0;
+        border-bottom: 1px solid variables.$white-transparent;
 
         &:hover {
           color: variables.$white;
-          left: variables.$spacing-xxl;
+          // left: variables.$spacing-xxl;
         }
 
         @include mixins.for-phone {
@@ -105,27 +116,15 @@
           content: 'Out of Stock';
           font-size: initial;
           -webkit-text-stroke: initial;
-          // margin-left: variables.$spacing-l;
           font-weight: 400;
           position: absolute;
           top: 100%;
           left: 0%;
-          z-index: -1;
+          margin: variables.$spacing-s 0;
         }
 
-        img {
-          position: absolute;
-          width: 550px;
-          object-fit: cover;
-          transform: translate(-50%, -50%);
-          z-index: -1;
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-
-          @include mixins.for-phone {
-            display: none;
-          }
+        &__text {
+          position: relative;
         }
       }
     }
@@ -163,7 +162,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    margin-top: variables.$vertical-spacer-s;
+    margin-top: variables.$vertical-spacer-xs;
     overflow: hidden;
 
     @include mixins.for-phone {

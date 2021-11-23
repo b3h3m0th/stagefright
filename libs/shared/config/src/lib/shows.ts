@@ -40,3 +40,7 @@ export const shows: Shows = [
 export const upcomingShows: IShow[] = shows.filter(
   (show: IShow) => new Date() < show.start
 );
+
+export const previousShows: IShow[] = shows
+  .filter((show: IShow) => new Date() >= show.start)
+  .sort((a: IShow, b: IShow) => +b.start - +a.start);

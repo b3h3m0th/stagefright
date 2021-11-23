@@ -15,6 +15,14 @@
     width: 287px;
     display: flex;
     align-items: center;
+    color: variables.$white;
+
+    @include mixins.for-phone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
 
     &__blender {
       background-color: variables.$white;
@@ -23,6 +31,10 @@
       top: 0;
       height: 100%;
       width: 0;
+
+      @include mixins.for-phone {
+        display: none;
+      }
     }
 
     &__text {
@@ -32,10 +44,23 @@
       color: variables.$white;
       white-space: nowrap;
       opacity: 0;
+
+      @include mixins.for-phone {
+        text-align: center;
+        width: 100% !important;
+        opacity: 1;
+      }
     }
 
-    @include mixins.for-phone {
-      text-align: center;
+    &__recent {
+      width: 236px;
+      margin-top: variables.$vertical-spacer-l;
+
+      @include mixins.for-phone {
+        text-align: center;
+        width: 100% !important;
+        opacity: 1;
+      }
     }
   }
 
@@ -60,6 +85,7 @@
 
       @include mixins.for-phone {
         flex-direction: column;
+        opacity: 1;
       }
 
       &:last-of-type {

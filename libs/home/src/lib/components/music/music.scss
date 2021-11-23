@@ -9,9 +9,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-bottom: variables.$vertical-spacer-l;
 
   @include mixins.for-phone {
-    display: initial;
+    flex-direction: column;
+    margin-bottom: variables.$vertical-spacer-xs;
   }
 
   &__title {
@@ -19,10 +21,9 @@
     text-align: left;
     color: variables.$white;
     text-transform: uppercase;
-    transform: rotate(180deg);
-    writing-mode: vertical-rl;
-    margin: 0 variables.$spacing-l 0 0;
+    margin: 0 variables.$spacing-xl 0 0;
     line-height: 0.9em;
+    z-index: 10;
 
     @include mixins.for-phone {
       text-align: center;
@@ -31,32 +32,131 @@
       width: initial;
       height: initial;
       line-height: initial;
+      width: 100%;
+      margin: 0;
     }
   }
 
-  &__content {
-    width: 100%;
-    height: 500px;
+  &__progress {
+    min-width: 100px;
+    height: variables.$spacing-xs;
+    background-color: variables.$white-transparent;
+    z-index: 10;
+    transform: translateY(50%);
+    margin-top: variables.$spacing-m;
 
-    &__box {
-      width: 0;
+    @include mixins.for-phone {
+      display: none;
+    }
+
+    &__bar {
+      top: 0;
+      left: 0;
+      background-color: variables.$white;
       height: 100%;
-      background-color: variables.$accent;
+      width: 0;
 
       @include mixins.for-phone {
         display: none;
       }
     }
+  }
 
-    &__announcement {
-      color: variables.$white;
+  &__content {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    left: 50%;
+
+    @include mixins.for-phone {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      height: auto;
+      position: static;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__item {
+      height: 100%;
+      min-width: 400px;
+      margin: variables.$spacing-l;
+      background-color: variables.$white-transparent;
+      transition: 0.4s;
+      position: relative;
 
       @include mixins.for-phone {
-        text-align: center;
+        background-color: transparent;
+        min-width: initial;
       }
 
-      &__album-title {
-        color: variables.$accent;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 400px;
+        background-color: variables.$black-1-transparent;
+        z-index: 10;
+        transition: 0.4s;
+        opacity: 1;
+      }
+
+      &:hover::after {
+        opacity: 0;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      &__content {
+        width: 100%;
+        color: variables.$white;
+
+        &__title {
+          margin-bottom: 0;
+          font-weight: 600;
+          font-size: variables.$font-size-l;
+        }
+
+        &__subtitle {
+          font-family: variables.$text;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin: variables.$spacing-xs 0;
+
+          p {
+            margin: 0;
+          }
+
+          &__year {
+            font-family: variables.$text;
+          }
+
+          &__separator {
+            height: variables.$spacing-s;
+            width: variables.$spacing-s;
+            background-color: variables.$accent;
+            border-radius: 50%;
+            margin: 0 variables.$spacing-s;
+          }
+
+          &__type {
+            font-family: variables.$text;
+          }
+        }
       }
     }
   }

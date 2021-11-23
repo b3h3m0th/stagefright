@@ -10,6 +10,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger, Power4 } from 'gsap/all';
+import { useMousePosition } from '@stagefright/shared/util';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
@@ -17,28 +18,19 @@ export interface ShopProps {}
 
 export const Shop: React.FC = (props: ShopProps) => {
   const shopTitle = useRef<HTMLHeadingElement>(null);
+  const shopProducts = useRef<HTMLUListElement>(null);
+  const shopButton = useRef<HTMLDivElement>(null);
   const shopTitleBlender = useRef<HTMLSpanElement>(null);
+  const imageFollowRef = useRef<HTMLImageElement>(null);
+  const mousePosition = useMousePosition();
 
   useEffect(() => {
-    gsap.to('.shop', {
-      scrollTrigger: {
-        trigger: '.shop',
-        start: 'top 10%',
-        end: '+200%',
-        pin: true,
-        pinSpacing: true,
-      },
-    });
-
     gsap.to('.shop__title__blender', {
-      delay:
-        loading.artificialPageMountDelay / 1000 +
-        animationData.shop.delay / 1000,
       opacity: 1,
       duration: 0,
       scrollTrigger: {
         trigger: '.shop__title__blender',
-        toggleActions: 'restart none none none',
+        toggleActions: 'play none none none',
         start: 'top bottom',
       },
       onComplete: () => {
@@ -46,7 +38,7 @@ export const Shop: React.FC = (props: ShopProps) => {
           .timeline()
           .to('.shop__title__blender', {
             width: '100%',
-            duration: animationData.shop.duration / 1000 / 2,
+            duration: animationData.shop.duration / 1000,
             ease: Power4.easeOut,
           })
           .to('.shop__title__blender', {
@@ -59,7 +51,7 @@ export const Shop: React.FC = (props: ShopProps) => {
           })
           .to('.shop__title__blender', {
             x: '100%',
-            duration: animationData.shop.duration / 1000 / 2,
+            duration: animationData.shop.duration / 1000,
             ease: Power4.easeOut,
           });
       },
@@ -71,43 +63,41 @@ export const Shop: React.FC = (props: ShopProps) => {
       stagger: 0.2,
       scrollTrigger: {
         trigger: '.shop__content__products__product',
-        start: 'top 20%',
+        start: 'top 80%',
         scrub: 1,
       },
     });
 
-    gsap.from('.shop__shop__button-link', {
-      y: -50,
-      duration: animationData.shop.duration / 1000,
-      scrollTrigger: {
-        trigger: '.shop__shop__button-link',
-        start: 'top center',
-        scrub: 1,
-      },
+    const onProductsOver: (e: MouseEvent) => gsap.core.Tween = (
+      e: MouseEvent
+    ) =>
+      gsap.to(imageFollowRef.current, {
+        autoAlpha: 1,
+        duration: animationData.shop.duration / 1000,
+      });
+
+    const onProductsLeave: (e: MouseEvent) => gsap.core.Tween = (
+      e: MouseEvent
+    ) =>
+      gsap.to(imageFollowRef.current, {
+        autoAlpha: 0,
+        duration: animationData.shop.duration / 1000,
+      });
+
+    gsap.to(imageFollowRef.current, {
+      css: { left: mousePosition.x, top: mousePosition.y },
     });
 
-    const items: NodeListOf<HTMLLIElement> = document.querySelectorAll(
-      '.shop__content__products__product'
-    );
+    shopProducts.current?.addEventListener('mouseover', onProductsOver);
+    shopProducts.current?.addEventListener('mouseleave', onProductsLeave);
 
-    items.forEach((el) => {
-      const image = el.querySelector('img');
+    return () => {
+      shopProducts.current?.removeEventListener('mouseenter', onProductsOver);
+      shopProducts.current?.removeEventListener('mouseleave', onProductsLeave);
+    };
+  }, [mousePosition]);
 
-      el.addEventListener('mouseenter', () => {
-        gsap.to(image, { autoAlpha: 1, zoom: 0.6 });
-      });
-
-      el.addEventListener('mouseleave', () => {
-        gsap.to(image, { autoAlpha: 0, zoom: 1.5 });
-      });
-
-      el.addEventListener('mousemove', (e: MouseEvent) => {
-        gsap.to(image, {
-          css: { left: e.offsetX, top: e.offsetY },
-        });
-      });
-    });
-  });
+  // console.log('render');
 
   return (
     <div className="shop" id={HomeSection.shop}>
@@ -118,7 +108,15 @@ export const Shop: React.FC = (props: ShopProps) => {
         </span>
       </h2>
       <div className="shop__content">
-        <ul className="shop__content__products">
+        <ul className="shop__content__products" ref={shopProducts}>
+          <img
+            src={
+              'https://artistsden.com/wp-content/uploads/2019/05/john-legend-e1568041810442.jpg'
+            }
+            alt="StageFright merch shirt"
+            ref={imageFollowRef}
+            className="shop__content__products__image-follow"
+          />
           {Object.values(shopData.products).map((e, _: number) => {
             return e.map((p, __: number) => {
               return (
@@ -129,8 +127,9 @@ export const Shop: React.FC = (props: ShopProps) => {
                   key={`product-${_}-${__}`}
                 >
                   <li className="shop__content__products__product">
-                    <img src={p.image} alt={p.altText} />
-                    {p.name}
+                    <span className="shop__content__products__product__text">
+                      {p.name}
+                    </span>
                   </li>
                 </a>
               );
@@ -138,7 +137,7 @@ export const Shop: React.FC = (props: ShopProps) => {
           })}
         </ul>
       </div>
-      <div className="shop__shop">
+      <div className="shop__shop" ref={shopButton}>
         <Button
           text="Visit StageFright Shop"
           link={shopData.url}

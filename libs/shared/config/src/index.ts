@@ -6,3 +6,4 @@ export * from './lib/animation';
 export * from './lib/contact';
 export * from './lib/interfaces';
 export * from './lib/shows';
+export * from './lib/music';

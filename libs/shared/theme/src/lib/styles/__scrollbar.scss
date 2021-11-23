@@ -1,7 +1,8 @@
 @use 'theme:variables' as variables;
 
 ::-webkit-scrollbar {
-  width: variables.$spacing-xs;
+  // width: variables.$spacing-xs;
+  width: 0;
 }
 
 ::-webkit-scrollbar-track {
