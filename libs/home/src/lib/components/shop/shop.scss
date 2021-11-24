@@ -6,9 +6,12 @@
     variables.$vertical-spacer-m variables.$horizontal-spacer-s;
   width: 100vw;
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
+
+  @include mixins.for-phone {
+    flex-direction: column;
+  }
 
   &__title {
     position: relative;
