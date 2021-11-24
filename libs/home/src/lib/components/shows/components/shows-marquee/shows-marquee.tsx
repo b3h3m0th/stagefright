@@ -27,19 +27,16 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
             const showContent = `
               [${show.start.toLocaleDateString()} ${show.location.title}]`;
             const divider: JSX.Element = (
-              <>
+              <span key={`${show}-${i}`} className="shows-marquee__divider">
                 {' '}
-                <span key={i} className="shows-marquee__divider">
-                  666
-                </span>{' '}
-              </>
+                666{' '}
+              </span>
             );
 
             return (
               <>
                 {show.location.url ? (
                   <a
-                    key={i}
                     className="shows-marquee__show"
                     href={show.location.url}
                     target="_blank"
@@ -48,9 +45,7 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
                     {showContent}
                   </a>
                 ) : (
-                  <div key={i} className="shows-marquee__show">
-                    {showContent}
-                  </div>
+                  <div className="shows-marquee__show">{showContent}</div>
                 )}
                 {divider}
               </>
