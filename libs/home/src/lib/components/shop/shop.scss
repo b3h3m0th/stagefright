@@ -5,9 +5,9 @@
   padding: variables.$vertical-spacer-xs variables.$horizontal-spacer-s
     variables.$vertical-spacer-m variables.$horizontal-spacer-s;
   width: 100vw;
-  // height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: flex-start;
 
   &__title {
@@ -57,7 +57,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    width: 100%;
+    flex: 1;
 
     @include mixins.for-phone {
       flex-direction: column;
@@ -67,7 +67,7 @@
       margin: 0;
       padding: 0;
       list-style-type: none;
-      width: 30%;
+      width: 100%;
 
       &__image-follow {
         position: absolute;
@@ -172,6 +172,13 @@
         font-size: 2em;
       }
     }
+  }
+
+  &__col {
+    height: 100%;
+    color: white;
+    flex: 1;
+    padding-left: variables.$spacing-l;
   }
 
   &__shop {

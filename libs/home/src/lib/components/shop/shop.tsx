@@ -77,17 +77,6 @@ export const Shop: React.FC = (props: ShopProps) => {
       },
     });
 
-    gsap.to('.shop__content__products__product', {
-      opacity: 1,
-      duration: animationData.shop.duration / 1000,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: '.shop__content__products__product',
-        start: 'top 80%',
-        scrub: 1,
-      },
-    });
-
     const onProductsOver: (e: MouseEvent) => gsap.core.Tween = (
       e: MouseEvent
     ) =>
@@ -124,13 +113,13 @@ export const Shop: React.FC = (props: ShopProps) => {
 
   return (
     <div className="shop" id={HomeSection.shop}>
-      <h2 className="shop__title" ref={shopTitle}>
-        <span className="shop__title__blender"></span>
-        <span className="shop__title__text" ref={shopTitleBlender}>
-          StageFright Shop
-        </span>
-      </h2>
       <div className="shop__content">
+        <h2 className="shop__title" ref={shopTitle}>
+          <span className="shop__title__blender"></span>
+          <span className="shop__title__text" ref={shopTitleBlender}>
+            StageFright Shop
+          </span>
+        </h2>
         <ul className="shop__content__products" ref={shopProducts}>
           <div
             className="shop__content__products__image-follow"
@@ -177,16 +166,17 @@ export const Shop: React.FC = (props: ShopProps) => {
             });
           })}
         </ul>
+        <div className="shop__shop" ref={shopButton}>
+          <Button
+            text="Visit StageFright Shop"
+            link={shopData.url}
+            linkTarget="_blank"
+            icon={faShoppingCart}
+            linkClassName="shop__shop__button-link"
+          />
+        </div>
       </div>
-      <div className="shop__shop" ref={shopButton}>
-        <Button
-          text="Visit StageFright Shop"
-          link={shopData.url}
-          linkTarget="_blank"
-          icon={faShoppingCart}
-          linkClassName="shop__shop__button-link"
-        />
-      </div>
+      <div className="shop__col">test</div>
     </div>
   );
 };
