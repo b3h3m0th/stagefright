@@ -6,10 +6,6 @@
   padding: variables.$vertical-spacer-s variables.$horizontal-spacer-s;
   background-size: cover;
   background-position: center;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-bottom: variables.$vertical-spacer-l;
 
   @include mixins.for-phone {
     flex-direction: column;
@@ -21,9 +17,9 @@
     text-align: left;
     color: variables.$white;
     text-transform: uppercase;
-    margin: 0 variables.$spacing-xl 0 0;
     line-height: 0.9em;
-    z-index: 10;
+    z-index: 99;
+    position: relative;
 
     @include mixins.for-phone {
       text-align: center;
@@ -37,38 +33,11 @@
     }
   }
 
-  &__progress {
-    min-width: 100px;
-    height: variables.$spacing-xs;
-    background-color: variables.$white-transparent;
-    z-index: 10;
-    transform: translateY(50%);
-    margin-top: variables.$spacing-m;
-
-    @include mixins.for-phone {
-      display: none;
-    }
-
-    &__bar {
-      top: 0;
-      left: 0;
-      background-color: variables.$white;
-      height: 100%;
-      width: 0;
-
-      @include mixins.for-phone {
-        display: none;
-      }
-    }
-  }
-
   &__content {
-    position: relative;
-    height: 400px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    left: 50%;
+    align-items: flex-start;
 
     @include mixins.for-phone {
       width: 100%;
@@ -84,50 +53,68 @@
       display: none;
     }
 
+    &__follow {
+      position: absolute;
+      height: 300px;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__image {
+        height: 100%;
+      }
+
+      &__blender {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: variables.$black;
+        z-index: 10;
+        opacity: 0;
+      }
+
+      @include mixins.for-phone {
+        display: none;
+      }
+    }
+
     &__item {
-      height: 100%;
-      min-width: 400px;
-      margin: variables.$spacing-l;
-      background-color: variables.$white-transparent;
+      width: 100%;
+      border-bottom: 1px solid variables.$white-transparent;
+      padding: variables.$spacing-xs 0;
       transition: 0.4s;
+      text-transform: uppercase;
       position: relative;
+      transition: color 0.4s, left 0.4s;
+
+      &:hover {
+        color: variables.$white;
+      }
 
       @include mixins.for-phone {
         background-color: transparent;
         min-width: initial;
       }
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        height: 100%;
-        width: 400px;
-        background-color: variables.$black-1-transparent;
-        z-index: 10;
-        transition: 0.4s;
-        opacity: 1;
-      }
-
-      &:hover::after {
-        opacity: 0;
-      }
-
       img {
         height: 100%;
-        width: 100%;
       }
 
       &__content {
         width: 100%;
         color: variables.$white;
+        height: 100%;
 
         &__title {
-          margin-bottom: 0;
-          font-weight: 600;
-          font-size: variables.$font-size-l;
+          margin: 0;
+          font-weight: 700;
+          font-size: 4em;
+          font-family: variables.$head;
+          -webkit-text-stroke: 1px variables.$white;
+          color: transparent;
         }
 
         &__subtitle {
@@ -135,7 +122,8 @@
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          margin: variables.$spacing-xs 0;
+          margin: variables.$spacing-xs 0 variables.$spacing-m 0;
+          text-transform: none;
 
           p {
             margin: 0;

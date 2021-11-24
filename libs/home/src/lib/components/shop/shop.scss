@@ -20,6 +20,7 @@
     width: 300px;
     display: flex;
     align-items: center;
+    z-index: 99;
 
     &__blender {
       background-color: variables.$white;
@@ -80,10 +81,6 @@
         align-items: center;
 
         &__image {
-          height: 100%;
-        }
-
-        &__image-back {
           height: 100%;
         }
 
@@ -175,10 +172,12 @@
   }
 
   &__col {
-    height: 100%;
+    height: auto;
     color: white;
     flex: 1;
     padding-left: variables.$spacing-l;
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__shop {

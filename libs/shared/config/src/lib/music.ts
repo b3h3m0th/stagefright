@@ -24,4 +24,11 @@ export const musicData: Musics = [
     cover: './assets/img/music/wanted/stagefright-wanted.jpg',
     releaseDate: new Date(2021, 11, 31),
   },
+  {
+    title: 'Drive',
+    subtitle: 'StageFright Single',
+    type: 'Single',
+    cover: './assets/img/music/wanted/stagefright-wanted.jpg',
+    releaseDate: new Date(2021, 11, 31),
+  },
 ];
