@@ -28,14 +28,16 @@ export const Shop: React.FC = (props: ShopProps) => {
 
   const updateFollowImage: (source: string) => void = (source: string) => {
     gsap.to(imageFollowBlenderRef.current, {
-      duration: animationData.shop.duration / 1000 / 4,
+      // duration: animationData.shop.duration / 1000 / 4,
+      duration: 0,
       autoAlpha: 1,
       onComplete: () => {
         imageFollowImageRef.current &&
           (imageFollowImageRef.current.src = source);
 
         gsap.to(imageFollowBlenderRef.current, {
-          duration: animationData.shop.duration / 1000 / 4,
+          // duration: animationData.shop.duration / 1000 / 4,
+          duration: 0,
           autoAlpha: 0,
         });
       },
