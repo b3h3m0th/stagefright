@@ -86,8 +86,8 @@
         &__blender {
           position: absolute;
           width: 100%;
+          height: 100%;
           background-color: variables.$black;
-          filter: blur(50%);
           z-index: 10;
         }
 
