@@ -89,6 +89,7 @@
       text-transform: uppercase;
       position: relative;
       transition: color 0.4s, left 0.4s;
+      cursor: pointer;
 
       &:hover {
         color: variables.$white;
