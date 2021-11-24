@@ -88,10 +88,9 @@
       transition: 0.4s;
       text-transform: uppercase;
       position: relative;
-      transition: color 0.4s, left 0.4s;
       cursor: pointer;
 
-      &:hover {
+      &:hover &__content__title {
         color: variables.$white;
       }
 
@@ -116,6 +115,7 @@
           font-family: variables.$head;
           -webkit-text-stroke: 1px variables.$white;
           color: transparent;
+          transition: 0.4s;
         }
 
         &__subtitle {
@@ -144,6 +144,10 @@
 
           &__type {
             font-family: variables.$text;
+          }
+
+          &__links > svg {
+            margin-right: variables.$spacing-xs;
           }
         }
       }

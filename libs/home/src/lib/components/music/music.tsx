@@ -6,6 +6,8 @@ import { ScrollTrigger } from 'gsap/all';
 import React, { memo, MemoExoticComponent, useEffect, useRef } from 'react';
 import { musicData, IMusic, animationData } from '@stagefright/shared/config';
 import { useMousePosition } from '@stagefright/shared/util';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
@@ -88,7 +90,6 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
                   )
                 }
               >
-                {/* <img src={m.cover} alt="StageFright Wanted album cover" /> */}
                 <div className="music__content__item__content">
                   <p className="music__content__item__content__title">
                     {m.title}
@@ -100,6 +101,11 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
                     <span className="music__content__item__content__subtitle__separator"></span>
                     <span className="music__content__item__content__subtitle__type">
                       {m.type}
+                    </span>
+                    <span className="music__content__item__content__subtitle__separator"></span>
+                    <span className="music__content__item__content__subtitle__links">
+                      <FontAwesomeIcon icon={faYoutube} />
+                      <FontAwesomeIcon icon={faSpotify} />
                     </span>
                   </p>
                 </div>

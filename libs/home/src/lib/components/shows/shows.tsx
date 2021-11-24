@@ -90,8 +90,8 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
           ease: Power4.easeOut,
         });
 
-      gsap.from('.shows__marquee', {
-        opacity: 0,
+      gsap.to('.shows__marquee', {
+        opacity: 1,
         duration: animationData.shows.duration / 1000,
         delay:
           loading.artificialPageMountDelay / 1000 +
