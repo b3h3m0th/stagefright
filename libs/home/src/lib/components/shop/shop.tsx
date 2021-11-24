@@ -107,14 +107,14 @@ export const Shop: React.FC = (props: ShopProps) => {
       });
 
     gsap.to(imageFollowRef.current, {
-      css: { left: mousePosition.x, top: mousePosition.y },
+      css: {
+        left: mousePosition.x,
+        top: mousePosition.y,
+      },
     });
 
     shopProducts.current?.addEventListener('mouseover', onProductsOver);
     shopProducts.current?.addEventListener('mouseleave', onProductsLeave);
-
-    const productListItems: NodeListOf<HTMLLIElement> =
-      document.querySelectorAll('.shop__content__products__product');
 
     return () => {
       shopProducts.current?.removeEventListener('mouseover', onProductsOver);
@@ -144,6 +144,7 @@ export const Shop: React.FC = (props: ShopProps) => {
               alt="StageFright merch shirt"
               className="shop__content__products__image-follow__image"
               ref={imageFollowImageRef}
+              src={shopData.products.shirt[0].image}
             />
           </div>
           {Object.values(shopData.products).map((e, _: number) => {
