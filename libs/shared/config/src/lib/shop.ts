@@ -1,5 +1,6 @@
 export const stagefrightShirtSource =
   './assets/img/products/merch/stagefright_black_shirt_chest_logo.png';
+/*eslint-disable-next-line */
 
 export const shopData = <const>{
   url: '#',

@@ -93,6 +93,7 @@
           height: 100%;
           background-color: variables.$black;
           z-index: 10;
+          opacity: 0;
         }
 
         @include mixins.for-phone {
