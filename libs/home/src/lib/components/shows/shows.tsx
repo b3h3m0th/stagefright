@@ -197,7 +197,10 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
           <div className="shows__content">
             {previousShows.length > 0 ? (
               previousShows.map((show: IShow, i) => (
-                <div className="shows__content__show" key={i}>
+                <div
+                  className="shows__content__show shows__recent__content__show"
+                  key={i}
+                >
                   <div className="shows__content__show__date">
                     <p className="shows__content__show__date__day">
                       {show.start.getUTCDate()}
