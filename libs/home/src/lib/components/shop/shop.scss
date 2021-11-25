@@ -185,6 +185,12 @@
     align-items: flex-end;
     text-transform: uppercase;
 
+    @include mixins.for-phone {
+      margin-top: variables.$vertical-spacer-s;
+      align-items: flex-start;
+      padding: 0;
+    }
+
     a {
       color: variables.$white;
       text-transform: initial;
@@ -215,9 +221,5 @@
     justify-content: flex-start;
     margin-top: variables.$vertical-spacer-xs;
     overflow: hidden;
-
-    @include mixins.for-phone {
-      justify-content: center;
-    }
   }
 }

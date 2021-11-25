@@ -26,6 +26,7 @@
 
     @include mixins.for-phone {
       align-items: center;
+      margin: variables.$spacing-l 0;
     }
 
     &__email {
@@ -41,6 +42,11 @@
         text-align: left;
         -webkit-text-stroke: 1px variables.$white;
         color: variables.$white;
+
+        @include mixins.for-phone {
+          font-size: (variables.$font-size-5xl) * 1.3;
+          letter-spacing: 1px;
+        }
       }
     }
   }
