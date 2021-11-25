@@ -175,13 +175,38 @@
     }
   }
 
-  &__col {
+  &__links {
     height: auto;
     color: white;
     flex: 1;
     padding-left: variables.$spacing-l;
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    text-transform: uppercase;
+
+    a {
+      color: variables.$white;
+      text-transform: initial;
+      margin-bottom: variables.$spacing-s;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 100%;
+        left: 0;
+        height: 1px;
+        background-color: variables.$white;
+        width: 100%;
+        transition: 0.2s;
+      }
+
+      &:hover::after {
+        width: 0;
+      }
+    }
   }
 
   &__shop {

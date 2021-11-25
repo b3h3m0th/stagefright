@@ -2,7 +2,12 @@
 import { HomeSection } from '@stagefright/router';
 import './shop.scss';
 
-import { animationData, loading, shopData } from '@stagefright/shared/config';
+import {
+  animationData,
+  loading,
+  shopData,
+  socials,
+} from '@stagefright/shared/config';
 /*eslint-disable-next-line */
 import { Button } from '@stagefright/shared/components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -162,7 +167,15 @@ export const Shop: React.FC = (props: ShopProps) => {
           />
         </div>
       </div>
-      <div className="shop__col">test</div>
+      <div className="shop__links">
+        <h2>Social Links</h2>
+        <a href={socials.instagram.link} target="_blank" rel="noreferrer">
+          {socials.instagram.text}
+        </a>
+        <a href={socials.facebook.link} target="_blank" rel="noreferrer">
+          {socials.facebook.text}
+        </a>
+      </div>
     </div>
   );
 };
