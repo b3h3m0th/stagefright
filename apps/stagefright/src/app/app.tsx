@@ -4,6 +4,7 @@ import React from 'react';
 import * as fromRouter from '@stagefright/router';
 import { Provider as StoreProvider } from 'mobx-react';
 import { SkewScrollingWrapper } from '@stagefright/shared/components';
+import { VFXProvider } from 'react-vfx';
 
 dotenv.config();
 
@@ -14,9 +15,11 @@ export const App: React.FC = () => {
   return (
     <React.StrictMode>
       <StoreProvider {...stores}>
-        {/* <SkewScrollingWrapper> */}
-        <fromRouter.Router />
-        {/* </SkewScrollingWrapper> */}
+        <VFXProvider>
+          {/* <SkewScrollingWrapper> */}
+          <fromRouter.Router />
+          {/* </SkewScrollingWrapper> */}
+        </VFXProvider>
       </StoreProvider>
     </React.StrictMode>
   );
