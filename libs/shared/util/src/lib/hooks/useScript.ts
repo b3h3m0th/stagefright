@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export function useScript(url: string, charset = 'utf-8') {
+export function useScript(url: string, charset = 'utf-8'): void {
   useEffect(() => {
     const script = document.createElement('script');
 
