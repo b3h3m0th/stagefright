@@ -60,6 +60,10 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
       };
     });
 
+    useEffect(() => {
+      void 0;
+    }, []);
+
     return (
       <section className="music" id={HomeSection.music}>
         <h2 className="music__title" ref={titleRef}>
