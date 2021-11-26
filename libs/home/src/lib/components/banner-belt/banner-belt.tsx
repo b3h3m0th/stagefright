@@ -12,15 +12,15 @@ export interface BannerBeltProps {}
 
 export const BannerBelt = (props: BannerBeltProps) => {
   const bannerBeltRef = useRef<HTMLDivElement>(null);
-  const {
-    scrolling: isScrolling,
-    time,
-    speed,
-    direction,
-    position,
-    relativeDistance,
-    totalDistance,
-  } = useScrollData();
+  // const {
+  //   scrolling: isScrolling,
+  //   time,
+  //   speed,
+  //   direction,
+  //   position,
+  //   relativeDistance,
+  //   totalDistance,
+  // } = useScrollData();
 
   useEffect(() => {
     gsap.to(bannerBeltRef.current, {
