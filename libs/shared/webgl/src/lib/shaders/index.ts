@@ -35,7 +35,7 @@ export const shaders: ShadersSheet = Shaders.create({
       }
     `,
     vert: GLSL`
-    uniform sampler2D uTexture;
+      uniform sampler2D uTexture;
       uniform vec2 uOffset;
       varying vec2 vUv;
 

@@ -78,9 +78,9 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
               ref={followImageRef}
               src={musicData[0].cover}
             />
-            <Surface width={300} height={300}>
-              <Node shader={shaders.rainbow} />
-            </Surface>
+            {/* <Surface width={300} height={300}>
+              <Node shader={shaders.bendDistortion} />
+            </Surface> */}
           </div>
           {musicData.map((m: IMusic, i: number) => {
             return (
