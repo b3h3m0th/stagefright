@@ -27,7 +27,7 @@ export const BannerBelt = (props: BannerBeltProps) => {
       y: -50,
       scrollTrigger: {
         trigger: bannerBeltRef.current,
-        start: 'center center',
+        start: 'top bottom',
         markers: true,
         scrub: 1,
       },
