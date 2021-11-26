@@ -2,7 +2,7 @@ import { GLSL, Shaders, ShadersSheet } from 'gl-react';
 
 // import rainbowFragment from './glsl/rainbow/fragment.glsl';
 
-// console.log('hi', fragment);
+// console.log('hi', rainbowFragment);
 
 export const shaders: ShadersSheet = Shaders.create({
   rainbow: {
