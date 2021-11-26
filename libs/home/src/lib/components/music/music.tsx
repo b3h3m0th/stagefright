@@ -1,4 +1,3 @@
-//@flow
 /*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
 import './music.scss';
@@ -9,18 +8,7 @@ import { musicData, IMusic, animationData } from '@stagefright/shared/config';
 import { useMousePosition } from '@stagefright/shared/util';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { Node } from 'gl-react';
-import { Surface } from 'gl-react-dom';
-import { shaders } from '@stagefright/shared/webgl';
 gsap.registerPlugin(ScrollTrigger);
-
-const Shader: React.FC = () => {
-  return (
-    <Surface width={350} height={400}>
-      <Node shader={shaders.rainbow} />
-    </Surface>
-  );
-};
 
 /* eslint-disable-next-line */
 export interface MusicProps {}
@@ -87,7 +75,6 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
               ref={followImageRef}
               src={musicData[0].cover}
             />
-            <Shader />
           </div>
           {musicData.map((m: IMusic, i: number) => {
             return (
