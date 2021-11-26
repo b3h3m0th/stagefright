@@ -1,14 +1,17 @@
 @use 'theme:variables' as variables;
 
-body,
-#root {
-  background-color: variables.$black;
-  overflow-x: hidden;
-  font-family: variables.$text;
-  scroll-behavior: smooth;
-  hyphens: auto;
+body {
   padding: 0;
   margin: 0;
+  hyphens: auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#root {
+  background-color: #111111;
+  font-family: variables.$text;
+  overflow-x: hidden;
 }
 
 ::selection {

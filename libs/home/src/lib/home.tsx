@@ -3,7 +3,7 @@ import Music from './components/music/music';
 import Shows from './components/shows/shows';
 import Socials from './components/socials/socials';
 /*eslint-disable-next-line */
-import { Contact } from '@stagefright/shared/components';
+import { Contact, NoiseBackground } from '@stagefright/shared/components';
 import './home.scss';
 import { motion } from 'framer-motion';
 import Shop from './components/shop/shop';
@@ -24,6 +24,7 @@ export const Home: React.FC<HomeProps> = (props: HomeProps) => {
       <Shop />
       {/* <Socials /> */}
       <Contact />
+      <NoiseBackground />
     </motion.div>
   );
 };
