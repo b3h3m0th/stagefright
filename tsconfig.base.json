@@ -23,7 +23,8 @@
       "@stagefright/shared/config": ["libs/shared/config/src/index.ts"],
       "@stagefright/shared/data": ["libs/shared/data/src/index.ts"],
       "@stagefright/shared/theme": ["libs/shared/theme/src/index.ts"],
-      "@stagefright/shared/util": ["libs/shared/util/src/index.ts"]
+      "@stagefright/shared/util": ["libs/shared/util/src/index.ts"],
+      "@stagefright/shared/webgl": ["libs/shared/webgl/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -6,6 +6,16 @@ module.exports = (config) => {
 
   return {
     ...config,
+    module: {
+      ...config.module,
+      rules: [
+        ...config.module.rules,
+        {
+          test: /\.(vert|frag|glsl)$/i,
+          use: 'raw-loader',
+        },
+      ],
+    },
     resolve: {
       ...config.resolve,
       alias: {

@@ -57,6 +57,9 @@
     "shared-util": {
       "tags": []
     },
+    "shared-webgl": {
+      "tags": []
+    },
     "stagefright": {
       "tags": []
     },
