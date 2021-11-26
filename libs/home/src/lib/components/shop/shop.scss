@@ -104,20 +104,15 @@
       &__product {
         text-align: left;
         margin-right: variables.$spacing-xl;
-        text-transform: uppercase;
-        font-size: 4em;
-        font-family: variables.$head;
-        font-weight: 700;
         position: relative;
         -webkit-text-stroke: 1px variables.$white;
         color: transparent;
         cursor: pointer;
         overflow: visible;
         white-space: nowrap;
-        margin-bottom: variables.$spacing-3xl;
+        margin-bottom: variables.$spacing-m;
         transition: color 0.4s, left 0.4s;
         left: 0;
-        border-bottom: 1px solid variables.$white-transparent;
 
         &:hover {
           color: variables.$white;
@@ -128,20 +123,22 @@
           margin-bottom: variables.$spacing-xl;
         }
 
-        &::after {
+        &__text {
+          text-transform: uppercase;
+          font-family: variables.$head;
+          font-weight: 700;
+          font-size: 4em;
+          position: relative;
+          border-bottom: 1px solid variables.$white-transparent;
+        }
+
+        &__info {
+          display: inline-block;
           color: variables.$accent;
-          content: 'Out of Stock';
           font-size: initial;
           -webkit-text-stroke: initial;
           font-weight: 400;
-          position: absolute;
-          top: 100%;
-          left: 0%;
-          margin: variables.$spacing-s 0;
-        }
-
-        &__text {
-          position: relative;
+          margin: variables.$spacing-s 0 0 0;
         }
       }
     }

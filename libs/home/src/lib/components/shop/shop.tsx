@@ -4,6 +4,7 @@ import './shop.scss';
 
 import {
   animationData,
+  IProduct,
   loading,
   shopData,
   socials,
@@ -128,7 +129,7 @@ export const Shop: React.FC = (props: ShopProps) => {
             />
           </div>
           {Object.values(shopData.products).map((e, _: number) => {
-            return e.map((p, __: number) => {
+            return e.map((p: IProduct, __: number) => {
               return (
                 <a
                   href={shopData.url}
@@ -148,8 +149,11 @@ export const Shop: React.FC = (props: ShopProps) => {
                       )
                     }
                   >
-                    <span className="shop__content__products__product__text">
+                    <div className="shop__content__products__product__text">
                       {p.name}
+                    </div>
+                    <span className="shop__content__products__product__info">
+                      {p.status}
                     </span>
                   </li>
                 </a>
