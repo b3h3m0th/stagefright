@@ -1,4 +1,4 @@
 declare module '*.glsl' {
-  const rainbowFragment: string;
-  export default rainbowFragment;
+  const value: string;
+  export default value;
 }
