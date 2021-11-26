@@ -1,3 +1,5 @@
+@use 'theme:variables' as variables;
+
 .skew-scroll-wrapper {
   position: fixed;
   top: 0;
@@ -5,6 +7,7 @@
   width: 100vw;
   overflow: hidden;
   overscroll-behavior-y: none;
+  background-color: variables.$noise-background;
 
   &__container {
     top: 0;

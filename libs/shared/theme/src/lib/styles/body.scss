@@ -9,7 +9,7 @@ body {
 }
 
 #root {
-  background-color: #111111;
+  background-color: variables.$noise-background;
   font-family: variables.$text;
   overflow-x: hidden;
 }

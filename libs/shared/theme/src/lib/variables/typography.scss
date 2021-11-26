@@ -4,8 +4,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import url('https://use.typekit.net/bzm0qwt.css');
 
+// active fonts list
+$fraklin-gothic-atf: 'franklin-gothic-atf', sans-serif;
+$acumin-pro: 'acumin-pro', sans-serif;
+$futura-pt: 'futura-pt', sans-serif;
+$paralucent: 'paralucent', sans-serif;
+$proxima-nova: 'proxima-nova', sans-serif;
+
 $text: 'franklin-gothic-atf', sans-serif;
-$head: 'franklin-gothic-atf', sans-serif;
+$head: $paralucent, sans-serif;
 $display: 'Anton', 'franklin-gothic-atf', sans-serif;
 
 $font-size-xs: 0.75rem;
