@@ -11,8 +11,8 @@ module.exports = (config) => {
       rules: [
         ...config.module.rules,
         {
-          test: /\.(vert|frag|glsl)$/i,
-          use: 'raw-loader',
+          test: /\.(glsl|vs|fs)$/,
+          loader: 'ts-shader-loader',
         },
       ],
     },
