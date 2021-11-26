@@ -28,7 +28,6 @@ export const BannerBelt = (props: BannerBeltProps) => {
       scrollTrigger: {
         trigger: bannerBeltRef.current,
         start: 'top bottom',
-        markers: true,
         scrub: 1,
       },
     });
