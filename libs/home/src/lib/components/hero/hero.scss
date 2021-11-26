@@ -2,8 +2,6 @@
 @use 'theme:mixins' as mixins;
 
 .hero {
-  // background-image: linear-gradient(variables.$black, variables.$black),
-  //   url('/assets/img/band_hero.jpg');
   background-blend-mode: saturation;
   width: 100vw;
   height: 45vh;
