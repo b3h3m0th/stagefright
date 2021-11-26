@@ -21,4 +21,5 @@ export const animationData = <const>{
     reducedCursorScale: 0.5,
     increasedCursorScale: 2,
   },
+  marqueeSpeed: 60,
 };

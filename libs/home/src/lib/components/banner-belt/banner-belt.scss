@@ -1,0 +1,33 @@
+@use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
+
+.banner-belt {
+  width: 100%;
+  // height: 50px;
+  margin: variables.$vertical-spacer-xs 0 variables.$vertical-spacer-s 0;
+
+  &__banner {
+    padding: variables.$vertical-spacer-s 0 variables.$vertical-spacer-s 0;
+    width: 100%;
+    background-color: variables.$accent;
+
+    &__marquee-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      color: variables.$white;
+
+      &__item {
+        font-family: variables.$head;
+        font-size: variables.$font-size-4xl;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0 variables.$spacing-l;
+      }
+
+      &__divider {
+        font-family: variables.$head;
+      }
+    }
+  }
+}

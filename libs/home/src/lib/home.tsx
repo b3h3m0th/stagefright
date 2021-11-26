@@ -7,6 +7,7 @@ import { Contact } from '@stagefright/shared/components';
 import './home.scss';
 import { motion } from 'framer-motion';
 import Shop from './components/shop/shop';
+import BannerBelt from './components/banner-belt/banner-belt';
 
 /* eslint-disable-next-line */
 export interface HomeProps {}
@@ -22,6 +23,7 @@ export const Home: React.FC<HomeProps> = (props: HomeProps) => {
       <Shows />
       <Music />
       <Shop />
+      <BannerBelt />
       {/* <Socials /> */}
       <Contact />
     </motion.div>

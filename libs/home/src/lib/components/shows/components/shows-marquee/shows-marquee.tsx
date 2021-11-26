@@ -1,6 +1,10 @@
 import './shows-marquee.scss';
 import Marquee from 'react-fast-marquee';
-import { IShow, upcomingShows } from '@stagefright/shared/config';
+import {
+  animationData,
+  IShow,
+  upcomingShows,
+} from '@stagefright/shared/config';
 
 /* eslint-disable-next-line */
 export interface ShowsMarqueeProps {
@@ -20,7 +24,7 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
     }
     `}
     >
-      <Marquee gradient={false} speed={100}>
+      <Marquee gradient={false} speed={animationData.marqueeSpeed}>
         {[]
           .concat(...Array(10).fill(upcomingShows))
           .map((show: IShow, i: number) => {
