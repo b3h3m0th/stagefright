@@ -24,7 +24,7 @@ export const BannerBelt = (props: BannerBeltProps) => {
 
   useEffect(() => {
     gsap.to(bannerBeltRef.current, {
-      y: -200,
+      y: -50,
       scrollTrigger: {
         trigger: bannerBeltRef.current,
         start: 'center center',
