@@ -11,6 +11,8 @@ import { faSpotify, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { Surface } from 'gl-react-dom';
 import { Node } from 'gl-react';
 import { shaders } from '@stagefright/shared/webgl';
+/*eslint-disable-next-line */
+import { SectionTitle } from '@stagefright/shared/components';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
@@ -19,7 +21,6 @@ export interface MusicProps {}
 export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
   (props: MusicProps) => {
     const contentRef = useRef<HTMLDivElement>(null);
-    const titleRef = useRef<HTMLHeadingElement>(null);
     const followRef = useRef<HTMLDivElement>(null);
     const followImageRef = useRef<HTMLImageElement>(null);
     const mousePosition = useMousePosition();
@@ -65,9 +66,7 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
 
     return (
       <section className="music" id={HomeSection.music}>
-        <h2 className="music__title" ref={titleRef}>
-          Music
-        </h2>
+        <SectionTitle text="Music" />
         <div className="music__link"></div>
         <div className="music__content" ref={contentRef}>
           <div className="music__content__follow" ref={followRef}>

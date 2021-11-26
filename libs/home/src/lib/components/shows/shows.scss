@@ -53,7 +53,6 @@
     }
 
     &__recent {
-      width: 236px;
       margin-top: variables.$vertical-spacer-l;
 
       @include mixins.for-phone {
@@ -172,5 +171,9 @@
       color: variables.$white;
       font-weight: 600;
     }
+  }
+
+  &__recent {
+    margin-top: variables.$vertical-spacer-l;
   }
 }

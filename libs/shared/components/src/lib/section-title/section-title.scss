@@ -1,0 +1,44 @@
+@use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
+
+.section-title {
+  position: relative;
+  color: variables.$white;
+  text-transform: uppercase;
+  text-align: left;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  display: inline-block;
+
+  &__blender {
+    background-color: variables.$white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+  }
+
+  &__text {
+    font-family: variables.$head;
+    color: variables.$white;
+    text-transform: uppercase;
+    color: variables.$white;
+    white-space: nowrap;
+    opacity: 0;
+    margin: 0;
+  }
+
+  @include mixins.for-phone {
+    text-align: center;
+    writing-mode: initial;
+    transform: initial;
+    width: 100%;
+    height: initial;
+    line-height: initial;
+    font-family: inherit;
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+}

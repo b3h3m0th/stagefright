@@ -9,9 +9,9 @@ import { removeURLProtocol, useWindowSize } from '@stagefright/shared/util';
 /* eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
 /* eslint-disable-next-line */
-import { Button } from '@stagefright/shared/components';
+import { Button, SectionTitle } from '@stagefright/shared/components';
 import { gsap } from 'gsap';
-import { ScrollTrigger, Power2, Power4 } from 'gsap/all';
+import { ScrollTrigger, Power4 } from 'gsap/all';
 import { useEffect, useRef } from 'react';
 import { animationData, loading } from '@stagefright/shared/config';
 import { ShowsMarquee } from './components';
@@ -21,75 +21,10 @@ gsap.registerPlugin(ScrollTrigger);
 export interface ShowsProps {}
 
 export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
-  const showsTitle = useRef<HTMLHeadingElement>(null);
-  const showsTitleText = useRef<HTMLSpanElement>(null);
-  const showsTitleBlender = useRef<HTMLDivElement>(null);
-  const showsRecentTitle = useRef<HTMLHeadingElement>(null);
-  const showsRecentTitleText = useRef<HTMLSpanElement>(null);
-  const showsRecentTitleBlender = useRef<HTMLDivElement>(null);
-
   const windowSize = useWindowSize();
 
   useEffect(() => {
     if (windowSize.width > breakpoints.phone) {
-      gsap
-        .timeline()
-        .to(showsTitleBlender.current, {
-          delay:
-            loading.artificialPageMountDelay / 1000 +
-            animationData.hero.delay / 1000,
-          opacity: 1,
-          duration: 0,
-        })
-        .to(showsTitleBlender.current, {
-          width: '100%',
-          duration: animationData.shows.duration / 1000,
-          ease: Power4.easeOut,
-        })
-        .to(showsTitleBlender.current, {
-          right: '0',
-          duration: 0,
-        })
-        .to(showsTitleText.current, {
-          opacity: 1,
-          duration: 0,
-        })
-        .to(showsTitleBlender.current, {
-          x: '100%',
-          duration: animationData.shows.duration / 1000,
-          ease: Power4.easeOut,
-        });
-
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: showsRecentTitle.current,
-            start: 'top bottom',
-          },
-        })
-        .to(showsRecentTitleBlender.current, {
-          opacity: 1,
-          duration: 0,
-        })
-        .to(showsRecentTitleBlender.current, {
-          width: '100%',
-          duration: animationData.shows.duration / 1000,
-          ease: Power4.easeOut,
-        })
-        .to(showsRecentTitleBlender.current, {
-          right: '0',
-          duration: 0,
-        })
-        .to(showsRecentTitleText.current, {
-          opacity: 1,
-          duration: 0,
-        })
-        .to(showsRecentTitleBlender.current, {
-          x: '100%',
-          duration: animationData.shows.duration / 1000,
-          ease: Power4.easeOut,
-        });
-
       gsap.to('.shows__marquee', {
         opacity: 1,
         duration: animationData.shows.duration / 1000,
@@ -117,12 +52,14 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
 
   return (
     <section className="shows" id={HomeSection.shows}>
-      <h2 className="shows__title" ref={showsTitle}>
-        <span className="shows__title__blender" ref={showsTitleBlender}></span>
-        <span className="shows__title__text" ref={showsTitleText}>
-          Upcoming Shows
-        </span>
-      </h2>
+      <SectionTitle
+        text="Upcoming Shows"
+        timelineConfig={{
+          delay:
+            animationData.hero.delay / 1000 +
+            loading.artificialPageMountDelay / 1000,
+        }}
+      />
       <div className="shows__content">
         {upcomingShows.length > 0 ? (
           upcomingShows.map((show: IShow, i) => (
@@ -182,18 +119,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
       <ShowsMarquee className={'shows__marquee'} />
       {previousShows.length <= 2 && (
         <div className="shows__recent">
-          <h2
-            className="shows__title shows__title__recent"
-            ref={showsRecentTitle}
-          >
-            <span
-              className="shows__title__blender"
-              ref={showsRecentTitleBlender}
-            ></span>
-            <span className="shows__title__text" ref={showsRecentTitleText}>
-              Recent Shows
-            </span>
-          </h2>
+          <SectionTitle text="Recent Shows" />
           <div className="shows__content">
             {previousShows.length > 0 ? (
               previousShows.map((show: IShow, i) => (

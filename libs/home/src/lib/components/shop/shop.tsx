@@ -10,7 +10,7 @@ import {
   socials,
 } from '@stagefright/shared/config';
 /*eslint-disable-next-line */
-import { Button } from '@stagefright/shared/components';
+import { Button, SectionTitle } from '@stagefright/shared/components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import { useEffect, useRef, useState } from 'react';
@@ -23,10 +23,8 @@ gsap.registerPlugin(ScrollTrigger);
 export interface ShopProps {}
 
 export const Shop: React.FC = (props: ShopProps) => {
-  const shopTitle = useRef<HTMLHeadingElement>(null);
   const shopProducts = useRef<HTMLUListElement>(null);
   const shopButton = useRef<HTMLDivElement>(null);
-  const shopTitleBlender = useRef<HTMLSpanElement>(null);
   const imageFollowRef = useRef<HTMLDivElement>(null);
   const imageFollowImageRef = useRef<HTMLImageElement>(null);
   const imageFollowBlenderRef = useRef<HTMLDivElement>(null);
@@ -37,38 +35,6 @@ export const Shop: React.FC = (props: ShopProps) => {
   };
 
   useEffect(() => {
-    gsap.to('.shop__title__blender', {
-      opacity: 1,
-      duration: 0,
-      scrollTrigger: {
-        trigger: '.shop__title__blender',
-        toggleActions: 'play none none none',
-        start: 'top bottom',
-      },
-      onComplete: () => {
-        gsap
-          .timeline()
-          .to('.shop__title__blender', {
-            width: '100%',
-            duration: animationData.shop.duration / 1000,
-            ease: Power4.easeOut,
-          })
-          .to('.shop__title__blender', {
-            right: '0',
-            duration: 0,
-          })
-          .to('.shop__title__text', {
-            opacity: 1,
-            duration: 0,
-          })
-          .to('.shop__title__blender', {
-            x: '100%',
-            duration: animationData.shop.duration / 1000,
-            ease: Power4.easeOut,
-          });
-      },
-    });
-
     const onProductsOver: (e: MouseEvent) => gsap.core.Tween = (
       e: MouseEvent
     ) =>
@@ -106,12 +72,7 @@ export const Shop: React.FC = (props: ShopProps) => {
   return (
     <div className="shop" id={HomeSection.shop}>
       <div className="shop__content">
-        <h2 className="shop__title" ref={shopTitle}>
-          <span className="shop__title__blender"></span>
-          <span className="shop__title__text" ref={shopTitleBlender}>
-            StageFright Shop
-          </span>
-        </h2>
+        <SectionTitle text="StageFright Shop" />
         <ul className="shop__content__products" ref={shopProducts}>
           <div
             className="shop__content__products__image-follow"
