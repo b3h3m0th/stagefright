@@ -133,7 +133,7 @@ export const Shop: React.FC = (props: ShopProps) => {
         </div>
       </div>
       <div className="shop__links">
-        <h2>Follow Us</h2>
+        <h2>More of us</h2>
         <a href={socials.instagram.link} target="_blank" rel="noreferrer">
           {socials.instagram.text}
         </a>
