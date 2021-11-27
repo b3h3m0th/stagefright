@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useEffect, useRef } from 'react';
 import Marquee from 'react-fast-marquee';
-import { useScrollData } from 'scroll-data-hook';
 gsap.registerPlugin(ScrollTrigger);
 
 /* eslint-disable-next-line */
@@ -12,20 +11,11 @@ export interface BannerBeltProps {}
 
 export const BannerBelt = (props: BannerBeltProps) => {
   const bannerBeltRef = useRef<HTMLDivElement>(null);
-  // const {
-  //   scrolling: isScrolling,
-  //   time,
-  //   speed,
-  //   direction,
-  //   position,
-  //   relativeDistance,
-  //   totalDistance,
-  // } = useScrollData();
 
   useEffect(() => {
     gsap.to(bannerBeltRef.current, {
       y: -100,
-      rotate: 5,
+      rotate: 3,
       scrollTrigger: {
         trigger: bannerBeltRef.current,
         start: 'top bottom',
