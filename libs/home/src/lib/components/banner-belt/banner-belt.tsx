@@ -24,7 +24,8 @@ export const BannerBelt = (props: BannerBeltProps) => {
 
   useEffect(() => {
     gsap.to(bannerBeltRef.current, {
-      y: -50,
+      y: -100,
+      rotate: 5,
       scrollTrigger: {
         trigger: bannerBeltRef.current,
         start: 'top bottom',
@@ -38,13 +39,16 @@ export const BannerBelt = (props: BannerBeltProps) => {
       <div className="banner-belt__banner" ref={bannerBeltRef}>
         <Marquee gradient={false} speed={animationData.marqueeSpeed}>
           <div className="banner-belt__banner__marquee-content">
-            {new Array(10).fill(null).map((_: null, i: number) => (
+            {new Array(7).fill(null).map((_: null, i: number) => (
               <>
                 <span className="banner-belt__banner__marquee-content__item">
-                  StageFright
+                  New StageFright merch coming soon!
                 </span>
                 <span className="banner-belt__banner__marquee-content__divider">
-                  666
+                  <img
+                    src="assets/img/logo_filled_white.png"
+                    alt="StageFright Logo"
+                  />
                 </span>
               </>
             ))}

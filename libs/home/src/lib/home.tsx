@@ -22,8 +22,8 @@ export const Home: React.FC<HomeProps> = (props: HomeProps) => {
       <Hero />
       <Shows />
       <Music />
-      <Shop />
       <BannerBelt />
+      <Shop />
       {/* <Socials /> */}
       <Contact />
     </motion.div>

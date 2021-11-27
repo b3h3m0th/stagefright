@@ -140,6 +140,9 @@ export const Shop: React.FC = (props: ShopProps) => {
         <a href={socials.facebook.link} target="_blank" rel="noreferrer">
           {socials.facebook.text}
         </a>
+        <a href={shopData.url} target="_blank" rel="noreferrer">
+          StageFright Shop
+        </a>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ body {
   hyphens: auto;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background-color: variables.$noise-background;
 }
 
 #root {

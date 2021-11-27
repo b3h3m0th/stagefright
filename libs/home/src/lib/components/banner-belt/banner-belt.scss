@@ -2,13 +2,16 @@
 @use 'theme:mixins' as mixins;
 
 .banner-belt {
-  width: 100%;
-  margin: variables.$vertical-spacer-l 0 variables.$vertical-spacer-l 0;
+  width: 100vw;
+  margin: variables.$vertical-spacer-l 0 variables.$vertical-spacer-m 0;
+  display: flex;
+  justify-content: center;
 
   &__banner {
-    padding: variables.$vertical-spacer-xs 0 variables.$vertical-spacer-xs 0;
-    width: 100%;
+    padding: variables.$vertical-spacer-xxs 0 variables.$vertical-spacer-xxs 0;
+    width: 130%;
     background-color: variables.$accent;
+    // transform: rotate(2deg);
 
     &__marquee-content {
       display: flex;
@@ -26,6 +29,10 @@
 
       &__divider {
         font-family: variables.$head;
+
+        img {
+          height: 80px;
+        }
       }
     }
   }
