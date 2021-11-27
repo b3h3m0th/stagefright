@@ -1,18 +1,21 @@
 @use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
 
 .footer {
   width: 100vw;
   min-height: 40vh;
   border-top: 1px solid variables.$white-transparent;
   color: variables.$white;
+  padding: 0 variables.$horizontal-spacer-s;
 
   &__head {
     margin: variables.$spacing-l 0;
     height: 10vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 
-    &__banner {
+    @include mixins.for-phone {
+      justify-content: center;
     }
 
     img {
@@ -29,11 +32,15 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
       list-style-type: none;
       margin: 0;
       padding: 0;
       font-family: variables.$head;
+
+      @include mixins.for-phone {
+        align-items: center;
+      }
 
       &__item {
         &__link {
@@ -44,8 +51,12 @@
     }
 
     &__copyright {
-      text-align: center;
+      text-align: left;
       font-size: variables.$font-size-s;
+
+      @include mixins.for-phone {
+        text-align: center;
+      }
     }
   }
 }

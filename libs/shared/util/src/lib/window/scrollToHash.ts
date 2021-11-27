@@ -1,8 +1,8 @@
-export function scrollToHash() {
-  const id = window.location.hash.substr(1);
+export function scrollToHash(): void {
+  const id: string = window.location.hash.substr(1);
 
   if (id) {
-    const anchor = document.getElementById(id);
+    const anchor: HTMLElement = document.getElementById(id);
     anchor && anchor.scrollIntoView();
   }
 }
