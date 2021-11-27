@@ -14,7 +14,7 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
         <img
           src="assets/img/logo_filled_white.png"
           alt="StageFright Logo"
-          // onClick={() => scrollTo(0, 0)}
+          onClick={() => window.scrollTo(0, 0)}
         />
       </div>
       <div className="footer__content">
