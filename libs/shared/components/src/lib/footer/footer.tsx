@@ -11,9 +11,11 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   return (
     <div className="footer">
       <div className="footer__head">
-        <a href="#">
-          <img src="assets/img/logo_filled_white.png" alt="StageFright Logo" />
-        </a>
+        <img
+          src="assets/img/logo_filled_white.png"
+          alt="StageFright Logo"
+          // onClick={() => scrollTo(0, 0)}
+        />
       </div>
       <div className="footer__content">
         <ul className="footer__content__quick-links">
