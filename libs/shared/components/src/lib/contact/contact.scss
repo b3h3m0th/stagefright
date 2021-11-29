@@ -40,8 +40,8 @@
         font-weight: 500;
         text-transform: uppercase;
         text-align: left;
-        -webkit-text-stroke: 1px variables.$white;
         color: variables.$white;
+        pointer-events: none;
 
         @include mixins.for-phone {
           font-size: (variables.$font-size-5xl) * 1.3;
