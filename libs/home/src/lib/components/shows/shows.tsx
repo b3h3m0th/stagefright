@@ -22,7 +22,6 @@ export interface ShowsProps {}
 
 export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
   const windowSize = useWindowSize();
-  const x = 'test';
 
   useEffect(() => {
     if (windowSize.width > breakpoints.phone) {
