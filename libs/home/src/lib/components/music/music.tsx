@@ -45,10 +45,11 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
         gsap.to(followRef.current, {
           autoAlpha: 0,
           scale: 0.5,
-          duration: animationData.shop.duration / 1000 / 4,
+          duration: animationData.music.duration / 1000 / 4,
         });
 
       gsap.to(followRef.current, {
+        duration: 0.5,
         css: {
           left: mousePosition.x,
           top: mousePosition.y,
