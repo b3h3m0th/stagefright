@@ -49,7 +49,7 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
         });
 
       gsap.to(followRef.current, {
-        duration: 0.5,
+        duration: animationData.cursorSpeed,
         css: {
           left: mousePosition.x,
           top: mousePosition.y,

@@ -52,7 +52,7 @@ export const Contact: React.FC<ContactProps> = (props: ContactProps) => {
     };
 
     gsap.to(cursorRef.current, {
-      duration: 0.5,
+      duration: animationData.cursorSpeed,
       css: {
         left: mousePosition.x,
         top: mousePosition.y,
