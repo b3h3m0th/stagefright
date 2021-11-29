@@ -3,7 +3,7 @@
 .primary-button {
   &__button {
     cursor: pointer;
-    padding: variables.$spacing-s variables.$spacing-m;
+    padding: variables.$spacing-m variables.$spacing-m;
     border: 0;
     outline: 0;
     background-color: variables.$accent;
