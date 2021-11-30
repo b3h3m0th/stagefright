@@ -5,7 +5,6 @@ import './shop.scss';
 import {
   animationData,
   IProduct,
-  loading,
   shopData,
   socials,
 } from '@stagefright/shared/config';
@@ -13,9 +12,9 @@ import {
 import { Button, SectionTitle } from '@stagefright/shared/components';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger, Power4 } from 'gsap/all';
+import { ScrollTrigger } from 'gsap/all';
 import { useMousePosition } from '@stagefright/shared/util';
 gsap.registerPlugin(ScrollTrigger);
 
