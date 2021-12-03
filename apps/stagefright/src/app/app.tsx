@@ -14,10 +14,6 @@ dotenv.config();
 const stores = {};
 
 export const App: React.FC = () => {
-  useEffect(() => {
-    console.log('ready!');
-  }, []);
-
   return (
     <React.StrictMode>
       <StoreProvider {...stores}>
