@@ -20,10 +20,30 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
     const contentRef = useRef<HTMLDivElement>(null);
     const followRef = useRef<HTMLDivElement>(null);
     const followImageRef = useRef<HTMLImageElement>(null);
+    const followImageBlenderRef = useRef<HTMLImageElement>(null);
     const mousePosition = useMousePosition();
 
     const updateFollowImage: (source: string) => void = (source: string) => {
-      followImageRef.current && (followImageRef.current.src = source);
+      followImageBlenderRef.current &&
+        (followImageBlenderRef.current.src = source);
+
+      // gsap
+      //   .timeline()
+      //   .to(followImageBlenderRef.current, {
+      //     duration: 0.3,
+      //     css: {
+      //       height: '100%',
+      //     },
+      //     onComplete: () => {
+      //       followImageRef.current && (followImageRef.current.src = source);
+      //     },
+      //   })
+      //   .to(followImageBlenderRef.current, {
+      //     duration: 0,
+      //     css: {
+      //       height: 0,
+      //     },
+      //   });
     };
 
     useEffect(() => {
@@ -68,7 +88,11 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
         <div className="music__link"></div>
         <div className="music__content" ref={contentRef}>
           <div className="music__content__follow" ref={followRef}>
-            <div className="music__content__follow__blender"></div>
+            <img
+              ref={followImageBlenderRef}
+              className="music__content__follow__blender"
+              alt="StageFright merch shirt"
+            />
             <img
               alt="StageFright merch shirt"
               className="music__content__follow__image"
