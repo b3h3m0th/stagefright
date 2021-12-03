@@ -87,11 +87,11 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
         <div className="music__link"></div>
         <div className="music__content" ref={contentRef}>
           <div className="music__content__follow" ref={followRef}>
-            <img
+            {/* <img
               ref={followImageBlenderRef}
               className="music__content__follow__blender"
               alt="StageFright merch shirt"
-            />
+            /> */}
             <img
               alt="StageFright merch shirt"
               className="music__content__follow__image"
