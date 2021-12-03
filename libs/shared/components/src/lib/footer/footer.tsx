@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
         </ul>
         <p className="footer__content__copyright">
           &copy; Copyright StageFright {new Date().getFullYear()} <br />
-          Responsible person Skip
+          Responsible editor Skip
         </p>
       </div>
     </div>
