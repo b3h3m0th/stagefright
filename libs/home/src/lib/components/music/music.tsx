@@ -24,8 +24,7 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
     const mousePosition = useMousePosition();
 
     const updateFollowImage: (source: string) => void = (source: string) => {
-      followImageBlenderRef.current &&
-        (followImageBlenderRef.current.src = source);
+      followImageRef.current && (followImageRef.current.src = source);
 
       // gsap
       //   .timeline()
