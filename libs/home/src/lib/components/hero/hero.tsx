@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
             wrapperStyle={{
               transform:
                 windowWidth >= breakpoints.phone
-                  ? `translate(${offset}px, 5px)`
+                  ? `translate(${offset + 20}px, 5px)`
                   : '',
             }}
           />
@@ -49,6 +49,7 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
             text="Wanted Coming Soon!"
             wrapperClassName="hero__content__headline"
             letterClassName="hero__content__headline"
+            animationDirection="up"
             wrapperStyle={{
               transform:
                 windowWidth >= breakpoints.phone

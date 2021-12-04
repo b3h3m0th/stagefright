@@ -29,17 +29,21 @@ export const AnimatedLetters: React.FC<AnimatedLettersProps> = ({
     animate: {
       transition: {
         delayChildren: 0.4,
-        staggerChildren: 0.07,
+        staggerChildren: 0.04,
       },
     },
   };
 
   const letterAnimation: Variants = {
     initial: {
-      y: animationDirection == LetterAnimationDirection.Down ? -1000 : 1000,
+      y: animationDirection == LetterAnimationDirection.Down ? -300 : 300,
+      skewX: 50,
+      perspective: '23rem',
     },
     animate: {
       y: 0,
+      skewX: -10,
+      perspective: 0,
       transition: {
         ease: [0.6, 0.01, -0.05, 0.95],
         duration: animationData.hero.duration / 1000,
