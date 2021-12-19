@@ -32,7 +32,7 @@ export const BannerBelt = (props: BannerBeltProps) => {
             {new Array(7).fill(null).map((_: null, i: number) => (
               <>
                 <span className="banner-belt__banner__marquee-content__item">
-                  New StageFright merch coming soon!
+                  New StageFright merch available!
                 </span>
                 <span className="banner-belt__banner__marquee-content__divider">
                   <img

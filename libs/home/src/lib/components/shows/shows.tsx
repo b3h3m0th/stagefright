@@ -12,7 +12,7 @@ import { HomeSection } from '@stagefright/router';
 import { Button, SectionTitle } from '@stagefright/shared/components';
 import { gsap } from 'gsap';
 import { ScrollTrigger, Power4 } from 'gsap/all';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { animationData, loading } from '@stagefright/shared/config';
 import { ShowsMarquee } from './components';
 gsap.registerPlugin(ScrollTrigger);
@@ -113,11 +113,13 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
             </div>
           ))
         ) : (
-          <p className="shows__content__empty">Coming Soon!</p>
+          <p className="shows__content__empty shows__content__show">
+            Coming Soon!
+          </p>
         )}
       </div>
       <ShowsMarquee className={'shows__marquee'} />
-      {previousShows.length <= 2 && (
+      {upcomingShows.length <= 2 && (
         <div className="shows__recent">
           <SectionTitle text="Recent Shows" />
           <div className="shows__content">

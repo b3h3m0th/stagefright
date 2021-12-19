@@ -21,7 +21,7 @@ export const Home: React.FC<HomeProps> = (props: HomeProps) => {
     >
       <Hero />
       <Shows />
-      <Music />
+      {/* <Music /> */}
       <BannerBelt />
       <Shop />
       {/* <Socials /> */}

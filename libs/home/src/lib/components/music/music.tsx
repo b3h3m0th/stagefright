@@ -82,7 +82,7 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
     });
 
     return (
-      <section className="music" id={HomeSection.music}>
+      <section className="music">
         <SectionTitle text="Music" />
         <div className="music__link"></div>
         <div className="music__content" ref={contentRef}>
