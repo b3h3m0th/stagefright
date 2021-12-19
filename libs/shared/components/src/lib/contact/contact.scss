@@ -42,7 +42,7 @@
         text-transform: uppercase;
         text-align: left;
         color: variables.$white;
-        pointer-events: none;
+        // pointer-events: none;
 
         @include mixins.for-phone {
           font-size: (variables.$font-size-5xl) * 1.3;
