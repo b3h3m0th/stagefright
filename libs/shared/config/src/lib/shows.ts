@@ -35,6 +35,17 @@ export const shows: Shows = [
       label: 'Box Office',
     },
   },
+  {
+    location: {
+      title: 'Kulturcafé Schlachthaus (w/ Silius & Discopowerboxxx)',
+      address: 'Schlachthausstraße 11, 6850 Dornbirn',
+      url: 'https://www.ojad.at/event/antichristmassacre-2/',
+    },
+    start: new Date(2022, 3, 25, 21),
+    ticket: {
+      label: 'Box Office',
+    },
+  },
 ];
 
 export const upcomingShows: IShow[] = shows.filter(
