@@ -46,6 +46,16 @@ export const shows: Shows = [
       label: 'Box Office',
     },
   },
+  {
+    location: {
+      title: 'Dornbirn Marktplatz Open Air',
+      address: 'Dornbirn Marktplatz, 6850 Dornbirn',
+    },
+    start: new Date(2022, 5, 23, 18),
+    ticket: {
+      label: 'Free',
+    },
+  },
 ];
 
 export const upcomingShows: IShow[] = shows.filter(
