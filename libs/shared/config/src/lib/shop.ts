@@ -1,4 +1,5 @@
 import { IProduct } from '..';
+import { contact } from './contact';
 
 export const stagefrightShirtSource =
   './assets/img/products/merch/stagefright_black_shirt_chest_logo.png';
@@ -6,7 +7,7 @@ export const stagefrightShirtSource =
 const altTextPrefix = <const>'StageFright Merch';
 
 export const shopData = <const>{
-  url: '#',
+  url: `mailto:${contact.email}?subject=Order%20StageFright%20Merch`,
   products: {
     shirt: <IProduct[]>[
       {
