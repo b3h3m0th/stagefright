@@ -135,7 +135,7 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
                         <FontAwesomeIcon icon={faYoutube} />
                       </a>
                       <a
-                        href={m.link?.youtube}
+                        href={m.link?.spotify}
                         target="_blank"
                         rel="noreferrer"
                       >
