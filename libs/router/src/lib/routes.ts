@@ -34,7 +34,7 @@ export const ROUTES: ROUTES = Object.keys(pages).reduce(
 
 export enum HomeSection {
   default = '',
-  // music = 'music',
+  music = 'music',
   shop = 'shop',
   shows = 'shows',
   contact = 'contact',

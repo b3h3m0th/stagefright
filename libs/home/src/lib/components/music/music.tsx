@@ -127,8 +127,20 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
                     </span>
                     <span className="music__content__item__content__subtitle__separator"></span>
                     <span className="music__content__item__content__subtitle__links">
-                      <FontAwesomeIcon icon={faYoutube} />
-                      <FontAwesomeIcon icon={faSpotify} />
+                      <a
+                        href={m.link?.youtube}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FontAwesomeIcon icon={faYoutube} />
+                      </a>
+                      <a
+                        href={m.link?.youtube}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FontAwesomeIcon icon={faSpotify} />
+                      </a>
                     </span>
                   </p>
                 </div>

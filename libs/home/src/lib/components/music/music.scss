@@ -149,7 +149,8 @@
             font-family: variables.$text;
           }
 
-          &__links > svg {
+          &__links a svg {
+            color: variables.$white;
             margin-right: variables.$spacing-xs;
           }
         }
