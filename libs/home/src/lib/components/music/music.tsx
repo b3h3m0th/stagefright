@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 /*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
 import './music.scss';
@@ -82,7 +83,7 @@ export const Music: MemoExoticComponent<React.FC<MusicProps>> = memo(
     });
 
     return (
-      <section className="music">
+      <section className="music" id={HomeSection.music}>
         <SectionTitle text="Music" />
         <div className="music__link"></div>
         <div className="music__content" ref={contentRef}>
