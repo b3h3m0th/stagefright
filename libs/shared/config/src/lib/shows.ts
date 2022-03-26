@@ -37,7 +37,7 @@ export const shows: Shows = [
   },
   {
     location: {
-      title: 'Kulturcafé Schlachthaus (w/ Silius & Discopowerboxxx)',
+      title: 'Antichristmassacre (w/ Silius & Discopowerboxxx)',
       address: 'Schlachthausstraße 11, 6850 Dornbirn',
       url: 'https://www.ojad.at/event/antichristmassacre-2/',
     },
