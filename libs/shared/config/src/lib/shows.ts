@@ -41,7 +41,7 @@ export const shows: Shows = [
       address: 'Schlachthausstraße 11, 6850 Dornbirn',
       url: 'https://www.ojad.at/event/antichristmassacre-2/',
     },
-    start: new Date(2022, 3, 25, 21),
+    start: new Date(2022, 2, 25, 21),
     ticket: {
       label: 'Box Office',
     },
