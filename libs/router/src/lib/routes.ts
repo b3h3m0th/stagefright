@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { propnameOf } from '@stagefright/shared/util';
 import { lazy } from 'react';
 import { loading } from '@stagefright/shared/config';

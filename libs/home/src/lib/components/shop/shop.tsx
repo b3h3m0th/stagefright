@@ -1,4 +1,4 @@
-/*eslint-disable-next-line */
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { HomeSection } from '@stagefright/router';
 import './shop.scss';
 
@@ -124,7 +124,7 @@ export const Shop: React.FC = (props: ShopProps) => {
         </ul>
         <div className="shop__shop" ref={shopButton}>
           <Button
-            text="Visit StageFright Shop"
+            text="Custom request"
             link={shopData.url}
             linkTarget="_blank"
             icon={faShoppingCart}
