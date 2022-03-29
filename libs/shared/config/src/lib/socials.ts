@@ -8,4 +8,8 @@ export const socials = <const>{
     link: 'https://www.facebook.com/TheTrueStageFright',
     text: 'Facebook',
   },
+  youtube: {
+    link: 'https://www.youtube.com/channel/UCrQgmOH2YIeL4fFME_hzPrg',
+    text: 'YouTube',
+  },
 };
