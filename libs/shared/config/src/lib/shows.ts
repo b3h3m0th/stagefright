@@ -48,7 +48,7 @@ export const shows: Shows = [
   },
   {
     location: {
-      title: 'Rockhouse Salzburg (w/ Devotion of Mine & Scävenger)',
+      title: 'Rockhouse Salzburg (w/ Devotion of Mine)',
       address: 'Schallmooser Hauptstraße 46, 5020 Salzburg',
       url: 'https://www.rockhouse.at/Veranstaltungen/RH-Veranstaltung/Local-heroes::322802',
     },
