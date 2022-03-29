@@ -48,6 +48,17 @@ export const shows: Shows = [
   },
   {
     location: {
+      title: 'Rockhouse Salzburg (w/ Devotion of Mine & Scävenger)',
+      address: 'Schallmooser Hauptstraße 46, 5020 Salzburg',
+      url: 'https://www.rockhouse.at/Veranstaltungen/RH-Veranstaltung/Local-heroes::322802',
+    },
+    start: new Date(2022, 3, 1, 19, 30),
+    ticket: {
+      url: 'https://www.rockhouse.at/Veranstaltungen/RH-Veranstaltung/Local-heroes::322802',
+    },
+  },
+  {
+    location: {
       title: 'Dornbirn Marktplatz Open Air',
       address: 'Dornbirn Marktplatz, 6850 Dornbirn',
     },

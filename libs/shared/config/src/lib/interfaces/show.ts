@@ -8,7 +8,7 @@ export interface IShow {
   doors?: Date;
   start: Date;
   ticket: {
-    label: string;
+    label?: string;
     url?: string;
   };
 }

@@ -98,7 +98,9 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
                 {show.ticket.url ? (
                   <Button
                     text={`
-                      Tickets (${show.ticket.label})
+                      Tickets ${
+                        show.ticket.label ? `(${show.ticket.label})` : ''
+                      }
                   `}
                     link={show.ticket.url}
                     linkTarget="_blank"
@@ -106,7 +108,9 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
                 ) : (
                   <Button
                     text={`
-                      Tickets (${show.ticket.label})
+                      Tickets ${
+                        show.ticket.label ? `(${show.ticket.label})` : ''
+                      }
                   `}
                   />
                 )}
