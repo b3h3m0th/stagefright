@@ -30,7 +30,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'JOIN, Nenzing',
-      address: '',
+      address: 'Eugen-Getzner-Straße 7, 6710 Nenzing',
     },
     start: new Date(2019, 8, 27, 20),
     ticket: {
