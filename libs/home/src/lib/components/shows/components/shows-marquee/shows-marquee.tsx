@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import './shows-marquee.scss';
 import Marquee from 'react-fast-marquee';
 import {
@@ -6,7 +7,6 @@ import {
   upcomingShows,
 } from '@stagefright/shared/config';
 
-/* eslint-disable-next-line */
 export interface ShowsMarqueeProps {
   className?: string | string[];
 }
@@ -42,7 +42,7 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
                 {show.location.url ? (
                   <a
                     className="shows-marquee__show"
-                    href={show.location.url}
+                    href={show.location.url.toString()}
                     target="_blank"
                     rel="noreferrer"
                   >

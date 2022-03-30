@@ -85,12 +85,12 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
                 </p>
                 {show.location.url && (
                   <a
-                    href={show.location.url}
+                    href={show.location.url.toString()}
                     target="_blank"
                     rel="noreferrer"
                     className="shows__content__show__location__url"
                   >
-                    {removeURLProtocol(show.location.url)}
+                    {removeURLProtocol(show.location.url.toString())}
                   </a>
                 )}
               </div>
@@ -102,7 +102,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
                         show.ticket.label ? `(${show.ticket.label})` : ''
                       }
                   `}
-                    link={show.ticket.url}
+                    link={show.ticket.url.toString()}
                     linkTarget="_blank"
                   />
                 ) : (
@@ -124,54 +124,52 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
         )}
       </div>
       <ShowsMarquee className={'shows__marquee'} />
-      {upcomingShows.length <= 2 && (
-        <div className="shows__recent">
-          <SectionTitle text="Recent Shows" />
-          <div className="shows__content">
-            {previousShows.length > 0 ? (
-              previousShows.slice(0, 20).map((show: IShow, i) => (
-                <div
-                  className="shows__content__show shows__recent__content__show"
-                  key={i}
-                >
-                  <div className="shows__content__show__date">
-                    <p className="shows__content__show__date__day">
-                      {show.start.getUTCDate()}
-                    </p>
-                    <p className="shows__content__show__date__month">
-                      {show.start.toLocaleString('en', { month: 'long' })}
-                    </p>
-                    <p className="shows__content__show__date__year">
-                      {show.start.getUTCFullYear()}
-                    </p>
-                  </div>
-                  <div className="shows__content__show__location">
-                    <p className="shows__content__show__location__title">
-                      {show.location.title}
-                    </p>
-                    <p className="shows__content__show__location__address">
-                      {show.location.address}
-                    </p>
-                    {show.location.url && (
-                      <a
-                        href={show.location.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="shows__content__show__location__url"
-                      >
-                        {removeURLProtocol(show.location.url)}
-                      </a>
-                    )}
-                  </div>
-                  <div className="shows__content__show__tickets"></div>
+      <div className="shows__recent">
+        <SectionTitle text="Recent Shows" />
+        <div className="shows__content">
+          {previousShows.length > 0 ? (
+            previousShows.slice(0, 20).map((show: IShow, i) => (
+              <div
+                className="shows__content__show shows__recent__content__show"
+                key={i}
+              >
+                <div className="shows__content__show__date">
+                  <p className="shows__content__show__date__day">
+                    {show.start.getUTCDate()}
+                  </p>
+                  <p className="shows__content__show__date__month">
+                    {show.start.toLocaleString('en', { month: 'long' })}
+                  </p>
+                  <p className="shows__content__show__date__year">
+                    {show.start.getUTCFullYear()}
+                  </p>
                 </div>
-              ))
-            ) : (
-              <p className="shows__content__empty">Coming Soon!</p>
-            )}
-          </div>
+                <div className="shows__content__show__location">
+                  <p className="shows__content__show__location__title">
+                    {show.location.title}
+                  </p>
+                  <p className="shows__content__show__location__address">
+                    {show.location.address}
+                  </p>
+                  {show.location.url && (
+                    <a
+                      href={show.location.url.toString()}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="shows__content__show__location__url"
+                    >
+                      {removeURLProtocol(show.location.url.toString())}
+                    </a>
+                  )}
+                </div>
+                <div className="shows__content__show__tickets"></div>
+              </div>
+            ))
+          ) : (
+            <p className="shows__content__empty">Coming Soon!</p>
+          )}
         </div>
-      )}
+      </div>
     </section>
   );
 };

@@ -3,12 +3,12 @@ export interface IShow {
   location: {
     title: string;
     address: string;
-    url?: string;
+    url?: URL;
   };
   doors?: Date;
   start: Date;
   ticket: {
     label?: string;
-    url?: string;
+    url?: URL;
   };
 }

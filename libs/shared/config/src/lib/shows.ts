@@ -41,7 +41,7 @@ export const shows: Shows = [
     location: {
       title: 'Kulturhaus ProKonTra',
       address: 'Kaiser-Franz-Josef-Straße 29, 6845 Hohenems',
-      url: 'https://prokontra.at/stagefright/',
+      url: new URL('https://prokontra.at/stagefright/'),
     },
     start: new Date(2021, 9, 30, 21),
     ticket: {
@@ -52,7 +52,7 @@ export const shows: Shows = [
     location: {
       title: 'Kulturcafé Schlachthaus (Postponed!)',
       address: 'Schlachthausstraße 11, 6850 Dornbirn',
-      url: 'https://www.ojad.at/event/stagefright/',
+      url: new URL('https://www.ojad.at/event/stagefright/'),
     },
     start: new Date(2021, 10, 19, 21),
     ticket: {
@@ -63,7 +63,7 @@ export const shows: Shows = [
     location: {
       title: 'Antichristmassacre (w/ Silius & Discopowerboxxx)',
       address: 'Schlachthausstraße 11, 6850 Dornbirn',
-      url: 'https://www.ojad.at/event/antichristmassacre-2/',
+      url: new URL('https://www.ojad.at/event/antichristmassacre-2/'),
     },
     start: new Date(2022, 2, 25, 21),
     ticket: {
@@ -74,11 +74,26 @@ export const shows: Shows = [
     location: {
       title: 'Rockhouse Salzburg (w/ Devotion of Mine)',
       address: 'Schallmooser Hauptstraße 46, 5020 Salzburg',
-      url: 'https://www.rockhouse.at/Veranstaltungen/RH-Veranstaltung/Local-heroes::322802',
+      url: new URL(
+        'https://www.rockhouse.at/Veranstaltungen/RH-Veranstaltung/Local-heroes::322802'
+      ),
     },
     start: new Date(2022, 3, 1, 19, 30),
     ticket: {
-      url: 'https://www.rockhouse.at/Veranstaltungen/RH-Veranstaltung/Local-heroes::322802',
+      url: new URL(
+        'https://www.rockhouse.at/Veranstaltungen/RH-Veranstaltung/Local-heroes::322802'
+      ),
+    },
+  },
+  {
+    location: {
+      title: 'Freudenhaus Lustenau',
+      address: 'Dornbirner Str., 6890 Lustenau',
+      url: new URL('https://freudenhaus.or.at/'),
+    },
+    start: new Date(2022, 4, 7, 18),
+    ticket: {
+      label: '',
     },
   },
   {
