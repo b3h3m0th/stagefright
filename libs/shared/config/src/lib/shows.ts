@@ -14,7 +14,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Szene Open Air',
-      address: '',
+      address: 'Lustenau',
     },
     start: new Date(2019, 5, 1, 19),
     ticket: {},
