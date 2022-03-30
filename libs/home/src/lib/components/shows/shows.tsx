@@ -129,7 +129,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
           <SectionTitle text="Recent Shows" />
           <div className="shows__content">
             {previousShows.length > 0 ? (
-              previousShows.slice(0, 3).map((show: IShow, i) => (
+              previousShows.slice(0, 20).map((show: IShow, i) => (
                 <div
                   className="shows__content__show shows__recent__content__show"
                   key={i}

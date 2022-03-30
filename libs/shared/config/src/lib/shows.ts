@@ -5,7 +5,33 @@ export type Shows = IShow[];
 export const shows: Shows = [
   {
     location: {
-      title: 'Kulturhaus ProKontra',
+      title: 'Szene Open Air',
+      address: '',
+    },
+    start: new Date(2019, 5, 1, 19),
+    ticket: {},
+  },
+  {
+    location: {
+      title: 'Kornmarktplatz Bregenz',
+      address: 'Kornmarktpl., 6900 Bregenz',
+    },
+    start: new Date(2019, 5, 22, 19),
+    ticket: {},
+  },
+  {
+    location: {
+      title: 'Nenzing',
+      address: '',
+    },
+    start: new Date(2019, 8, 27, 20),
+    ticket: {
+      label: 'Box Office',
+    },
+  },
+  {
+    location: {
+      title: 'Kulturhaus ProKonTra',
       address: 'Kaiser-Franz-Josef-Straße 29, 6845 Hohenems',
       url: 'https://prokontra.at/stagefright/',
     },
@@ -21,16 +47,6 @@ export const shows: Shows = [
       url: 'https://www.ojad.at/event/stagefright/',
     },
     start: new Date(2021, 10, 19, 21),
-    ticket: {
-      label: 'Box Office',
-    },
-  },
-  {
-    location: {
-      title: 'Weihnachtsrock Wolfurt',
-      address: 'Unterlinden 1, 6922 Wolfurt',
-    },
-    start: new Date(2021, 11, 11, 21),
     ticket: {
       label: 'Box Office',
     },
