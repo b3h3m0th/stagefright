@@ -1,0 +1,33 @@
+@use 'theme:variables' as variables;
+@use 'theme:mixins' as mixins;
+
+.band {
+  // background-color: variables.$accent;
+  padding: variables.$vertical-spacer-s variables.$horizontal-spacer-s;
+
+  &__content {
+    display: flex;
+
+    @include mixins.for-phone {
+      flex-direction: column;
+    }
+
+    img {
+      width: 40%;
+      margin-right: variables.$spacing-l;
+      align-self: flex-start;
+
+      @include mixins.for-phone {
+        margin-bottom: variables.$spacing-l;
+        width: 100%;
+      }
+    }
+
+    &__band-bio {
+      color: variables.$white;
+      font-family: variables.$fraklin-gothic-atf;
+      font-size: variables.$font-size-l;
+      line-height: variables.$spacing-xl;
+    }
+  }
+}
