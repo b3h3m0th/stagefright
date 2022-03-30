@@ -5,6 +5,14 @@ export type Shows = IShow[];
 export const shows: Shows = [
   {
     location: {
+      title: 'Conrad Sohm',
+      address: 'Boden 1, 6850 Dornbirn',
+    },
+    start: new Date(2019, 4, 3, 19),
+    ticket: {},
+  },
+  {
+    location: {
       title: 'Szene Open Air',
       address: '',
     },
@@ -21,7 +29,7 @@ export const shows: Shows = [
   },
   {
     location: {
-      title: 'Nenzing',
+      title: 'JOIN, Nenzing',
       address: '',
     },
     start: new Date(2019, 8, 27, 20),
