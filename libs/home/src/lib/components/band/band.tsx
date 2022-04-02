@@ -14,7 +14,6 @@ export interface BandProps {}
 export const Band: React.FC = (props: BandProps) => {
   useEffect(() => {
     gsap.from('.band__content__band-bio', {
-      delay: loading.artificialPageMountDelay / 1000,
       opacity: 0,
       duration: animationData.shows.duration / 1000,
       scrollTrigger: {
