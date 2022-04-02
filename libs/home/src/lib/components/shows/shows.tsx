@@ -7,9 +7,7 @@ import {
   breakpoints,
 } from '@stagefright/shared/config';
 import { removeURLProtocol, useWindowSize } from '@stagefright/shared/util';
-/* eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
-/* eslint-disable-next-line */
 import { Button, SectionTitle } from '@stagefright/shared/components';
 import { gsap } from 'gsap';
 import { ScrollTrigger, Power4 } from 'gsap/all';
@@ -50,7 +48,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
         },
       });
     }
-  }, []);
+  });
 
   return (
     <section className="shows" id={HomeSection.shows}>
