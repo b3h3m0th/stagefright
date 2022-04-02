@@ -79,7 +79,6 @@
       justify-content: space-around;
       align-items: center;
       font-family: variables.$head;
-      opacity: 0;
       transform-origin: top;
 
       @include mixins.for-phone {
@@ -175,5 +174,9 @@
 
   &__recent {
     margin-top: variables.$vertical-spacer-l;
+
+    &__show-more {
+      margin-top: variables.$spacing-l;
+    }
   }
 }

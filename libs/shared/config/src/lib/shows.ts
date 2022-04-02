@@ -6,7 +6,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Conrad Sohm',
-      address: 'Boden 1, 6850 Dornbirn',
+      address: 'Boden 1, Dornbirn',
     },
     start: new Date(2019, 4, 3, 19),
     ticket: {},
@@ -14,7 +14,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Szene Open Air',
-      address: '6890 Lustenau',
+      address: 'Lustenau',
     },
     start: new Date(2019, 5, 1, 19),
     ticket: {},
@@ -22,7 +22,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Kornmarktplatz Bregenz',
-      address: 'Kornmarktpl., 6900 Bregenz',
+      address: 'Kornmarktpl., Bregenz',
     },
     start: new Date(2019, 5, 22, 19),
     ticket: {},
@@ -30,7 +30,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'JOIN, Nenzing',
-      address: 'Eugen-Getzner-Straße 7, 6710 Nenzing',
+      address: 'Eugen-Getzner-Straße 7, Nenzing',
     },
     start: new Date(2019, 8, 27, 20),
     ticket: {
@@ -40,7 +40,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Kulturhaus ProKonTra',
-      address: 'Kaiser-Franz-Josef-Straße 29, 6845 Hohenems',
+      address: 'Kaiser-Franz-Josef-Straße 29, Hohenems',
       url: new URL('https://prokontra.at/stagefright/'),
     },
     start: new Date(2021, 9, 30, 21),
@@ -51,7 +51,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Kulturcafé Schlachthaus (Postponed!)',
-      address: 'Schlachthausstraße 11, 6850 Dornbirn',
+      address: 'Schlachthausstraße 11, Dornbirn',
       url: new URL('https://www.ojad.at/event/stagefright/'),
     },
     start: new Date(2021, 10, 19, 21),
@@ -62,7 +62,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Antichristmassacre (w/ Silius & Discopowerboxxx)',
-      address: 'Schlachthausstraße 11, 6850 Dornbirn',
+      address: 'Schlachthausstraße 11, Dornbirn',
       url: new URL('https://www.ojad.at/event/antichristmassacre-2/'),
     },
     start: new Date(2022, 2, 25, 21),
@@ -73,7 +73,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Rockhouse Salzburg (w/ Devotion of Mine)',
-      address: 'Schallmooser Hauptstraße 46, 5020 Salzburg',
+      address: 'Schallmooser Hauptstraße 46, Salzburg',
       url: new URL(
         'https://www.rockhouse.at/Veranstaltungen/RH-Veranstaltung/Local-heroes::322802'
       ),
@@ -87,8 +87,18 @@ export const shows: Shows = [
   },
   {
     location: {
+      title: 'Oilers',
+      address: 'Dornbirn Kehlegg',
+    },
+    start: new Date(2022, 3, 17, 18),
+    ticket: {
+      label: 'Box Office',
+    },
+  },
+  {
+    location: {
       title: 'Freudenhaus Lustenau',
-      address: 'Dornbirner Str., 6890 Lustenau',
+      address: 'Dornbirner Str., Lustenau',
       url: new URL('https://freudenhaus.or.at/'),
     },
     start: new Date(2022, 4, 7, 18),
@@ -99,11 +109,21 @@ export const shows: Shows = [
   {
     location: {
       title: 'Dornbirn Marktplatz Open Air',
-      address: 'Dornbirn Marktplatz, 6850 Dornbirn',
+      address: 'Dornbirn Marktplatz, Dornbirn',
     },
     start: new Date(2022, 5, 23, 18),
     ticket: {
       label: 'Free',
+    },
+  },
+  {
+    location: {
+      title: 'Soundcheck Open Air',
+      address: 'Thüringen',
+    },
+    start: new Date(2022, 7, 6, 18),
+    ticket: {
+      label: '',
     },
   },
 ];
