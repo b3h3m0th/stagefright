@@ -22,7 +22,7 @@ export const Band: React.FC = (props: BandProps) => {
         start: 'top 90%',
       },
     });
-  });
+  }, []);
 
   return (
     <div id={HomeSection.band} className="band">

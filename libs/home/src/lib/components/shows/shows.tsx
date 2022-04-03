@@ -48,7 +48,7 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
         },
       });
     }
-  });
+  }, []);
 
   return (
     <section className="shows" id={HomeSection.shows}>
