@@ -85,16 +85,16 @@ export const shows: Shows = [
       ),
     },
   },
-  {
-    location: {
-      title: 'Oilers',
-      address: 'Dornbirn Kehlegg',
-    },
-    start: new Date(2022, 3, 17, 18),
-    ticket: {
-      label: 'Box Office',
-    },
-  },
+  // {
+  //   location: {
+  //     title: 'Oilers',
+  //     address: 'Dornbirn Kehlegg',
+  //   },
+  //   start: new Date(2022, 3, 17, 18),
+  //   ticket: {
+  //     label: 'Box Office',
+  //   },
+  // },
   {
     location: {
       title: 'Freudenhaus Lustenau',
