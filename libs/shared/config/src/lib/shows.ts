@@ -126,11 +126,21 @@ export const shows: Shows = [
       label: '',
     },
   },
+  {
+    location: {
+      title: 'Gerominos Motorcycle',
+      address: 'Nenzing',
+    },
+    start: new Date(2022, 8, 10, 20),
+    ticket: {
+      label: '',
+    },
+  },
 ];
 
-export const upcomingShows: IShow[] = shows.filter(
-  (show: IShow) => new Date() < show.start
-);
+export const upcomingShows: IShow[] = shows
+  .filter((show: IShow) => new Date() < show.start)
+  .sort((a: IShow, b: IShow) => +a.start - +b.start);
 
 export const previousShows: IShow[] = shows
   .filter((show: IShow) => new Date() >= show.start)
