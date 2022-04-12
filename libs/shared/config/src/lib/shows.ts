@@ -98,7 +98,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Freudenhaus Lustenau',
-      address: 'Dornbirner Str., Lustenau',
+      address: 'Schlachthausstraße 11, Dornbirn',
       url: new URL('https://freudenhaus.or.at/'),
     },
     start: new Date(2022, 4, 7, 18),
@@ -108,8 +108,19 @@ export const shows: Shows = [
   },
   {
     location: {
+      title: 'Schlachthaus (w/ Casiopeia & Contrail)',
+      address: 'Dornbirner Str., Dornbirn',
+      url: new URL('https://freudenhaus.or.at/'),
+    },
+    start: new Date(2022, 4, 28, 21),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
       title: 'Dornbirn Marktplatz Open Air',
-      address: 'Dornbirn Marktplatz, Dornbirn',
+      address: 'Marktplatz Dornbirn',
     },
     start: new Date(2022, 5, 23, 18),
     ticket: {
