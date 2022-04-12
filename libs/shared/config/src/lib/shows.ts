@@ -88,7 +88,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Freudenhaus Lustenau',
-      address: 'Schlachthausstraße 11, Dornbirn',
+      address: 'Dornbirner Str., Lustenau',
       url: new URL('https://freudenhaus.or.at/'),
     },
     start: new Date(2022, 4, 7, 18),
@@ -99,7 +99,7 @@ export const shows: Shows = [
   {
     location: {
       title: 'Schlachthaus (w/ Casiopeia & Contrail)',
-      address: 'Dornbirner Str., Dornbirn',
+      address: 'Schlachthausstraße 11, Dornbirn',
     },
     start: new Date(2022, 4, 28, 21),
     ticket: {
