@@ -100,7 +100,6 @@ export const shows: Shows = [
     location: {
       title: 'Schlachthaus (w/ Casiopeia & Contrail)',
       address: 'Dornbirner Str., Dornbirn',
-      url: new URL('https://freudenhaus.or.at/'),
     },
     start: new Date(2022, 4, 28, 21),
     ticket: {
