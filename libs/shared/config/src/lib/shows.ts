@@ -128,7 +128,7 @@ export const shows: Shows = [
   },
   {
     location: {
-      title: 'Gerominos Motorcycle',
+      title: 'Geronimos Motorcycle',
       address: 'Nenzing',
     },
     start: new Date(2022, 8, 10, 20),
