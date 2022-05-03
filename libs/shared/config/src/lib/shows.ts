@@ -89,7 +89,7 @@ export const shows: Shows = [
     location: {
       title: 'Freudenhaus Lustenau',
       address: 'Dornbirner Str., Lustenau',
-      url: new URL('https://freudenhaus.or.at/'),
+      url: new URL('https://freudenhaus.or.at/programm/2022/play-for-ukraine/'),
     },
     start: new Date(2022, 4, 7, 18),
     ticket: {
