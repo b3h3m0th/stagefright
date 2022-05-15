@@ -100,6 +100,9 @@ export const shows: Shows = [
     location: {
       title: 'Schlachthaus (w/ Casiopeia & Contrail)',
       address: 'Schlachthausstraße 11, Dornbirn',
+      url: new URL(
+        'https://www.ojad.at/event/benefizkonzert_rock_hard_4_life/'
+      ),
     },
     start: new Date(2022, 4, 28, 21),
     ticket: {
