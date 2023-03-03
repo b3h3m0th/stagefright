@@ -243,6 +243,17 @@ export const shows: Shows = [
       label: '',
     },
   },
+  {
+    location: {
+      title: 'Dä 3. Stock',
+      address: 'Herisau (CH)',
+      url: new URL('https://www.xn--d3stock-5wa.ch/'),
+    },
+    start: new Date(2023, 10, 18, 21),
+    ticket: {
+      label: '',
+    },
+  },
 ];
 
 export const upcomingShows: IShow[] = shows
