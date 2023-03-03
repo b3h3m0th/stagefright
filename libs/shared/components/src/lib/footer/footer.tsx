@@ -1,5 +1,6 @@
 /*eslint-disable-next-line */
 import { HomeSection } from '@stagefright/router';
+import { logoFilledWhite } from '@stagefright/shared/assets';
 import './footer.scss';
 
 /* eslint-disable-next-line */
@@ -12,7 +13,7 @@ export const Footer: React.FC<FooterProps> = (props: FooterProps) => {
     <div className="footer">
       <div className="footer__head">
         <img
-          src="assets/img/logo_filled_white.png"
+          src={logoFilledWhite}
           alt="StageFright Logo"
           onClick={() => window.scrollTo(0, 0)}
         />

@@ -46,7 +46,7 @@ export const Hero: React.FC<HeroProps> = (props: HeroProps) => {
         )}
         {windowWidth >= breakpoints.phone ? (
           <AnimatedLetters
-            text="Wanted Coming Soon!"
+            text="Wanted Out Now!"
             wrapperClassName="hero__content__headline"
             letterClassName="hero__content__headline"
             animationDirection="up"

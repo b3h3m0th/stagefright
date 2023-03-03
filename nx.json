@@ -42,6 +42,9 @@
     "router": {
       "tags": []
     },
+    "shared-assets": {
+      "tags": []
+    },
     "shared-components": {
       "tags": []
     },

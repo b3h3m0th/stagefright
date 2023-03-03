@@ -4,9 +4,9 @@
   &__button {
     cursor: pointer;
     padding: variables.$spacing-m variables.$spacing-m;
-    border: 0;
+    border: 1px solid variables.$accent;
     outline: 0;
-    background-color: variables.$accent;
+    background-color: transparent;
     color: variables.$white;
   }
 }

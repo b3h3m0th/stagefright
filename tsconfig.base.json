@@ -15,10 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@stagefright/assets": ["apps/stagefright/src/assets"],
       "@stagefright/home": ["libs/home/src/index.ts"],
       "@stagefright/loader": ["libs/loader/src/index.ts"],
       "@stagefright/router": ["libs/router/src/index.ts"],
-      "@stagefright/assets": ["apps/stagefright/src/assets"],
+      "@stagefright/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@stagefright/shared/components": ["libs/shared/components/src/index.ts"],
       "@stagefright/shared/config": ["libs/shared/config/src/index.ts"],
       "@stagefright/shared/data": ["libs/shared/data/src/index.ts"],

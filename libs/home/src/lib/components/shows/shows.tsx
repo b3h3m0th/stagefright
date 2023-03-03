@@ -66,13 +66,13 @@ export const Shows: React.FC<ShowsProps> = (props: ShowsProps) => {
             <div className="shows__content__show" key={i}>
               <div className="shows__content__show__date">
                 <p className="shows__content__show__date__day">
-                  {show.start.getUTCDate()}
+                  {show.start.getDate()}
                 </p>
                 <p className="shows__content__show__date__month">
                   {show.start.toLocaleString('en', { month: 'long' })}
                 </p>
                 <p className="shows__content__show__date__year">
-                  {show.start.getUTCFullYear()}
+                  {show.start.getFullYear()}
                 </p>
               </div>
               <div className="shows__content__show__location">

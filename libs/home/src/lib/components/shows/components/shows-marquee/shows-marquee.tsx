@@ -6,6 +6,7 @@ import {
   IShow,
   upcomingShows,
 } from '@stagefright/shared/config';
+import { Fragment } from 'react';
 
 export interface ShowsMarqueeProps {
   className?: string | string[];
@@ -38,7 +39,7 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
             );
 
             return (
-              <>
+              <Fragment key={i}>
                 {show.location.url ? (
                   <a
                     className="shows-marquee__show"
@@ -52,7 +53,7 @@ export const ShowsMarquee = ({ className }: ShowsMarqueeProps) => {
                   <div className="shows-marquee__show">{showContent}</div>
                 )}
                 {divider}
-              </>
+              </Fragment>
             );
           })}
       </Marquee>

@@ -111,7 +111,7 @@ export const shows: Shows = [
   },
   {
     location: {
-      title: 'Dornbirn Marktplatz Open Air',
+      title: 'Dornbirn Marktplatz Open Air (cancelled)',
       address: 'Marktplatz Dornbirn',
     },
     start: new Date(2022, 5, 23, 18),
@@ -135,6 +135,110 @@ export const shows: Shows = [
       address: 'Nenzing',
     },
     start: new Date(2022, 8, 10, 20),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Metbar Lenzburg (w/ Sin Starlett)',
+      address: 'Lenzburg (CH)',
+      url: new URL('https://www.metbar.ch/'),
+    },
+    start: new Date(2022, 10, 26, 21),
+    ticket: {
+      label: 'Tickets',
+      url: new URL(
+        'https://eventfrog.ch/de/p/konzert/hard-rock-heavy-metal/sin-starlett-stage-fright-live-6985188026046351312.html'
+      ),
+    },
+  },
+  {
+    location: {
+      title: 'Schlachthaus (w/ Dreaming of Tomorrow)',
+      address: 'Schlachthausstraße 11, Dornbirn',
+      url: new URL('https://www.ojad.at/event'),
+    },
+    start: new Date(2022, 11, 3, 21),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Camäleon (w/ Dr. Dipshit & Unbekannte Täterschaft)',
+      address: 'Fabrikweg, 9490 Vaduz (FL)',
+      url: new URL('https://camaleon.li'),
+    },
+    start: new Date(2023, 1, 25, 21),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Bar&Pub Festival w/ Fate of Faith',
+      address: 'Reflex, Buchs (FL)',
+      url: new URL('http://www.reflex-bar.ch/'),
+    },
+    start: new Date(2023, 2, 4, 21),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Baragga Fäscht Festival',
+      address: 'Simon Frick-Strasse, 9466 Sennwald (CH)',
+      url: new URL('https://www.baragga-faescht.com/'),
+    },
+    start: new Date(2023, 4, 13, 20),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Bruch Brothers (w/ Mirkwood Spiders)',
+      address: 'Baselstrasse 7, 6003 Luzern (CH)',
+      url: new URL('https://www.bruch-brothers.ch/'),
+    },
+    start: new Date(2023, 4, 20, 20),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Planken Rockt Openair',
+      address: 'Eschen (CH)',
+      url: new URL('http://www.reflex-bar.ch/'),
+    },
+    start: new Date(2023, 5, 24, 21),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Palazzo',
+      address: 'Chur (CH)',
+      url: new URL(
+        'https://www.local.ch/de/d/chur/7000/bowlingcenter/palazzo-suedostschweiz-ag-iO0KOt0NBV177R6181mtEA'
+      ),
+    },
+    start: new Date(2023, 6, 8, 21),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Stage am Bach',
+      address: 'Mels (CH)',
+      url: new URL('https://stageambach.ch/'),
+    },
+    start: new Date(2023, 9, 7, 21),
     ticket: {
       label: '',
     },

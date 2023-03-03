@@ -3,7 +3,6 @@ import { HomeSection } from '@stagefright/router';
 import { SectionTitle } from '@stagefright/shared/components';
 import { bandBio } from '@stagefright/shared/data';
 import './band.scss';
-import band from '../../../../../../apps/stagefright/src/assets/img/band_hero.png';
 import { useEffect } from 'react';
 import { animationData, loading } from '@stagefright/shared/config';
 import gsap from 'gsap';

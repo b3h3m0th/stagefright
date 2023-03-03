@@ -16,6 +16,7 @@ import {
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { motion, Variants } from 'framer-motion';
 import { animationData, loading } from '@stagefright/shared/config';
+import { logoLetteringWhite } from '@stagefright/shared/assets';
 
 /* eslint-disable-next-line */
 export interface HeaderProps {}
@@ -115,10 +116,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
           onClick={() => window.scrollTo(0, 0)}
         >
           <Link to={`/${HomeSection.default}`}>
-            <img
-              src="assets/img/logo_filled_white.png"
-              alt="StageFright Logo"
-            />
+            <img src={logoLetteringWhite} alt="StageFright Logo" />
           </Link>
         </li>
         {navItems.map((e: [string, HomeSection], i: number) => (
@@ -149,10 +147,7 @@ export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
           onClick={() => window.scrollTo(0, 0)}
         >
           <Link to={`/`}>
-            <img
-              src="assets/img/logo_filled_white.png"
-              alt="StageFright Logo"
-            />
+            <img src={logoLetteringWhite} alt="StageFright Logo" />
           </Link>
         </li>
         <AnimateHeight duration={350} height={isMenuOpened ? 'auto' : 0}>

@@ -1,8 +1,8 @@
 import { IProduct } from '..';
 import { contact } from './contact';
+import { blackShirtChestLogo } from '@stagefright/shared/assets';
 
-export const stagefrightShirtSource =
-  './assets/img/products/merch/stagefright_black_shirt_chest_logo.png';
+export const stagefrightShirtSource = blackShirtChestLogo;
 
 const altTextPrefix = <const>'StageFright Merch';
 
