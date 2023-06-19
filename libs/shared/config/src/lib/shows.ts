@@ -210,9 +210,18 @@ export const shows: Shows = [
   },
   {
     location: {
+      title: 'Leiblachhalle',
+      address: 'Hergensweiler (DE)',
+    },
+    start: new Date(2023, 5, 17, 21),
+    ticket: {
+      label: '',
+    },
+  },
+  {
+    location: {
       title: 'Planken Rockt Openair',
       address: 'Eschen (CH)',
-      url: new URL('http://www.reflex-bar.ch/'),
     },
     start: new Date(2023, 5, 24, 21),
     ticket: {
@@ -230,6 +239,17 @@ export const shows: Shows = [
     start: new Date(2023, 6, 8, 21),
     ticket: {
       label: '',
+    },
+  },
+  {
+    location: {
+      title: 'Kulturcafé Schlachthaus',
+      address: 'Schlachthausstraße 11, Dornbirn',
+      url: new URL('https://www.ojad.at/angebot/schlachthaus/'),
+    },
+    start: new Date(2021, 8, 16, 21),
+    ticket: {
+      label: 'Box Office',
     },
   },
   {
